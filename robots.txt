@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://zirhlidijital.com.tr/sitemap.xml
