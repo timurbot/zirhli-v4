@@ -6,74 +6,83 @@
     <title>SİBER REKLAM DÜNYASI | ZIRHLI DİJİTAL</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root { --neon: #39ff14; --cyber: #00d2ff; --bg: #050505; }
+        :root { --neon: #39ff14; --cyber: #00d2ff; --bg: #050505; --dark-card: #0d0d0d; }
         * { margin:0; padding:0; box-sizing:border-box; }
-        body { background: var(--bg); color: #fff; font-family: 'Courier New', Courier, monospace; overflow-x: hidden; }
+        body { background: var(--bg); color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
         
-        .top-bar { padding: 20px; border-bottom: 1px solid #222; text-align: center; background: #000; }
-        .logo { font-size: 24px; font-weight: bold; color: var(--cyber); letter-spacing: 2px; }
+        /* Header */
+        header { padding: 25px; background: #000; border-bottom: 2px solid var(--cyber); text-align: center; }
+        .logo { font-size: 26px; font-weight: 900; color: var(--cyber); text-transform: uppercase; letter-spacing: 2px; }
         .logo span { color: var(--neon); }
 
-        .hero { padding: 40px 20px; text-align: center; }
-        .hero h1 { font-size: 20px; margin-bottom: 20px; color: var(--neon); text-shadow: 0 0 10px var(--neon); }
-        
-        .scan-container { background: #111; border: 1px solid #333; padding: 20px; border-radius: 10px; margin: 20px 0; position: relative; overflow: hidden; }
-        .scan-line { width: 100%; height: 2px; background: var(--neon); position: absolute; top: 0; left: 0; animation: scan 3s linear infinite; }
+        /* Hero / Scanner Area */
+        .scanner-section { padding: 30px 20px; background: linear-gradient(180deg, #000, #0d0d0d); position: relative; }
+        .scanner-box { border: 1px solid #333; padding: 20px; border-radius: 12px; background: rgba(0,0,0,0.8); position: relative; overflow: hidden; }
+        .scan-line { width: 100%; height: 2px; background: var(--neon); position: absolute; top: 0; left: 0; animation: scan 2.5s linear infinite; box-shadow: 0 0 15px var(--neon); }
         @keyframes scan { 0% { top: 0; } 100% { top: 100%; } }
+        .scan-text { font-family: 'Courier New', monospace; font-size: 12px; color: var(--neon); margin-bottom: 10px; }
 
-        .service-list { display: grid; gap: 15px; padding: 20px; }
-        .s-item { background: #1a1a1a; padding: 20px; border-radius: 8px; border-left: 4px solid var(--cyber); }
-        .s-item h3 { font-size: 16px; margin-bottom: 10px; color: var(--cyber); }
-        .s-item p { font-size: 13px; color: #888; }
+        /* Service Cards */
+        .grid { padding: 20px; display: grid; gap: 20px; }
+        .card { background: var(--dark-card); border: 1px solid #222; border-radius: 15px; padding: 25px; transition: 0.3s; }
+        .card:hover { border-color: var(--cyber); transform: translateY(-5px); }
+        .card i { font-size: 35px; color: var(--cyber); margin-bottom: 15px; }
+        .card h3 { font-size: 19px; margin-bottom: 10px; color: #fff; }
+        .card p { font-size: 14px; color: #888; line-height: 1.5; }
 
-        .price-box { border: 2px solid var(--neon); margin: 20px; padding: 20px; border-radius: 15px; text-align: center; background: rgba(57, 255, 20, 0.05); }
-        .price-box h2 { color: var(--neon); font-size: 18px; }
-        .price-tag { font-size: 35px; font-weight: bold; margin: 15px 0; }
+        /* Pricing Section */
+        .price-wrap { margin: 20px; padding: 30px; border-radius: 20px; background: linear-gradient(145deg, #111, #000); border: 2px solid var(--neon); text-align: center; box-shadow: 0 0 20px rgba(57, 255, 20, 0.1); }
+        .price-wrap h2 { color: var(--neon); font-size: 20px; margin-bottom: 15px; }
+        .price-val { font-size: 42px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+        .price-val span { font-size: 16px; color: #555; }
 
-        .footer-nav { position: fixed; bottom: 0; width: 100%; background: #000; display: flex; justify-content: space-around; padding: 15px 0; border-top: 1px solid #333; }
-        .f-item { color: #666; text-decoration: none; font-size: 10px; text-align: center; }
-        .f-item i { font-size: 22px; margin-bottom: 5px; display: block; }
-        .f-item.active { color: var(--neon); }
+        /* Bottom Action */
+        .wa-sticky { background: var(--neon); color: #000; padding: 18px; text-decoration: none; display: block; text-align: center; font-weight: 800; border-radius: 12px; margin: 20px; font-size: 15px; text-transform: uppercase; }
 
-        .wa-btn { background: var(--neon); color: #000; padding: 15px; display: block; text-decoration: none; font-weight: bold; margin: 20px; border-radius: 10px; font-size: 14px; }
-        
-        #admin-panel { display: none; position: fixed; bottom: 80px; left: 10px; background: #222; padding: 15px; border: 1px solid var(--neon); z-index: 999; }
-        .adm-btn { background: #000; color: var(--neon); border: 1px solid var(--neon); padding: 5px 10px; margin: 2px; }
+        /* Navigation */
+        .nav-fixed { position: fixed; bottom: 0; width: 100%; background: #000; display: flex; justify-content: space-around; padding: 15px 0; border-top: 1px solid #222; z-index: 1000; }
+        .nav-link { color: #555; text-decoration: none; font-size: 11px; text-align: center; }
+        .nav-link i { font-size: 22px; margin-bottom: 5px; display: block; }
+        .nav-link.active { color: var(--neon); }
+
+        /* Admin */
+        #admin-panel { display: none; position: fixed; bottom: 80px; left: 15px; background: #111; padding: 15px; border: 1px solid var(--neon); border-radius: 10px; z-index: 1001; }
+        .adm-btn { background: #222; color: var(--neon); border: 1px solid var(--neon); padding: 8px 12px; border-radius: 5px; cursor: pointer; font-size: 12px; }
     </style>
 </head>
 <body>
 
-<div class="top-bar">
+<header>
     <div class="logo">SİBER<span>REKLAM</span></div>
+</header>
+
+<div class="scanner-section">
+    <div class="scanner-box">
+        <div class="scan-line"></div>
+        <div class="scan-text">>> ANALYZING_DIGITAL_ASSETS...</div>
+        <div class="scan-text" style="color:#555">>> SECURING_AD_BUDGET: ACTIVE</div>
+        <div class="scan-text" style="color:#555">>> SEO_VULNERABILITY: CRITICAL</div>
+    </div>
 </div>
 
-<div class="hero">
-    <h1>SİBER GÜVENLİKLİ DİJİTAL YÖNETİM</h1>
-    <p style="font-size: 13px; color: #888;">Esenyurt'un En Güçlü Siber Reklam Ajansı</p>
-</div>
-
-<div class="scan-container">
-    <div class="scan-line"></div>
-    <p style="color: var(--neon); font-size: 12px;">[SYSTEM_CHECK]: ANALİZ BAŞLATILDI...</p>
-    <p style="font-size: 11px; margin-top: 10px; color: #555;">Sitenizdeki güvenlik açıkları ve reklam bütçesi sızıntıları kontrol ediliyor...</p>
-</div>
-
-<div class="service-list">
-    <div class="s-item">
+<div class="grid">
+    <div class="card">
+        <i class="fas fa-user-shield"></i>
         <h3>Zırhlı Web Tasarım</h3>
-        <p>Hacklenemez, SEO uyumlu ve hızlı. Sizi siber dünyada bir kale gibi korur.</p>
+        <p>Sadece site yapmıyoruz; hacklenemez, WAF korumalı ve Google dostu kaleler inşa ediyoruz.</p>
     </div>
-    <div class="s-item">
-        <h3>Google Ads Zırhlama</h3>
-        <p>Rakiplerinizin bütçenizi bitirmesine son verin. Bot korumalı reklam yönetimi.</p>
+    <div class="card">
+        <i class="fab fa-google"></i>
+        <h3>Ads Bütçe Koruması</h3>
+        <p>Rakiplerinizin bütçenizi bitirmesine izin vermeyin. Sahte tıklama korumalı profesyonel reklam yönetimi.</p>
     </div>
 </div>
 
-<div class="price-box">
-    <h2>HIZLI BAŞLANGIÇ PAKETİ</h2>
-    <div class="price-tag">4.500₺</div>
-    <p style="font-size: 12px; color: #888;">SEO + Google Ads + Siber Güvenlik</p>
-    <a href="https://wa.me/905414516774?text=Zırhlı Başlangıç Paketi ile hemen para kazanmaya başlamak istiyorum." class="wa-btn">ŞİMDİ RANDEVU AL</a>
+<div class="price-wrap">
+    <h2>ZIRHLI BAŞLANGIÇ PAKETİ</h2>
+    <div class="price-val">4.500₺ <span>/Tek Sefer</span></div>
+    <p style="color:#666; font-size:13px; margin-bottom:20px;">Web Tasarım + SEO + Google Ads Kurulumu</p>
+    <a href="https://wa.me/905414516774?text=Zırhlı Paket ile hemen başlamak istiyorum." class="wa-sticky">WHATSAPP İLE BAĞLAN</a>
 </div>
 
 <div id="admin-panel">
@@ -81,19 +90,19 @@
     <button class="adm-btn" onclick="alert('Bellek Temizlendi')">CLEAR</button>
 </div>
 
-<div class="footer-nav">
-    <a href="https://wa.me/905414516774" class="f-item"><i class="fab fa-whatsapp"></i>Destek</a>
-    <div class="f-item" onclick="handleSecurity()"><i class="fas fa-shield-alt"></i>Güvenlik</div>
-    <a href="tel:+905414516774" class="f-item"><i class="fas fa-phone"></i>Hemen Ara</a>
+<div class="nav-fixed">
+    <a href="https://wa.me/905414516774" class="nav-link"><i class="fab fa-whatsapp"></i>Asistan</a>
+    <div class="nav-link" onclick="handleSecurity()"><i class="fas fa-shield-alt"></i>Güvenlik</div>
+    <a href="tel:+905414516774" class="nav-link"><i class="fas fa-phone"></i>Hemen Ara</a>
 </div>
 
 <script>
-    let clicks = 0;
+    let c = 0;
     function handleSecurity() {
-        clicks++;
-        if(clicks >= 3) {
+        c++;
+        if(c >= 3) {
             document.getElementById('admin-panel').style.display = 'block';
-            clicks = 0;
+            c = 0;
         }
     }
 </script>
