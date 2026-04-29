@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Zırhlı Dijital | Siber Güvenlik & Reklam</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --blue: #00d2ff; --green: #39ff14; --dark: #050505; }
+        body { background: var(--dark); color: #fff; font-family: sans-serif; margin: 0; overflow-x: hidden; }
+        .container { padding: 20px; text-align: center; }
+        #analiz-box { border: 1px solid var(--blue); padding: 20px; border-radius: 15px; background: rgba(0,210,255,0.05); margin-top: 30px; }
+        .scan-btn { background: var(--blue); color: #000; padding: 15px 30px; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; width: 100%; }
+        #admin-panel { display: none; position: fixed; bottom: 80px; left: 10px; background: #222; padding: 10px; border-radius: 10px; border: 1px solid var(--green); }
+        .admin-btn { background: #444; color: var(--green); border: none; padding: 10px; margin: 5px; cursor: pointer; }
+        .nav-bar { position: fixed; bottom: 0; width: 100%; background: #000; display: flex; justify-content: space-around; padding: 15px; border-top: 1px solid #222; }
+        .nav-item { color: #888; text-decoration: none; font-size: 12px; text-align: center; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 style="color:var(--blue)">ZIRHLI<span style="color:var(--green)">DİJİTAL</span></h1>
+    <div id="analiz-box">
+        <h3>Siber Risk Analizi</h3>
+        <input type="text" id="target-url" placeholder="Site adresini yazın" style="width:90%; padding:12px; margin-bottom:15px; border-radius:8px;">
+        <button class="scan-btn" onclick="startScan()">ANALİZİ BAŞLAT</button>
+        <div id="status" style="margin-top:15px; color:var(--green); font-family:monospace; text-align:left; font-size:13px;"></div>
+    </div>
+</div>
+<div id="admin-panel">
+    <button class="admin-btn" onclick="location.reload()">UPDATE</button>
+    <button class="admin-btn" onclick="document.getElementById('status').innerHTML=''">CLEAR</button>
+</div>
+<div class="nav-bar">
+    <a href="https://wa.me/90541451674" class="nav-item"><i class="fab fa-whatsapp"></i><br>Destek</a>
+    <a href="#" class="nav-item" onclick="toggleAdmin()"><i class="fas fa-shield-alt"></i><br>Güvenlik</a>
+    <a href="tel:+90541451674" class="nav-item"><i class="fas fa-phone"></i><br>Ara</a>
+</div>
+<script>
+    function startScan() {
+        let status = document.getElementById('status');
+        let lines = ["> Hedefle el sıkışılıyor...", "> Zaafiyetler taranıyor...", "> Port 80/443 açık...", "> XSS riski tespit edildi!", "> Rapor hazırlanıyor..."];
+        let i = 0; status.innerHTML = "";
+        let interval = setInterval(() => {
+            status.innerHTML += lines[i] + "<br>"; i++;
+            if(i >= lines.length) {
+                clearInterval(interval);
+                setTimeout(() => { window.location.href = "https://wa.me/90541451674?text=Analiz yaptım, destek istiyorum."; }, 1500);
+            }
+        }, 800);
+    }
+    let count = 0;
+    function toggleAdmin() {
+        count++;
+        if(count >= 3) { document.getElementById('admin-panel').style.display = 'block'; count = 0; }
+    }
+</script>
+</body>
+</html>
