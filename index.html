@@ -3,110 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Siber Reklam Dünyası: Esenyurt'ta profesyonel web tasarım, Google Ads yönetimi ve siber güvenlik odaklı dijital çözümler. Timur ile dijital varlıklarınızı zırhlayın.">
-    <meta name="keywords" content="esenyurt web tasarım, siber reklam dünyası, profesyonel google ads, güvenli web tasarım, seo ajansı istanbul, timur siber güvenlik">
-    <title>Siber Reklam Dünyası | Esenyurt Web Tasarım & Siber Güvenlik</title>
+    <meta name="description" content="Siber Reklam Dünyası: Esenyurt merkezli profesyonel web tasarım, Google Ads reklam yönetimi ve siber güvenlik çözümleri. İşletmenizi siber zırhla koruyun.">
+    <meta name="keywords" content="esenyurt web tasarım, siber reklam dünyası, google ads yönetimi, siber güvenlik, seo uzmanı istanbul, güvenli web sitesi, timur siber güvenlik">
+    <title>Siber Reklam Dünyası | Profesyonel Siber Ajans & Web Tasarım</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root { --neon: #39ff14; --cyber: #00d2ff; --bg: #050505; }
+        :root { --neon: #39ff14; --cyber: #00d2ff; --bg: #050505; --dark-card: #0d0d0d; }
         * { margin:0; padding:0; box-sizing:border-box; }
         body { background: var(--bg); color: #fff; font-family: 'Inter', -apple-system, sans-serif; overflow-x: hidden; line-height: 1.6; }
         
-        /* Marka Header */
-        .top-bar { padding: 25px; border-bottom: 2px solid var(--cyber); text-align: center; background: #000; box-shadow: 0 4px 15px rgba(0,210,255,0.2); }
-        .logo { font-size: 28px; font-weight: 900; color: var(--cyber); letter-spacing: 1px; text-transform: uppercase; }
+        /* Header */
+        .header { padding: 25px; border-bottom: 2px solid var(--cyber); text-align: center; background: #000; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 24px; font-weight: 900; color: var(--cyber); text-transform: uppercase; letter-spacing: 1px; }
         .logo span { color: var(--neon); }
 
-        /* SEO Hero Section */
-        .hero { padding: 50px 20px; text-align: center; background: radial-gradient(circle at center, #111 0%, #050505 100%); }
-        .hero h1 { font-size: 24px; margin-bottom: 15px; color: var(--neon); text-transform: uppercase; letter-spacing: 1px; }
-        .hero p { font-size: 15px; color: #aaa; max-width: 600px; margin: 0 auto; }
-
-        /* Geliştirilmiş Analiz Ekranı */
-        .scan-container { background: #0d0d0d; border: 1px solid #222; padding: 25px; border-radius: 15px; margin: 20px; position: relative; overflow: hidden; box-shadow: inset 0 0 20px #000; }
+        /* Scanner */
+        .scanner-section { padding: 20px; background: #000; }
+        .scanner-box { border: 1px solid #222; padding: 20px; border-radius: 12px; position: relative; overflow: hidden; background: #0a0a0a; }
         .scan-line { width: 100%; height: 2px; background: var(--neon); position: absolute; top: 0; left: 0; animation: scan 3s linear infinite; box-shadow: 0 0 10px var(--neon); }
         @keyframes scan { 0% { top: 0; } 100% { top: 100%; } }
-        .scan-log { font-family: 'Courier New', monospace; font-size: 12px; color: var(--neon); line-height: 1.8; }
+        .scan-log { font-family: 'Courier New', monospace; font-size: 11px; color: var(--neon); }
 
-        /* Hizmetler & SEO İçeriği */
-        .service-list { display: grid; gap: 20px; padding: 20px; }
-        .s-item { background: #111; padding: 25px; border-radius: 12px; border: 1px solid #1a1a1a; transition: 0.3s; }
-        .s-item:hover { border-color: var(--cyber); transform: scale(1.02); }
-        .s-item h2 { font-size: 20px; margin-bottom: 12px; color: var(--cyber); display: flex; align-items: center; gap: 10px; }
-        .s-item p { font-size: 14px; color: #888; }
+        /* Hizmet Detayları */
+        .services-container { padding: 20px; }
+        .service-block { background: var(--dark-card); border: 1px solid #1a1a1a; padding: 25px; border-radius: 15px; margin-bottom: 20px; border-left: 4px solid var(--cyber); }
+        .service-block h2 { font-size: 20px; color: var(--neon); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .service-block p { font-size: 14px; color: #aaa; margin-bottom: 15px; }
+        .service-block ul { list-style: none; }
+        .service-block ul li { font-size: 13px; color: #888; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .service-block ul li i { color: var(--cyber); font-size: 10px; }
 
-        /* Fiyat & Aksiyon */
-        .price-box { border: 2px solid var(--neon); margin: 20px; padding: 35px; border-radius: 20px; text-align: center; background: rgba(57, 255, 20, 0.03); position: relative; }
-        .price-box h3 { color: var(--neon); font-size: 18px; margin-bottom: 10px; }
-        .price-tag { font-size: 45px; font-weight: 900; margin: 15px 0; color: #fff; }
-        .price-tag span { font-size: 18px; color: #555; }
+        /* Fiyat & CTA */
+        .cta-section { padding: 20px; text-align: center; background: #000; }
+        .price-card { border: 2px solid var(--neon); padding: 30px; border-radius: 20px; background: rgba(57, 255, 20, 0.03); }
+        .price-card h3 { color: #fff; font-size: 22px; margin-bottom: 10px; }
+        .price-tag { font-size: 40px; font-weight: 900; color: var(--neon); margin: 15px 0; }
+        .wa-btn { background: var(--neon); color: #000; padding: 18px; display: block; text-decoration: none; font-weight: 900; border-radius: 12px; text-transform: uppercase; margin-top: 20px; box-shadow: 0 5px 15px rgba(57,255,20,0.3); }
+
+        /* SEO Metin Alanı */
+        .seo-content { padding: 40px 20px; background: #000; border-top: 1px solid #111; }
+        .seo-content h4 { color: var(--cyber); font-size: 16px; margin-bottom: 15px; }
+        .seo-content p { font-size: 12px; color: #444; text-align: justify; margin-bottom: 10px; }
+
+        /* Alt Nav */
+        .bottom-nav { position: fixed; bottom: 0; width: 100%; background: #000; display: flex; justify-content: space-around; padding: 15px 0; border-top: 1px solid #222; z-index: 1001; }
+        .nav-item { color: #555; text-decoration: none; font-size: 10px; text-align: center; }
+        .nav-item i { font-size: 22px; margin-bottom: 4px; display: block; }
+        .nav-item.active { color: var(--neon); }
         
-        .wa-btn { background: var(--neon); color: #000; padding: 18px; display: block; text-decoration: none; font-weight: 900; border-radius: 12px; font-size: 16px; text-transform: uppercase; transition: 0.3s; box-shadow: 0 0 15px rgba(57,255,20,0.4); }
-        .wa-btn:active { transform: scale(0.95); }
-
-        /* Footer & Alt Nav */
-        .seo-footer { padding: 40px 20px 100px; font-size: 12px; color: #333; text-align: center; }
-        .footer-nav { position: fixed; bottom: 0; width: 100%; background: #000; display: flex; justify-content: space-around; padding: 15px 0; border-top: 1px solid #222; z-index: 1000; }
-        .f-item { color: #555; text-decoration: none; font-size: 11px; text-align: center; }
-        .f-item i { font-size: 24px; margin-bottom: 5px; display: block; }
-        .f-item.active { color: var(--neon); }
-
-        #admin-panel { display: none; position: fixed; bottom: 85px; left: 15px; background: #111; padding: 15px; border: 1px solid var(--neon); border-radius: 10px; z-index: 1001; }
-        .adm-btn { background: #222; color: var(--neon); border: 1px solid var(--neon); padding: 8px 15px; cursor: pointer; border-radius: 6px; }
+        #admin-panel { display: none; position: fixed; bottom: 85px; left: 15px; background: #111; padding: 15px; border: 1px solid var(--neon); border-radius: 10px; z-index: 1002; }
+        .adm-btn { background: #222; color: var(--neon); border: 1px solid var(--neon); padding: 8px 12px; cursor: pointer; border-radius: 5px; }
     </style>
 </head>
 <body>
 
-<div class="top-bar">
+<div class="header">
     <div class="logo">SİBER<span>REKLAM</span> DÜNYASI</div>
 </div>
 
-<div class="hero">
-    <h1>Zırhlı Dijital Yönetim Merkezi</h1>
-    <p>Esenyurt'un siber güvenlik odaklı ilk ve tek profesyonel reklam ajansı. İşletmenizi koruma altına alıyoruz.</p>
-</div>
-
-<div class="scan-container">
-    <div class="scan-line"></div>
-    <div class="scan-log">
-        [SYS]: SİBER REKLAM DÜNYASI ANALİZ MOTORU AKTİF...<br>
-        [OK]: ALAN ADI GÜVENLİK TESTİ GEÇİLDİ.<br>
-        [WARN]: REKLAM BÜTÇESİ SIZINTISI TESPİT EDİLDİ!<br>
-        [ACTION]: ZIRHLI KORUMA MODU ÖNERİLİYOR...
+<div class="scanner-section">
+    <div class="scanner-box">
+        <div class="scan-line"></div>
+        <div class="scan-log">
+            >> INITIALIZING SIBER_REKLAM_ENGINE... OK<br>
+            >> CHECKING DOMAIN REPUTATION... SECURE<br>
+            >> DETECTING ADS LEAKAGE... 42% REVENUE LOSS<br>
+            >> ADVISORY: ACTIVATE CYBER_SHIELD IMMEDIATELY
+        </div>
     </div>
 </div>
 
-<div class="service-list">
-    <div class="s-item">
-        <h2><i class="fas fa-code"></i> Esenyurt Web Tasarım</h2>
-        <p>Google botları ile tam uyumlu, siber saldırılara (WAF) karşı önceden zırhlanmış, mobil öncelikli profesyonel web siteleri üretiyoruz.</p>
+<div class="services-container">
+    <div class="service-block">
+        <h2><i class="fas fa-shield-alt"></i> Zırhlı Web Tasarım</h2>
+        <p>Klasik web siteleri saldırılara açıktır. Biz, markanızı siber güvenlik katmanıyla örülmüş bir kaleye dönüştürüyoruz.</p>
+        <ul>
+            <li><i class="fas fa-caret-right"></i> WAF (Web Application Firewall) Entegrasyonu</li>
+            <li><i class="fas fa-caret-right"></i> Brute-Force ve SQL Injection Koruması</li>
+            <li><i class="fas fa-caret-right"></i> SSL ve 256-bit Veri Şifreleme</li>
+            <li><i class="fas fa-caret-right"></i> Mobil Öncelikli ve SEO Uyumlu Kod Yapısı</li>
+        </ul>
     </div>
-    <div class="s-item">
-        <h2><i class="fab fa-google"></i> Profesyonel Ads Yönetimi</h2>
-        <p>Reklam bütçenizi sahte tıklamalardan ve rakiplerin saldırılarından koruyan, yüksek dönüşüm odaklı Google Ads stratejileri.</p>
+
+    <div class="service-block">
+        <h2><i class="fab fa-google"></i> Akıllı Ads Yönetimi</h2>
+        <p>Reklam bütçenizin rakipler ve botlar tarafından tüketilmesine izin vermeyin. Veri odaklı zırhlama yapıyoruz.</p>
+        <ul>
+            <li><i class="fas fa-caret-right"></i> Geçersiz Tıklama ve Bot Engelleme</li>
+            <li><i class="fas fa-caret-right"></i> Rakip Reklam Stratejisi Analizi</li>
+            <li><i class="fas fa-caret-right"></i> Negatif Anahtar Kelime Optimizasyonu</li>
+            <li><i class="fas fa-caret-right"></i> Haftalık Dönüşüm ve ROI Raporlama</li>
+        </ul>
+    </div>
+
+    <div class="service-block">
+        <h2><i class="fas fa-user-secret"></i> Dijital Siber Denetim</h2>
+        <p>Mevcut dijital varlıklarınızdaki açıkları kapatıyoruz. Mercedes-Benz Bug Bounty tecrübesiyle yanınızdayız.</p>
+        <ul>
+            <li><i class="fas fa-caret-right"></i> Web Sitesi Sızma (Penetrasyon) Testleri</li>
+            <li><i class="fas fa-caret-right"></i> Veri Sızıntısı Analizi</li>
+            <li><i class="fas fa-caret-right"></i> Sosyal Medya Hesap Güvenliği</li>
+        </ul>
     </div>
 </div>
 
-<div class="price-box">
-    <h3>ZIRHLI BAŞLANGIÇ PAKETİ</h3>
-    <div class="price-tag">4.500₺ <span>/ Tek Sefer</span></div>
-    <p style="color:#666; font-size:13px; margin-bottom:20px;">SEO + Güvenli Web + Ads Kurulumu</p>
-    <a href="https://wa.me/905414516774?text=Siber Reklam Dünyası'ndan Zırhlı Başlangıç Paketi teklifi almak istiyorum." class="wa-btn">Hemen Randevu Al</a>
+<div class="cta-section">
+    <div class="price-card">
+        <h3>ZIRHLI BAŞLANGIÇ PAKETİ</h3>
+        <p style="font-size:12px; color:#777;">KOBİ'ler İçin Tam Koruma ve Reklam Desteği</p>
+        <div class="price-tag">4.500₺</div>
+        <ul style="text-align:left; display:inline-block; margin-bottom:20px;">
+            <li><i class="fas fa-check" style="color:var(--neon)"></i> SEO Uyumlu Tek Sayfa Site</li>
+            <li><i class="fas fa-check" style="color:var(--neon)"></i> Google Ads Kurulumu</li>
+            <li><i class="fas fa-check" style="color:var(--neon)"></i> Siber Güvenlik Altyapısı</li>
+        </ul>
+        <a href="https://wa.me/905414516774?text=Siber Reklam Dünyası'ndan profesyonel hizmet almak istiyorum." class="wa-btn">HEMEN ANALİZ BAŞLAT</a>
+    </div>
 </div>
 
-<div class="seo-footer">
-    Siber Reklam Dünyası; Esenyurt, İstanbul merkezli profesyonel bir reklam ajansıdır. Web tasarım, SEO ve Google Ads konularında siber güvenlik standartlarında hizmet sunar. Timur yönetimindeki ekibimizle markanızı dijital dünyada zırhlıyoruz.
+<div class="seo-content">
+    <h4>Neden Siber Reklam Dünyası?</h4>
+    <p>İstanbul Esenyurt bölgesinde profesyonel web tasarım ve Google Ads hizmeti arayan işletmeler için en güvenli limanız. Siber güvenlik uzmanı Timur önderliğinde geliştirilen altyapımız, sadece estetik bir görünüm değil, aynı zamanda aşılması zor bir dijital güvenlik sunar.</p>
+    <p>Google Ads reklam bütçenizi yönetirken geçersiz tıklama koruması (click fraud protection) yöntemlerini kullanarak paranızın boşa gitmesini engelliyoruz. SEO çalışmalarımızda teknik siber analizleri kullanarak rakiplerinizin önüne geçmenizi sağlıyoruz.</p>
 </div>
 
 <div id="admin-panel">
-    <button class="adm-btn" onclick="location.reload()">SİSTEMİ GÜNCELLE</button>
-    <button class="adm-btn" onclick="alert('Önbellek Temizlendi')">TEMİZLE</button>
+    <button class="adm-btn" onclick="location.reload()">GÜNCELLE</button>
+    <button class="adm-btn" onclick="alert('Bellek Temizlendi')">SİL</button>
 </div>
 
-<div class="footer-nav">
-    <a href="https://wa.me/905414516774" class="f-item"><i class="fab fa-whatsapp"></i>Asistan</a>
-    <div class="f-item" onclick="handleSecurity()"><i class="fas fa-shield-alt"></i>Güvenlik</div>
-    <a href="tel:+905414516774" class="f-item"><i class="fas fa-phone"></i>Hemen Ara</a>
+<div class="bottom-nav">
+    <a href="https://wa.me/905414516774" class="nav-item"><i class="fab fa-whatsapp"></i>Destek</a>
+    <div class="nav-item" onclick="handleSecurity()"><i class="fas fa-shield-alt"></i>Güvenlik</div>
+    <a href="tel:+905414516774" class="nav-item"><i class="fas fa-phone-alt"></i>Ara</a>
 </div>
 
 <script>
