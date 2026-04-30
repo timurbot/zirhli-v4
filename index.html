@@ -3,128 +3,156 @@
 <head>
     <script>
       window.addEventListener('DOMContentLoaded', function() {
-          var s = document.createElement('script');
-          s.async = true;
+          var s = document.createElement('script'); s.async = true;
           s.src = 'https://www.googletagmanager.com/gtag/js?id=G-EZT6VH2Y2H';
           document.head.appendChild(s);
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-EZT6VH2Y2H');
+          gtag('js', new Date()); gtag('config', 'G-EZT6VH2Y2H');
       });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Siber Reklam Dünyası: Google Ads bütçe koruması, profesyonel SEO ve siber güvenlik odaklı web tasarım çözümleri.">
-    <title>Siber Reklam Dünyası | Premium Siber Reklam Ajansı</title>
+    <meta name="description" content="Siber Reklam Dünyası: Google Ads bütçe koruması, profesyonel SEO ve siber güvenlik odaklı web tasarım çözümleriyle dijital varlığınızı zırhlayın.">
+    <title>Siber Reklam Dünyası | Türkiye'nin İlk Zırhlı Dijital Ajansı</title>
     
     <style>
-        :root { --n: #39ff14; --c: #00d2ff; --b: #020202; --s: #0d0d0d; --w: #ffffff; }
-        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', system-ui, sans-serif; }
+        :root { --n: #39ff14; --c: #00d2ff; --b: #020202; --s: #0d0d0d; --w: #ffffff; --g: #1a1a1a; }
+        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', -apple-system, sans-serif; }
         body { background: var(--b); color: var(--w); line-height: 1.6; overflow-x: hidden; padding-bottom: 100px; }
         
-        /* Header */
-        .h { height: 80px; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.9); border-bottom: 1px solid #1a1a1a; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(15px); }
-        .logo { font-size: 24px; font-weight: 900; color: var(--c); letter-spacing: 3px; text-transform: uppercase; }
+        /* Premium Header */
+        .h { height: 85px; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.95); border-bottom: 1px solid var(--g); position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(20px); }
+        .logo { font-size: 26px; font-weight: 900; color: var(--c); letter-spacing: 4px; text-transform: uppercase; text-shadow: 0 0 20px rgba(0, 210, 255, 0.3); }
         .logo span { color: var(--n); }
 
-        /* Hero Section */
-        .hr { padding: 120px 20px 60px; text-align: center; background: radial-gradient(circle at 50% 50%, #151515 0%, #020202 100%); }
-        .bd { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--n); border: 1px solid var(--n); padding: 8px 20px; border-radius: 50px; margin-bottom: 30px; background: rgba(57,255,20,0.05); font-weight: 800; letter-spacing: 1px; }
-        h1 { font-size: 44px; font-weight: 900; margin-bottom: 25px; line-height: 1.1; letter-spacing: -2px; }
-        h1 span { color: var(--n); text-shadow: 0 0 25px rgba(57,255,20,0.4); }
-        .hp { font-size: 19px; color: #888; max-width: 750px; margin: 0 auto 40px; font-weight: 400; }
+        /* Hacker Background Matrix Effect */
+        .matrix-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.05; pointer-events: none; }
 
-        /* Terminal Animasyonu */
-        .tm { margin: 0 auto 40px; max-width: 580px; background: #000; border: 1px solid #222; border-radius: 16px; padding: 30px; text-align: left; box-shadow: 0 30px 60px rgba(0,0,0,0.8); }
-        .tl { font-family: 'Courier New', monospace; font-size: 14px; color: var(--n); margin-bottom: 10px; white-space: nowrap; overflow: hidden; border-right: 3px solid var(--n); width: 0; }
+        /* Hero */
+        .hr { padding: 120px 20px 80px; text-align: center; position: relative; }
+        .bd { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; color: var(--n); border: 1px solid var(--n); padding: 10px 24px; border-radius: 50px; margin-bottom: 35px; background: rgba(57,255,20,0.05); font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
+        h1 { font-size: clamp(32px, 8vw, 54px); font-weight: 900; margin-bottom: 30px; line-height: 1.1; letter-spacing: -3px; }
+        h1 span { color: var(--n); text-shadow: 0 0 30px rgba(57,255,20,0.5); }
+        .hp { font-size: clamp(16px, 4vw, 20px); color: #aaa; max-width: 800px; margin: 0 auto 50px; font-weight: 400; }
+
+        /* Terminal - Otomatik Kayan Profesyonel Kodlar */
+        .tm { margin: 0 auto 60px; max-width: 650px; background: #000; border: 1px solid #333; border-radius: 20px; padding: 30px; text-align: left; box-shadow: 0 40px 80px rgba(0,0,0,0.9); position: relative; overflow: hidden; }
+        .tm::before { content: "● ● ●"; position: absolute; top: 12px; left: 20px; color: #444; font-size: 12px; letter-spacing: 3px; }
+        .tl { font-family: 'Courier New', monospace; font-size: 14px; color: var(--n); margin-bottom: 8px; white-space: nowrap; overflow: hidden; border-right: 3px solid var(--n); width: 0; }
         .l1 { animation: t 2s steps(40) forwards; }
         .l2 { animation: t 2s steps(40) 2s forwards; }
+        .l3 { animation: t 2s steps(40) 4s forwards; }
         @keyframes t { from { width: 0 } to { width: 100% } }
 
-        /* Hizmetlerimiz - Premium Bento Grid */
-        .section-title { text-align: center; font-size: 14px; color: var(--n); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 50px; font-weight: 900; }
-        .gr { display: grid; gap: 20px; padding: 20px; }
-        .cd { background: var(--s); border: 1px solid #1a1a1a; padding: 45px 30px; border-radius: 32px; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; }
-        .cd:hover { border-color: var(--n); transform: translateY(-10px); background: #111; }
-        .cd i { font-size: 40px; color: var(--n); margin-bottom: 25px; display: block; }
-        .cd h3 { color: var(--c); font-size: 26px; margin-bottom: 15px; font-weight: 800; }
-        .cd p { font-size: 15px; color: #999; margin-bottom: 20px; }
-        
-        /* Neden Biz / Başarılarımız */
-        .stats { background: #080808; padding: 80px 20px; margin: 40px 0; border-top: 1px solid #111; border-bottom: 1px solid #111; }
-        .st-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: center; }
-        .st-card { padding: 30px; background: #000; border-radius: 20px; border: 1px solid #151515; }
-        .st-card h4 { font-size: 32px; color: var(--n); margin-bottom: 5px; }
-        .st-card span { font-size: 12px; color: #555; text-transform: uppercase; font-weight: 700; }
+        /* Hizmetlerimiz - Bento Grid Layout */
+        .section-label { text-align: center; font-size: 13px; color: var(--n); text-transform: uppercase; letter-spacing: 6px; margin-bottom: 20px; font-weight: 900; opacity: 0.8; }
+        .gr { display: grid; gap: 25px; padding: 20px; max-width: 1200px; margin: 0 auto; }
+        .cd { background: linear-gradient(145deg, #0d0d0d, #050505); border: 1px solid var(--g); padding: 50px 35px; border-radius: 35px; transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1); }
+        .cd:hover { border-color: var(--n); transform: translateY(-12px); box-shadow: 0 20px 40px rgba(57,255,20,0.1); }
+        .cd i { font-size: 45px; color: var(--n); margin-bottom: 30px; display: block; }
+        .cd h3 { color: var(--c); font-size: 28px; margin-bottom: 20px; font-weight: 900; }
+        .cd p { font-size: 16px; color: #888; margin-bottom: 25px; }
+        .cd ul { list-style: none; }
+        .cd ul li { font-size: 14px; color: #555; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+        .cd ul li i { font-size: 12px; color: var(--n); margin-bottom: 0; width: auto; }
+
+        /* Referanslar & Başarılar */
+        .stats { background: #050505; padding: 100px 20px; border-top: 1px solid var(--g); border-bottom: 1px solid var(--g); margin: 60px 0; }
+        .st-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 1000px; margin: 0 auto; }
+        .st-card { padding: 40px 20px; background: #000; border-radius: 25px; border: 1px solid var(--g); text-align: center; }
+        .st-card h4 { font-size: 42px; color: var(--n); margin-bottom: 10px; font-weight: 900; }
+        .st-card span { font-size: 12px; color: #555; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
 
         /* CTA */
-        .cta { background: var(--n); color: #000; padding: 26px; border-radius: 24px; text-decoration: none; display: block; margin: 40px 20px; font-weight: 900; text-align: center; font-size: 20px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 15px 40px rgba(57,255,20,0.3); }
+        .cta { background: var(--n); color: #000; padding: 28px; border-radius: 25px; text-decoration: none; display: block; margin: 50px 20px; font-weight: 900; text-align: center; font-size: 22px; text-transform: uppercase; letter-spacing: 2px; box-shadow: 0 20px 50px rgba(57,255,20,0.3); transition: 0.3s; }
+        .cta:hover { transform: scale(1.02); filter: brightness(1.1); }
 
-        /* Footer SEO */
-        .ft { padding: 60px 20px 120px; text-align: center; font-size: 13px; color: #333; line-height: 2; }
+        /* Footer */
+        .ft { padding: 80px 20px 150px; text-align: center; font-size: 14px; color: #444; max-width: 900px; margin: 0 auto; line-height: 2; border-left: 2px solid #111; }
 
         /* Nav */
-        .nv { position: fixed; bottom: 0; width: 100%; background: rgba(0,0,0,0.98); display: flex; justify-content: space-around; padding: 20px 0; border-top: 1px solid #222; z-index: 1001; backdrop-filter: blur(10px); }
-        .ni { color: #fff; text-decoration: none; font-size: 12px; text-align: center; font-weight: 700; }
-        .ni i { color: var(--n); display: block; font-size: 26px; margin-bottom: 8px; }
+        .nv { position: fixed; bottom: 0; width: 100%; background: rgba(0,0,0,0.98); display: flex; justify-content: space-around; padding: 22px 0; border-top: 1px solid #222; z-index: 1001; backdrop-filter: blur(15px); }
+        .ni { color: #fff; text-decoration: none; font-size: 12px; text-align: center; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+        .ni i { color: var(--n); display: block; font-size: 28px; margin-bottom: 10px; }
+
+        @media (min-width: 768px) { .gr { grid-template-columns: repeat(3, 1fr); } .st-grid { grid-template-columns: repeat(4, 1fr); } }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
 </head>
 <body>
+
+<div class="matrix-bg"></div>
 
 <header class="h"><div class="logo">SİBER<span>REKLAM</span> DÜNYASI</div></header>
 
 <main>
     <section class="hr">
-        <div class="bd"><i class="fas fa-lock"></i> SİBER GÜVENLİK ODAKLI DİJİTAL STRATEJİ</div>
-        <h1>Reklamınızı <span>Siber Zırhla</span> Markaya Dönüştürün</h1>
-        <p class="hp">Türkiye'nin en hızlı ve en güvenli dijital ajansı. Google Ads bütçenizi botlardan koruyor, SEO ile sektörünüzü domine etmenizi sağlıyoruz.</p>
+        <div class="bd"><i class="fas fa-shield-virus"></i> Siber Güvenlik Denetimli Dijital Üstünlük</div>
+        <h1>Dijital Krallığınızı <span>Siber Zırhla</span> İnşa Edin</h1>
+        <p class="hp">Sıradan ajanslar reklam yayınlar, biz dijital varlığınızı korur ve büyütürüz. Türkiye'nin tek siber zırhlı performans ajansıyla tanışın.</p>
+        
         <div class="tm">
-            <div class="tl l1">> SYSTEM_RANKING: #1 GOOGLE_ADS</div>
-            <div class="tl l2">> SEO_STRENGTH: MAXIMUM_AUTHORITY</div>
+            <div class="tl l1">> ANALYZING_VULNERABILITIES... [NONE]</div>
+            <div class="tl l2">> OPTIMIZING_GOOGLE_ALGORITHM... [DONE]</div>
+            <div class="tl l3">> SHIELDING_ADS_BUDGET... [ACTIVE]</div>
         </div>
     </section>
 
-    <div class="section-title">Uzmanlık Alanlarımız</div>
+    <div class="section-label">Neden Biz? & Hizmetlerimiz</div>
     <div class="gr">
         <div class="cd">
-            <i class="fas fa-microchip"></i>
+            <i class="fas fa-user-shield"></i>
             <h3>Zırhlı Google Ads</h3>
-            <p>Reklam bütçenizin bir kuruşu bile botlara gitmez. Rakip tıklama koruması ve yüksek dönüşüm (ROI) odaklı siber analizler sunuyoruz.</p>
+            <p>Reklam bütçeniz kutsaldır. Bot trafiğini ve rakip saldırılarını engelleyerek sadece gerçek müşteriye ulaşmanızı sağlıyoruz.</p>
+            <ul>
+                <li><i class="fas fa-caret-right"></i> Tıklama Sahtekarlığı Koruması</li>
+                <li><i class="fas fa-caret-right"></i> ROI Maksimizasyon Analizi</li>
+                <li><i class="fas fa-caret-right"></i> Veri Odaklı Hedefleme</li>
+            </ul>
         </div>
         <div class="cd">
-            <i class="fas fa-code-branch"></i>
+            <i class="fas fa-vault"></i>
             <h3>Otorite Odaklı SEO</h3>
-            <p>Google botlarını ikna eden kusursuz teknik altyapı. Rakip analizi ve semantik içeriklerle sektörün zirvesine kalıcı olarak yerleşin.</p>
+            <p>Google'da birinci sıra tesadüf değildir. Siber güvenlik altyapısıyla güçlendirilmiş teknik SEO ile rakiplerinizi geride bırakın.</p>
+            <ul>
+                <li><i class="fas fa-caret-right"></i> Teknik Mimari Denetimi</li>
+                <li><i class="fas fa-caret-right"></i> Semantik İçerik Stratejisi</li>
+                <li><i class="fas fa-caret-right"></i> Backlink Zırhlama</li>
+            </ul>
         </div>
         <div class="cd">
-            <i class="fas fa-fingerprint"></i>
-            <h3>Premium Web Tasarım</h3>
-            <p>Sadece şık değil, aynı zamanda sızma testlerinden geçmiş, saniyeler içinde açılan ultra hızlı ve güvenli dijital kaleler.</p>
+            <i class="fas fa-code"></i>
+            <h3>Siber Güvenlikli Web</h3>
+            <p>Web siteniz siber kalenizdir. Hızın güvenlik ile buluştuğu, sızma testlerinden geçmiş kusursuz tasarımlar üretiyoruz.</p>
+            <ul>
+                <li><i class="fas fa-caret-right"></i> WAF & SSL Entegrasyonu</li>
+                <li><i class="fas fa-caret-right"></i> %100 Mobil Performans</li>
+                <li><i class="fas fa-caret-right"></i> Dönüşüm Odaklı UX/UI</li>
+            </ul>
         </div>
     </div>
 
     <section class="stats">
-        <div class="section-title">Neden Biz?</div>
+        <div class="section-label">Başarı Rakamlarımız</div>
         <div class="st-grid">
-            <div class="st-card"><h4>%100</h4><span>Performans</span></div>
-            <div class="st-card"><h4>%40</h4><span>Bütçe Tasarrufu</span></div>
-            <div class="st-card"><h4>%250</h4><span>Dönüşüm Artışı</span></div>
-            <div class="st-card"><h4>7/24</h4><span>Siber İzleme</span></div>
+            <div class="st-card"><h4>98%</h4><span>Müşteri Memnuniyeti</span></div>
+            <div class="st-card"><h4>40%</h4><span>Bütçe Verimliliği</span></div>
+            <div class="st-card"><h4>100</h4><span>SEO Performansı</span></div>
+            <div class="st-card"><h4>24/7</h4><span>Siber Destek</span></div>
         </div>
     </section>
 
-    <a href="https://wa.me/905414516774" class="cta">ÜCRETSİZ DİJİTAL ANALİZİ BAŞLAT</a>
+    <a href="https://wa.me/905414516774" class="cta">Siber Analizi Başlat & Teklif Al</a>
 </main>
 
 <footer class="ft">
-    Siber Reklam Dünyası; İstanbul Esenyurt merkezli, Google Ads yönetimi, profesyonel SEO danışmanlığı ve güvenli web tasarımında uzmanlaşmış lider ajanstır. Google sıralamalarında kalıcı başarı için siber güvenlik standartlarında dijital pazarlama çözümleri üretiyoruz.
+    Siber Reklam Dünyası; İstanbul Esenyurt merkezli, Google Ads yönetimi, profesyonel SEO danışmanlığı ve siber güvenlik odaklı web tasarımında uzmanlaşmış premium bir dijital ajanstan daha fazlasıdır. Biz sizin dijital koruma kalkanınız ve büyüme motorunuzuz.
 </footer>
 
 <nav class="nv">
     <a href="https://wa.me/905414516774" class="ni"><i class="fab fa-whatsapp"></i>Hızlı Teklif</a>
-    <a href="tel:+905414516774" class="ni"><i class="fas fa-bolt"></i>Hemen Ara</a>
+    <a href="tel:+905414516774" class="ni"><i class="fas fa-phone-volume"></i>Hemen Ara</a>
 </nav>
 
 </body>
