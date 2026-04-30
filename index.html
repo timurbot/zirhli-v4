@@ -1,84 +1,75 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EZT6VH2Y2H"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-EZT6VH2Y2H', { 'page_speed_insights': true });
+      /* Google Analytics - Geciktirilmiş Yükleme */
+      window.addEventListener('load', function() {
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-EZT6VH2Y2H';
+          document.head.appendChild(script);
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-EZT6VH2Y2H');
+      });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="TsjAUXa0RtDNcXynlfm1XaNXgOR88huyPc1KJpRxyOM">
-    <meta name="description" content="Siber Reklam Dünyası: Google Ads bütçe koruması, zırhlı SEO ve siber güvenlik denetimli web tasarım çözümleri.">
-    <title>Siber Reklam Dünyası | Profesyonel Siber Ajans</title>
+    <meta name="description" content="Siber Reklam Dünyası: Google Ads bütçe koruması ve uzman SEO.">
+    <title>Siber Reklam Dünyası | Zırhlı Ajans</title>
     
     <style>
-        :root { --n: #39ff14; --c: #00d2ff; --b: #030303; --s: #0a0a0a; }
-        * { margin:0; padding:0; box-sizing:border-box; font-family: system-ui, -apple-system, sans-serif; }
-        body { background: var(--b); color: #fff; line-height: 1.5; overflow-x: hidden; padding-bottom: 90px; }
-        .header { height: 70px; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.9); border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
-        .logo { font-size: 22px; font-weight: 900; color: var(--c); letter-spacing: 2px; }
+        :root { --n: #39ff14; --c: #00d2ff; --b: #030303; }
+        * { margin:0; padding:0; box-sizing:border-box; font-family: system-ui, sans-serif; }
+        body { background: var(--b); color: #fff; line-height: 1.4; overflow-x: hidden; padding-bottom: 80px; }
+        .h { height: 60px; display: flex; justify-content: center; align-items: center; background: #000; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 10; }
+        .logo { font-size: 20px; font-weight: 900; color: var(--c); letter-spacing: 1px; }
         .logo span { color: var(--n); }
-        .hero { padding: 80px 20px; text-align: center; background: radial-gradient(circle, #111 0%, #030303 100%); }
-        .badge { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; color: var(--n); border: 1px solid var(--n); padding: 6px 15px; border-radius: 50px; margin-bottom: 20px; }
-        h1 { font-size: 32px; font-weight: 900; margin-bottom: 15px; }
+        .hr { padding: 60px 20px; text-align: center; background: radial-gradient(circle, #0a0a0a, #030303); }
+        .bd { display: inline-block; font-size: 10px; color: var(--n); border: 1px solid var(--n); padding: 4px 12px; border-radius: 50px; margin-bottom: 15px; }
+        h1 { font-size: 28px; font-weight: 900; margin-bottom: 10px; }
         h1 span { color: var(--n); }
-        .terminal { margin: 20px auto; max-width: 500px; background: #000; border: 1px solid #1a1a1a; border-radius: 12px; padding: 20px; text-align: left; }
-        .t-line { font-family: monospace; font-size: 13px; color: var(--n); overflow: hidden; white-space: nowrap; border-right: 2px solid var(--n); width: 0; margin-bottom: 5px; }
-        .l1 { animation: t 1.5s steps(30) forwards; }
-        .l2 { animation: t 1.5s steps(30) 1.5s forwards; }
+        .tm { margin: 15px auto; max-width: 450px; background: #000; border: 1px solid #1a1a1a; border-radius: 8px; padding: 15px; text-align: left; }
+        .tl { font-family: monospace; font-size: 12px; color: var(--n); overflow: hidden; white-space: nowrap; border-right: 2px solid var(--n); width: 0; }
+        .l1 { animation: t 1s steps(30) forwards; }
+        .l2 { animation: t 1s steps(30) 1s forwards; }
         @keyframes t { from { width: 0 } to { width: 100% } }
-        .grid { display: grid; gap: 20px; padding: 20px; }
-        .card { background: var(--s); border: 1px solid #151515; padding: 30px; border-radius: 20px; }
-        .card h3 { color: var(--c); font-size: 22px; margin-bottom: 10px; }
-        .card p { font-size: 14px; color: #888; }
-        .cta { background: var(--n); color: #000; padding: 20px; border-radius: 15px; text-decoration: none; display: block; margin: 30px 20px; font-weight: 900; text-align: center; }
-        .nav { position: fixed; bottom: 0; width: 100%; background: #000; display: flex; justify-content: space-around; padding: 15px 0; border-top: 1px solid #222; z-index: 1001; }
-        .n-i { color: #fff; text-decoration: none; font-size: 11px; text-align: center; }
-        .n-i span { display: block; color: var(--n); font-size: 20px; margin-bottom: 4px; font-weight: bold; }
+        .gr { display: grid; gap: 15px; padding: 15px; }
+        .cd { background: #0a0a0a; border: 1px solid #111; padding: 25px; border-radius: 15px; }
+        .cd h3 { color: var(--c); font-size: 20px; margin-bottom: 8px; }
+        .cd p { font-size: 13px; color: #888; }
+        .cta { background: var(--n); color: #000; padding: 18px; border-radius: 12px; text-decoration: none; display: block; margin: 20px; font-weight: 900; text-align: center; font-size: 16px; }
+        .nv { position: fixed; bottom: 0; width: 100%; background: #000; display: flex; justify-content: space-around; padding: 12px 0; border-top: 1px solid #222; }
+        .ni { color: #fff; text-decoration: none; font-size: 10px; text-align: center; }
+        .ni i { color: var(--n); display: block; font-size: 18px; margin-bottom: 3px; font-style: normal; }
     </style>
 
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
 </head>
 <body>
-
-<header class="header"><div class="logo">SİBER<span>REKLAM</span> DÜNYASI</div></header>
-
+<header class="h"><div class="logo">SİBER<span>REKLAM</span> DÜNYASI</div></header>
 <main>
-    <section class="hero">
-        <div class="badge">SİBER GÜVENLİK DENETİMLİ AJANS</div>
-        <h1>Reklam Bütçenizi <span>Zırhlıyoruz</span></h1>
-        <p style="color:#777; margin-bottom:20px;">Bot trafiğinden temizlenmiş, %100 verimli Google Ads ve SEO yönetimi.</p>
-        <div class="terminal">
-            <div class="t-line l1">> INITIALIZING_SECURE_ADS... [OK]</div>
-            <div class="t-line l2">> OPTIMIZING_PERFORMANCE... [100%]</div>
+    <section class="hr">
+        <div class="bd">SİBER GÜVENLİK DENETİMLİ</div>
+        <h1>Dijital Kalenizi <span>Zırhlayın</span></h1>
+        <p style="color:#666; font-size:14px;">Bot trafiğinden temizlenmiş Google Ads ve SEO.</p>
+        <div class="tm">
+            <div class="tl l1">> SECURE_INIT... [OK]</div>
+            <div class="tl l2">> LIGHTSPEED_ACTIVE... [100%]</div>
         </div>
     </section>
-
-    <div class="grid">
-        <div class="card">
-            <h3>Stratejik SEO</h3>
-            <p>Google'da üst sıralara çıkmanız için siber güvenlik standartlarında teknik altyapı ve içerik stratejisi sunuyoruz.</p>
-        </div>
-        <div class="card">
-            <h3>Zırhlı Ads</h3>
-            <p>Reklam bütçenizi rakiplerin ve botların saldırılarından koruyan özel filtreleme sistemleri kullanıyoruz.</p>
-        </div>
-        <div class="card">
-            <h3>Güvenli Web</h3>
-            <p>Hız şampiyonu, mobil uyumlu ve sızma testlerinden geçirilmiş kurumsal web çözümleri.</p>
-        </div>
+    <div class="gr">
+        <div class="cd"><h3>Siber SEO</h3><p>Teknik SEO ve siber saldırı korumalı içerik stratejisi.</p></div>
+        <div class="cd"><h3>Zırhlı Ads</h3><p>Bütçenizi botlardan ve rakip tıklamalarından koruyan filtreleme.</p></div>
+        <div class="cd"><h3>Profesyonel Web</h3><p>Hız ve güvenliğin zirvesinde kurumsal tasarım.</p></div>
     </div>
-
-    <a href="https://wa.me/905414516774" class="cta">ÜCRETSİZ ANALİZİ BAŞLAT</a>
+    <a href="https://wa.me/905414516774" class="cta">ÜCRETSİZ ANALİZ AL</a>
 </main>
-
-<nav class="nav">
-    <a href="https://wa.me/905414516774" class="n-i"><span><i class="fab fa-whatsapp"></i></span>WhatsApp</a>
-    <a href="tel:+905414516774" class="n-i"><span><i class="fas fa-phone"></i></span>Hemen Ara</a>
+<nav class="nv">
+    <a href="https://wa.me/905414516774" class="ni"><i>W</i>WhatsApp</a>
+    <a href="tel:+905414516774" class="ni"><i>P</i>Hemen Ara</a>
 </nav>
-
 </body>
 </html>
