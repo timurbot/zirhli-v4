@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <!-- Google Analytics Operasyonu [v5.5] -->
+    <!-- Google Analytics Operasyonu [v5.6] -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BKCKX7CWK"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -12,7 +12,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Siber Reklam Dünyası - Google Ads, SEO ve Siber Güvenlik Uzmanlığı.">
+    <meta name="description" content="Siber Reklam Dünyası - Profesyonel Google Ads, SEO ve Zırhlı Web Tasarım Paketleri.">
     <title>SİBER REKLAM DÜNYASI | Dijital Zırh ve Büyüme</title>
     <style>
         :root {
@@ -20,10 +20,11 @@
             --bg: #05060a;
             --card: #111420;
             --text: #f8fafc;
-            --dim: #cbd5e1; /* Erişilebilirlik için gri tonu bir tık açıldı */
+            --dim: #cbd5e1;
             --danger: #ff3e3e;
             --whatsapp: #25d366;
             --phone: #34b7f1;
+            --gold: #ffd700;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, system-ui, sans-serif; }
@@ -46,45 +47,80 @@
 
         .container { width: 92%; max-width: 1100px; margin: 0 auto; padding: 40px 0; }
 
-        /* Hero: Güçlü Giriş */
         .hero { text-align: center; margin-bottom: 50px; }
         .hero h1 { font-size: clamp(1.8rem, 8vw, 3rem); line-height: 1.1; margin-bottom: 20px; }
         .hero span { color: var(--neon); }
         .hero p { color: var(--dim); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
 
-        /* Neden Biz? - 4 Ana Odak Noktası */
-        .hizmetler { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-        
+        /* Sayaç Alanı */
+        .promo-timer {
+            background: rgba(255, 62, 62, 0.1);
+            border: 1px dashed var(--danger);
+            padding: 15px;
+            border-radius: 12px;
+            margin: 20px auto;
+            max-width: 600px;
+            color: var(--danger);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* Fiyat Tablosu */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .price-card {
+            background: var(--card);
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .price-card.featured {
+            border: 1px solid var(--neon);
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.1);
+        }
+
+        .badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--neon);
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .price-card h3 { font-size: 1.4rem; margin-bottom: 10px; color: #fff; }
+        .price-amount { font-size: 2.2rem; font-weight: 800; margin-bottom: 20px; color: var(--neon); }
+        .price-amount span { font-size: 1rem; color: var(--dim); }
+
+        .price-features { list-style: none; margin-bottom: 30px; flex-grow: 1; }
+        .price-features li { font-size: 0.9rem; color: var(--dim); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+        .price-features li::before { content: "✔"; color: var(--neon); font-size: 0.8rem; }
+
         .h-card {
             background: var(--card);
             padding: 30px;
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: 0.3s;
-            position: relative;
-            overflow: hidden;
+            margin-bottom: 20px;
         }
 
-        .h-card::before {
-            content: "✓";
-            position: absolute;
-            top: 10px; right: 15px;
-            color: var(--neon);
-            font-weight: bold;
-            font-size: 1.5rem;
-            opacity: 0.2;
-        }
-
-        .h-card:hover { border-color: var(--neon); transform: translateY(-5px); }
-
-        .h-card h3 { color: var(--neon); font-size: 1.2rem; margin-bottom: 15px; }
-        .h-card ul { list-style: none; margin-bottom: 20px; }
-        .h-card ul li { font-size: 0.85rem; color: var(--dim); margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px; }
-        .h-card ul li::before { content: "»"; color: var(--neon); }
-
-        /* Operasyonel Kanıt Bölümü */
         .kanit {
-            margin-top: 50px;
+            margin-top: 60px;
             padding: 40px;
             background: linear-gradient(145deg, #111420, #05060a);
             border: 1px solid var(--neon);
@@ -92,10 +128,6 @@
             text-align: center;
         }
 
-        .kanit h2 { font-size: 1.5rem; margin-bottom: 15px; }
-        .kanit p { color: var(--dim); margin-bottom: 25px; }
-
-        /* Alt Sabit İletişim */
         .fixed-contact {
             position: fixed;
             bottom: 20px; left: 50%;
@@ -109,7 +141,7 @@
 
         .c-btn {
             flex: 1;
-            padding: 18px; /* Dokunma alanı iyileştirildi */
+            padding: 18px;
             border-radius: 14px;
             text-align: center;
             text-decoration: none;
@@ -118,15 +150,14 @@
             color: #fff;
             display: flex; align-items: center; justify-content: center; gap: 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            min-height: 50px;
         }
 
         .btn-wa { background: var(--whatsapp); }
         .btn-ph { background: var(--phone); }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            .price-card.featured { transform: scale(1); margin-top: 10px; }
             .hero h1 { font-size: 1.8rem; }
-            .kanit { padding: 25px; }
         }
     </style>
 </head>
@@ -134,67 +165,75 @@
 
 <header>
     <div class="brand">SİBER REKLAM DÜNYASI</div>
-    <div style="font-size: 10px; color: var(--neon); font-weight: bold;">v5.5 LIVE</div>
+    <div style="font-size: 10px; color: var(--neon); font-weight: bold;">v5.6 LIVE</div>
 </header>
 
 <div class="container">
     <section class="hero">
         <h1>Dijitalde Sadece Var Olmayın, <span>Hükmedin.</span></h1>
-        <p>Sıradan bir ajans değil, işletmenizin dijital koruma ve büyüme karargahıyız.</p>
+        <p>Siber güvenlik altyapılı reklam ve yazılım çözümleriyle rakiplerinizin önüne geçin.</p>
+        
+        <div class="promo-timer">
+            ⚠️ MAYIS AYINA ÖZEL LANSMAN FİYATLARI İÇİN SON 14 GÜN!
+        </div>
     </section>
 
-    <div class="hizmetler">
-        <div class="h-card">
-            <h3>GOOGLE ADS</h3>
-            <ul>
-                <li>Boşa giden bütçeleri durduruyoruz.</li>
-                <li>Doğrudan "satın almaya hazır" kitleyi hedefliyoruz.</li>
-                <li>Rakiplerinizin reklamlarını analiz edip önlerine geçiyoruz.</li>
+    <div class="pricing-grid">
+        <!-- Paket 1 -->
+        <div class="price-card">
+            <h3>Giriş / Kurumsal</h3>
+            <div class="price-amount">₺12.500 <span>+ KDV</span></div>
+            <ul class="price-features">
+                <li>Modern & Mobil Uyumlu Tasarım</li>
+                <li>Hız Optimizasyonu (Lighthouse 90+)</li>
+                <li>Temel SEO Yapılandırması</li>
+                <li>Ücretsiz SSL Sertifikası</li>
+                <li>Google Harita Kaydı</li>
             </ul>
         </div>
 
-        <div class="h-card">
-            <h3>SEO UZMANLIĞI</h3>
-            <ul>
-                <li>Google botlarını sitenize hayran bırakıyoruz.</li>
-                <li>Kalıcı ve organik sıralama başarısı sağlıyoruz.</li>
-                <li>Reklam maliyetinizi organik trafikle sıfırlıyoruz.</li>
+        <!-- Paket 2 -->
+        <div class="price-card featured">
+            <div class="badge">EN ÇOK TERCİH EDİLEN</div>
+            <h3>Zırhlı Büyüme Paketi</h3>
+            <div class="price-amount">₺24.500 <span>+ KDV</span></div>
+            <ul class="price-features">
+                <li><strong>Gelişmiş Siber Güvenlik Duvarı</strong></li>
+                <li>Google Ads Kampanya Kurulumu</li>
+                <li>Detaylı Rakip Analizi</li>
+                <li>Profesyonel SEO İçerik Stratejisi</li>
+                <li>Mercedes-Benz Onaylı Güvenlik Taraması</li>
             </ul>
         </div>
 
-        <div class="h-card">
-            <h3>WEB TASARIM</h3>
-            <ul>
-                <li>Mobil uyumu değil, mobil mükemmelliği hedefliyoruz.</li>
-                <li>Işık hızında açılan (100 Puan) profesyonel kodlama.</li>
-                <li>Ziyaretçiyi müşteriye dönüştüren stratejik tasarım.</li>
-            </ul>
-        </div>
-
-        <div class="h-card">
-            <h3>SİBER GÜVENLİK</h3>
-            <ul>
-                <li>Mercedes-Benz onaylı Bug Bounty tecrübesi.</li>
-                <li>Veri hırsızlığına karşı aşılmaz zırh.</li>
-                <li>Zafiyet taraması ile 7/24 anlık koruma kalkanı.</li>
+        <!-- Paket 3 -->
+        <div class="price-card">
+            <h3>Elite / Ajans Çözümü</h3>
+            <div class="price-amount">₺45.000 <span>'den başlayan</span></div>
+            <ul class="price-features">
+                <li>Tam Kapsamlı Dijital Yönetim</li>
+                <li>Sürekli Google Ads Optimizasyonu</li>
+                <li>Aylık Teknik Bakım & Güvenlik</li>
+                <li>E-Ticaret Entegrasyonları</li>
+                <li>Özel Yazılım Çözümleri</li>
             </ul>
         </div>
     </div>
 
     <section class="kanit">
-        <h2>NEDEN SİBER REKLAM DÜNYASI?</h2>
-        <p>Biz sadece reklam vermiyoruz; önce sisteminizi **Siber Güvenlik** süzgecinden geçiriyor, sonra **SEO ve Tasarım** ile optimize ederek **Google Reklamları** ile satışa dönüştürüyoruz.</p>
-        <div style="font-weight: bold; font-size: 1.2rem; color: var(--neon);">Rakipleriniz beklerken, siz büyümeyi başlatın.</div>
+        <h2>STRATEJİK OPERASYON MERKEZİ</h2>
+        <p>Biz sadece kod yazmıyoruz. Önce sisteminizi siber güvenlik süzgecinden geçiriyor, sonra SEO ile optimize ederek satışa hazır hale getiriyoruz.</p>
+        <div style="font-weight: bold; font-size: 1.2rem; color: var(--neon); margin-top: 15px;">Profesyonellik, tesadüf değildir.</div>
     </section>
 </div>
 
 <div class="fixed-contact">
-    <a href="tel:+905414516774" class="c-btn btn-ph" aria-label="Bizi telefonla arayın">📞 HEMEN ARA</a>
-    <a href="https://wa.me/905414516774" class="c-btn btn-wa" aria-label="WhatsApp üzerinden mesaj gönderin">💬 WHATSAPP</a>
+    <a href="tel:+905414516774" class="c-btn btn-ph">📞 HEMEN ARA</a>
+    <a href="https://wa.me/905414516774" class="c-btn btn-wa">💬 WHATSAPP</a>
 </div>
 
 <footer style="text-align: center; padding: 20px; font-size: 0.7rem; color: #444; margin-top: 20px;">
-    © 2026 Siber Reklam Dünyası | Operasyon Merkezi: +90 541 451 67 74
+    © 2026 Siber Reklam Dünyası | Güvenlik Denetimi Tamamlandı.
 </footer>
 
 </body>
