@@ -2,171 +2,123 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SİBER REKLAM DÜNYASI | Official</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SİBER REKLAM DÜNYASI | Dijital Güvenlik ve Büyüme</title>
     <style>
-        /* SIFIR DIŞ BAĞIMLILIK - MAKSİMUM HIZ */
         :root {
-            --primary: #00f2ff;
-            --bg-dark: #080a12;
-            --card-bg: #111420;
-            --text-dim: #94a3b8;
-            --white: #ffffff;
+            --neon: #00f2ff;
+            --bg: #05060a;
+            --card: #111420;
+            --text: #f8fafc;
+            --dim: #94a3b8;
+            --whatsapp: #25d366;
+            --phone: #34b7f1;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-        
-        body {
-            background-color: var(--bg-dark);
-            color: var(--white);
-            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.6;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, system-ui, sans-serif; }
+        body { background: var(--bg); color: var(--text); line-height: 1.5; padding-bottom: 80px; } /* Butonlar için boşluk */
 
-        /* Modern Cam Efektli Header */
         header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 18px 6%;
-            background: rgba(8, 10, 18, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 15px 6%;
+            background: rgba(5, 6, 10, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 242, 255, 0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .brand {
-            font-weight: 800;
-            font-size: 1.1rem;
-            letter-spacing: -0.5px;
-            color: var(--primary);
-            text-transform: uppercase;
-        }
+        .brand { font-weight: 800; color: var(--neon); letter-spacing: 1px; font-size: 1rem; }
+        .container { width: 90%; max-width: 1100px; margin: 0 auto; padding: 30px 0; }
 
-        .container { width: 90%; max-width: 1000px; margin: 0 auto; padding-bottom: 50px; }
+        /* Hizmetler Bölümü */
+        .hizmetler { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; margin-top: 20px; }
+        .h-card { background: var(--card); padding: 25px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.03); }
+        .h-card h3 { color: var(--neon); font-size: 1.1rem; margin-bottom: 12px; border-left: 3px solid var(--neon); padding-left: 10px; }
+        .h-card p { font-size: 0.85rem; color: var(--dim); }
 
-        /* Hero: Mobilde Daha Profesyonel Duruş */
-        .hero {
-            padding: 50px 0 30px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: clamp(1.8rem, 7vw, 2.8rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 15px;
-            background: linear-gradient(180deg, #fff 0%, #64748b 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Hizmet Kartları: Modern SaaS Stili */
-        .services-stack {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .s-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            padding: 24px;
-            border-radius: 16px;
-            position: relative;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .s-card:active { transform: scale(0.98); } /* Mobil dokunma hissi */
-
-        .s-card h3 {
-            font-size: 1.1rem;
-            color: var(--primary);
-            margin-bottom: 10px;
+        /* --- YENİ: SABİT İLETİŞİM KANALLARI --- */
+        .fixed-contact {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
-            align-items: center;
             gap: 10px;
+            width: 90%;
+            max-width: 400px;
+            z-index: 9999;
         }
 
-        .s-card p { font-size: 0.9rem; color: var(--text-dim); }
-
-        /* Neden Biz? - Karargah Paneli */
-        .why-us {
-            margin-top: 40px;
-            background: linear-gradient(145deg, #111420 0%, #080a12 100%);
-            border: 1px solid rgba(0, 242, 255, 0.15);
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-        }
-
-        .why-us h2 { font-size: 1.2rem; margin-bottom: 12px; color: var(--primary); }
-
-        /* Premium CTA Butonu */
-        .btn-call {
-            display: block;
-            width: 100%;
-            max-width: 300px;
-            margin: 25px auto 0;
-            padding: 16px;
-            background: var(--primary);
-            color: #000;
+        .c-btn {
+            flex: 1;
+            padding: 15px;
+            border-radius: 12px;
             text-align: center;
             text-decoration: none;
-            font-weight: 700;
-            border-radius: 12px;
-            font-size: 1rem;
-            box-shadow: 0 10px 20px rgba(0, 242, 255, 0.2);
+            font-weight: 800;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: 0.2s;
         }
 
-        /* Masaüstü Ek Dokunuşlar */
-        @media (min-width: 769px) {
-            .btn-call { width: auto; padding: 16px 40px; }
-            .s-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .c-btn:active { transform: scale(0.95); }
+
+        .btn-wa { background: var(--whatsapp); }
+        .btn-ph { background: var(--phone); }
+
+        /* SEO Otorite Paneli */
+        .otorite { margin-top: 40px; padding: 30px; background: #111420; border-radius: 15px; border: 1px solid var(--neon); text-align: center; }
+
+        @media (max-width: 600px) {
+            .brand { font-size: 0.9rem; }
+            .h-card { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="brand">Siber Reklam Dünyası</div>
-    <div style="font-size: 10px; color: var(--primary); font-weight: bold;">v4.7 SECURE</div>
+    <div class="brand">SİBER REKLAM DÜNYASI</div>
+    <div style="font-size: 10px; color: var(--neon);">[v4.9 OFFICIAL]</div>
 </header>
 
 <div class="container">
-    <section class="hero">
-        <h1>Dijital Zırhınızı <br> Kuşanın.</h1>
-        <p style="color: var(--text-dim); font-size: 1rem;">Profesyonel SEO, Web Tasarım ve Siber Güvenlik.</p>
-    </section>
-
-    <div class="services-stack">
-        <div class="s-card">
-            <h3>📈 Google Ads</h3>
-            <p>Bütçenizi koruyarak doğrudan satış odaklı kitlelere ulaşmanızı sağlıyoruz.</p>
-        </div>
-        <div class="s-card">
-            <h3>🔍 SEO Uzmanlığı</h3>
-            <p>Google'da görünmez olmayın. Teknik SEO ile organik zirveye yerleşin.</p>
-        </div>
-        <div class="s-card">
-            <h3>🎨 Web Tasarım</h3>
-            <p>Hız testlerinde 100 tam puan alan, modern ve yüksek dönüşümlü arayüzler.</p>
-        </div>
-        <div class="s-card">
-            <h3>🛡️ Siber Güvenlik</h3>
-            <p>Mercedes-Benz düzeyinde bug bounty tecrübesiyle verileriniz sarsılmaz.</p>
-        </div>
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h1 style="font-size: clamp(1.5rem, 6vw, 2.2rem); margin-bottom: 10px;">Dijital Dünyada <br> Zırhınız Hazır.</h1>
+        <p style="color: var(--dim);">Google Ads, SEO ve Siber Güvenlikte Kesin Çözümler.</p>
     </div>
 
-    <section class="why-us">
-        <h2>NEDEN BİZ?</h2>
-        <p style="font-size: 0.9rem; color: var(--text-dim);">Sisteminizi önce siber güvenlik süzgecinden geçiriyor, sonra SEO ve reklamlarla büyümenizi mühürlüyoruz.</p>
-        <a href="https://wa.me/905414516774" class="btn-call">OPERASYONU BAŞLAT</a>
+    <div class="hizmetler">
+        <div class="h-card"><h3>GOOGLE ADS</h3><p>Maksimum ROAS odaklı, profesyonel reklam yönetimi.</p></div>
+        <div class="h-card"><h3>SEO UZMANLIĞI</h3><p>Google'da organik liderlik ve kalıcı sıralama başarısı.</p></div>
+        <div class="h-card"><h3>WEB TASARIM</h3><p>Hız testlerinde 100 puan alan, modern ve kurumsal arayüzler.</p></div>
+        <div class="h-card"><h3>SİBER GÜVENLİK</h3><p>Sızma testleri ve zafiyet taraması ile %100 dijital koruma.</p></div>
+    </div>
+
+    <section class="otorite">
+        <h2 style="font-size: 1.2rem; margin-bottom: 10px;">OPERASYON MERKEZİ</h2>
+        <p style="font-size: 0.85rem; color: var(--dim); margin-bottom: 20px;">Sisteminizi siber güvenlikten geçirmeden reklam vermeyin. Bizimle çalışarak her aşamada güvende kalın.</p>
+        <p style="font-weight: bold; color: var(--neon);">Resmi Hattımız: +90 541 451 67 74</p>
     </section>
 </div>
+
+<div class="fixed-contact">
+    <a href="tel:+905414516774" class="c-btn btn-ph">📞 HEMEN ARA</a>
+    <a href="https://wa.me/905414516774" class="c-btn btn-wa">💬 WHATSAPP</a>
+</div>
+
+<footer style="text-align: center; padding: 20px; font-size: 0.7rem; color: #444;">
+    © 2026 Siber Reklam Dünyası | Speed Optimized v4.9
+</footer>
 
 </body>
 </html>
