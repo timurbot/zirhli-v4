@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <!-- Google Analytics Operasyonu [v5.7] -->
+    <!-- Google Analytics & Ads Global Operasyonu [v7.5] -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BKCKX7CWK"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+
+      // Tek bir akış üzerinden her iki mülke de veri gönderimi
       gtag('config', 'G-8BKCKX7CWK');
-    </script>
+      gtag('config', 'AW-18116614443'); // Google Ads Kimliği [Screenshot_2026-05-01_02_52_42.png]
 
-    <!-- Google Ads Etiketi Entegrasyonu [AW-18116614443] -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18116614443"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-18116614443');
-
-      // Dönüşüm Tetikleyici Fonksiyon - [KtVsCOyVr6UcEKuy1r5D] Entegre Edildi
+      // Dönüşüm Tetikleyici Fonksiyon - Tasarımınla Tam Uyumlu
       function gtag_report_conversion(url) {
         var callback = function () {
           if (typeof(url) != 'undefined') {
@@ -69,9 +63,7 @@
         }
 
         .brand { font-weight: 800; color: var(--neon); letter-spacing: 1px; }
-
         .container { width: 92%; max-width: 1100px; margin: 0 auto; padding: 40px 0; }
-
         .hero { text-align: center; margin-bottom: 50px; }
         .hero h1 { font-size: clamp(1.8rem, 8vw, 3rem); line-height: 1.1; margin-bottom: 20px; }
         .hero span { color: var(--neon); }
@@ -169,14 +161,7 @@
         .btn-wa { background: var(--whatsapp); }
         .btn-ph { background: var(--phone); }
 
-        /* Chatbot CSS - Tasarım Koruma Modu */
-        #z-chat-container {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            z-index: 10000;
-        }
-
+        #z-chat-container { position: fixed; bottom: 100px; right: 20px; z-index: 10000; }
         #z-chat-window {
             display: none;
             width: 300px;
@@ -203,17 +188,14 @@
 
 <header>
     <div class="brand">SİBER REKLAM DÜNYASI</div>
-    <div style="font-size: 10px; color: var(--neon); font-weight: bold;">v6.5 SECURE</div>
+    <div style="font-size: 10px; color: var(--neon); font-weight: bold;">v7.5 SECURE</div>
 </header>
 
 <div class="container">
     <section class="hero">
         <h1>Dijitalde Sadece Var Olmayın, <span>Hükmedin.</span></h1>
         <p>Siber güvenlik altyapılı reklam ve yazılım çözümleriyle rakiplerinizin önüne geçin.</p>
-        
-        <div class="promo-timer">
-            ⚠️ MAYIS AYINA ÖZEL LANSMAN FİYATLARI İÇİN SON 14 GÜN!
-        </div>
+        <div class="promo-timer">⚠️ MAYIS AYINA ÖZEL LANSMAN FİYATLARI İÇİN SON 14 GÜN!</div>
     </section>
 
     <div class="pricing-grid">
@@ -262,7 +244,6 @@
     </section>
 </div>
 
-<!-- Siber Destek Chatbot -->
 <div id="z-chat-container">
     <div id="z-chat-window">
         <div style="background: var(--neon); color: #000; padding: 12px; font-weight: 800; font-size: 0.9rem; display: flex; justify-content: space-between; align-items: center;">
@@ -302,7 +283,7 @@
         const message = input.value.trim();
         if (message !== "") {
             const waUrl = `https://wa.me/905414516774?text=${encodeURIComponent("Siteden yeni mesaj: " + message)}`;
-            gtag_report_conversion(waUrl); // WA üzerinden de dönüşüm sayar
+            gtag_report_conversion(waUrl);
             input.value = "";
         }
     }
@@ -311,6 +292,5 @@
         if (e.key === 'Enter') sendToWA();
     });
 </script>
-
 </body>
 </html>
