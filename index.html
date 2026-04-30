@@ -2,12 +2,12 @@
 <html lang="tr">
 <head>
     <script>
-      /* Google Analytics - Geciktirilmiş Yükleme */
-      window.addEventListener('load', function() {
-          var script = document.createElement('script');
-          script.async = true;
-          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-EZT6VH2Y2H';
-          document.head.appendChild(script);
+      /* Google Analytics - Non-blocking Load */
+      window.addEventListener('DOMContentLoaded', function() {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-EZT6VH2Y2H';
+          document.head.appendChild(s);
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
@@ -17,59 +17,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="TsjAUXa0RtDNcXynlfm1XaNXgOR88huyPc1KJpRxyOM">
-    <meta name="description" content="Siber Reklam Dünyası: Google Ads bütçe koruması ve uzman SEO.">
-    <title>Siber Reklam Dünyası | Zırhlı Ajans</title>
+    <meta name="description" content="Siber Reklam Dünyası: Google Ads bütçe koruması ve uzman SEO ile zırhlı dijital çözümler.">
+    <title>Siber Reklam Dünyası | Zırhlı Dijital Ajans</title>
     
     <style>
-        :root { --n: #39ff14; --c: #00d2ff; --b: #030303; }
-        * { margin:0; padding:0; box-sizing:border-box; font-family: system-ui, sans-serif; }
-        body { background: var(--b); color: #fff; line-height: 1.4; overflow-x: hidden; padding-bottom: 80px; }
-        .h { height: 60px; display: flex; justify-content: center; align-items: center; background: #000; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 10; }
-        .logo { font-size: 20px; font-weight: 900; color: var(--c); letter-spacing: 1px; }
+        :root { --n: #39ff14; --c: #00d2ff; --b: #050505; --s: #0d0d0d; }
+        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        body { background: var(--b); color: #fff; line-height: 1.6; overflow-x: hidden; padding-bottom: 100px; }
+        
+        /* Glassmorphism Header */
+        .h { height: 75px; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.8); border-bottom: 1px solid #1a1a1a; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+        .logo { font-size: 22px; font-weight: 900; color: var(--c); letter-spacing: 2px; text-transform: uppercase; }
         .logo span { color: var(--n); }
-        .hr { padding: 60px 20px; text-align: center; background: radial-gradient(circle, #0a0a0a, #030303); }
-        .bd { display: inline-block; font-size: 10px; color: var(--n); border: 1px solid var(--n); padding: 4px 12px; border-radius: 50px; margin-bottom: 15px; }
-        h1 { font-size: 28px; font-weight: 900; margin-bottom: 10px; }
-        h1 span { color: var(--n); }
-        .tm { margin: 15px auto; max-width: 450px; background: #000; border: 1px solid #1a1a1a; border-radius: 8px; padding: 15px; text-align: left; }
-        .tl { font-family: monospace; font-size: 12px; color: var(--n); overflow: hidden; white-space: nowrap; border-right: 2px solid var(--n); width: 0; }
-        .l1 { animation: t 1s steps(30) forwards; }
-        .l2 { animation: t 1s steps(30) 1s forwards; }
-        @keyframes t { from { width: 0 } to { width: 100% } }
-        .gr { display: grid; gap: 15px; padding: 15px; }
-        .cd { background: #0a0a0a; border: 1px solid #111; padding: 25px; border-radius: 15px; }
-        .cd h3 { color: var(--c); font-size: 20px; margin-bottom: 8px; }
-        .cd p { font-size: 13px; color: #888; }
-        .cta { background: var(--n); color: #000; padding: 18px; border-radius: 12px; text-decoration: none; display: block; margin: 20px; font-weight: 900; text-align: center; font-size: 16px; }
-        .nv { position: fixed; bottom: 0; width: 100%; background: #000; display: flex; justify-content: space-around; padding: 12px 0; border-top: 1px solid #222; }
-        .ni { color: #fff; text-decoration: none; font-size: 10px; text-align: center; }
-        .ni i { color: var(--n); display: block; font-size: 18px; margin-bottom: 3px; font-style: normal; }
-    </style>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+        /* Hero - Cyber Atmosphere */
+        .hr { padding: 100px 20px; text-align: center; background: radial-gradient(circle at center, #111 0%, #050505 100%); position: relative; }
+        .bd { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; color: var(--n); border: 1px solid var(--n); padding: 6px 16px; border-radius: 50px; margin-bottom: 25px; background: rgba(57,255,20,0.05); font-weight: 700; }
+        h1 { font-size: 38px; font-weight: 900; margin-bottom: 20px; line-height: 1.1; }
+        h1 span { color: var(--n); text-shadow: 0 0 15px rgba(57,255,20,0.3); }
+        .hp { font-size: 17px; color: #888; max-width: 650px; margin: 0 auto 35px; }
+
+        /* Terminal - High Tech Look */
+        .tm { margin: 20px auto; max-width: 550px; background: #000; border: 1px solid #222; border-radius: 12px; padding: 25px; text-align: left; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
+        .tl { font-family: 'Courier New', monospace; font-size: 14px; color: var(--n); margin-bottom: 8px; white-space: nowrap; overflow: hidden; border-right: 3px solid var(--n); width: 0; }
+        .l1 { animation: t 2s steps(40) forwards; }
+        .l2 { animation: t 2s steps(40) 2s forwards; }
+        @keyframes t { from { width: 0 } to { width: 100% } }
+
+        /* Professional Content Grid */
+        .gr { display: grid; gap: 25px; padding: 40px 20px; }
+        .cd { background: var(--s); border: 1px solid #1a1a1a; padding: 40px 30px; border-radius: 25px; transition: 0.3s ease; position: relative; overflow: hidden; }
+        .cd:hover { border-color: var(--n); transform: translateY(-5px); }
+        .cd i { font-size: 40px; color: var(--n); margin-bottom: 20px; display: block; }
+        .cd h3 { color: var(--c); font-size: 24px; margin-bottom: 15px; font-weight: 800; }
+        .cd p { font-size: 15px; color: #999; margin-bottom: 20px; }
+        .cd ul { list-style: none; font-size: 14px; color: #666; }
+        .cd ul li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .cd ul li::before { content: "✓"; color: var(--n); font-weight: 900; }
+
+        /* Action Section */
+        .cta { background: var(--n); color: #000; padding: 25px; border-radius: 20px; text-decoration: none; display: block; margin: 40px 20px; font-weight: 900; text-align: center; font-size: 18px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 10px 30px rgba(57,255,20,0.2); }
+
+        /* Professional Nav */
+        .nv { position: fixed; bottom: 0; width: 100%; background: rgba(0,0,0,0.95); display: flex; justify-content: space-around; padding: 18px 0; border-top: 1px solid #222; z-index: 1000; backdrop-filter: blur(10px); }
+        .ni { color: #fff; text-decoration: none; font-size: 11px; text-align: center; font-weight: 600; }
+        .ni svg { display: block; margin: 0 auto 6px; width: 24px; height: 24px; fill: var(--n); }
+    </style>
 </head>
 <body>
+
 <header class="h"><div class="logo">SİBER<span>REKLAM</span> DÜNYASI</div></header>
+
 <main>
     <section class="hr">
-        <div class="bd">SİBER GÜVENLİK DENETİMLİ</div>
-        <h1>Dijital Kalenizi <span>Zırhlayın</span></h1>
-        <p style="color:#666; font-size:14px;">Bot trafiğinden temizlenmiş Google Ads ve SEO.</p>
+        <div class="bd">SİBER GÜVENLİK DENETİMLİ STRATEJİK AJANS</div>
+        <h1>Reklamınızı <span>Zırhlıyoruz</span></h1>
+        <p class="hp">Sadece reklam yönetmiyoruz; bütçenizi botlardan, rakiplerden ve siber saldırılardan koruyoruz.</p>
         <div class="tm">
-            <div class="tl l1">> SECURE_INIT... [OK]</div>
-            <div class="tl l2">> LIGHTSPEED_ACTIVE... [100%]</div>
+            <div class="tl l1">> STATUS: SECURE_CORE_ACTIVE</div>
+            <div class="tl l2">> PERFORMANCE: LIGHTSPEED_V25</div>
         </div>
     </section>
+
     <div class="gr">
-        <div class="cd"><h3>Siber SEO</h3><p>Teknik SEO ve siber saldırı korumalı içerik stratejisi.</p></div>
-        <div class="cd"><h3>Zırhlı Ads</h3><p>Bütçenizi botlardan ve rakip tıklamalarından koruyan filtreleme.</p></div>
-        <div class="cd"><h3>Profesyonel Web</h3><p>Hız ve güvenliğin zirvesinde kurumsal tasarım.</p></div>
+        <div class="cd">
+            <i class="fas fa-shield-halved"></i>
+            <h3>Zırhlı Google Ads</h3>
+            <p>Reklam bütçenizi geçersiz tıklamalardan koruyan, %100 verim odaklı yönetim.</p>
+            <ul>
+                <li>Bot Trafik Engelleme</li>
+                <li>ROI Odaklı Strateji</li>
+                <li>7/24 Rakip Analizi</li>
+            </ul>
+        </div>
+        <div class="cd">
+            <i class="fas fa-code"></i>
+            <h3>Uzman SEO</h3>
+            <p>Google'da kalıcı otorite kuran, siber güvenlik denetimli teknik altyapı.</p>
+            <ul>
+                <li>Teknik SEO Denetimi</li>
+                <li>Semantik İçerik Gücü</li>
+                <li>Hız Optimizasyonu</li>
+            </ul>
+        </div>
     </div>
-    <a href="https://wa.me/905414516774" class="cta">ÜCRETSİZ ANALİZ AL</a>
+
+    <a href="https://wa.me/905414516774" class="cta">SİBER ANALİZİ BAŞLAT</a>
 </main>
+
 <nav class="nv">
-    <a href="https://wa.me/905414516774" class="ni"><i>W</i>WhatsApp</a>
-    <a href="tel:+905414516774" class="ni"><i>P</i>Hemen Ara</a>
+    <a href="https://wa.me/905414516774" class="ni">
+        <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.767 5.767 0 1.267.405 2.436 1.096 3.389l-1.013 3.701 3.794-0.995c0.916.556 1.989.872 3.135.872 3.182 0 5.767-2.586 5.767-5.767s-2.585-5.767-5.767-5.767zm3.332 8.177c-.139.39-.714.711-1.012.756-.277.042-.638.076-1.026-.051-.237-.078-.541-.184-.919-.344-1.606-.682-2.645-2.316-2.725-2.423-.081-.106-.656-.872-.656-1.664s.408-1.182.553-1.341c.145-.16.316-.2.421-.2.105 0 .211 0 .303.005.101.002.237-.038.371.288.139.34.475 1.157.515 1.241.041.085.068.184.011.298-.057.114-.085.184-.17.283-.085.1-.18.223-.257.3-.088.088-.181.184-.078.361.103.177.458.756.983 1.224.675.602 1.244.789 1.421.877.177.088.281.073.383-.045.102-.118.437-.508.555-.681.118-.173.236-.145.397-.085.161.06.1.282.723.59.623.308 1.037.46 1.139.636.102.176.102.518-.037.908z"/></svg>
+        WhatsApp
+    </a>
+    <a href="tel:+905414516774" class="ni">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Hemen Ara
+    </a>
 </nav>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+
 </body>
 </html>
