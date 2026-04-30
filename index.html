@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+    <!-- Google Analytics Operasyonu [v5.6] -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BKCKX7CWK"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -11,211 +12,229 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SİBER REKLAM DÜNYASI | Dijital Zırh</title>
+    <meta name="description" content="Siber Reklam Dünyası - Profesyonel Google Ads, SEO ve Zırhlı Web Tasarım Paketleri.">
+    <title>SİBER REKLAM DÜNYASI | Dijital Zırh ve Büyüme</title>
     <style>
         :root {
             --neon: #00f2ff;
             --bg: #05060a;
-            --card: #0f111a;
-            --text: #ffffff;
-            --dim: #94a3b8;
-            --danger: #ff4b4b;
+            --card: #111420;
+            --text: #f8fafc;
+            --dim: #cbd5e1;
+            --danger: #ff3e3e;
             --whatsapp: #25d366;
-            --phone: #007bff;
+            --phone: #34b7f1;
+            --gold: #ffd700;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-        body { background: var(--bg); color: var(--text); overflow-x: hidden; padding-bottom: 100px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, system-ui, sans-serif; }
+        body { background: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 90px; }
 
-        /* NİHAİ HEADER TASARIMI */
         header {
-            padding: 10px 5%;
+            padding: 15px 6%;
             background: rgba(5, 6, 10, 0.95);
             backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 242, 255, 0.1);
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
             position: sticky;
             top: 0;
+            z-index: 1000;
+        }
+
+        .brand { font-weight: 800; color: var(--neon); letter-spacing: 1px; }
+
+        .container { width: 92%; max-width: 1100px; margin: 0 auto; padding: 40px 0; }
+
+        .hero { text-align: center; margin-bottom: 50px; }
+        .hero h1 { font-size: clamp(1.8rem, 8vw, 3rem); line-height: 1.1; margin-bottom: 20px; }
+        .hero span { color: var(--neon); }
+        .hero p { color: var(--dim); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+
+        /* Sayaç Alanı */
+        .promo-timer {
+            background: rgba(255, 62, 62, 0.1);
+            border: 1px dashed var(--danger);
+            padding: 15px;
+            border-radius: 12px;
+            margin: 20px auto;
+            max-width: 600px;
+            color: var(--danger);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* Fiyat Tablosu */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .price-card {
+            background: var(--card);
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .price-card.featured {
+            border: 1px solid var(--neon);
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.1);
+        }
+
+        .badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--neon);
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .price-card h3 { font-size: 1.4rem; margin-bottom: 10px; color: #fff; }
+        .price-amount { font-size: 2.2rem; font-weight: 800; margin-bottom: 20px; color: var(--neon); }
+        .price-amount span { font-size: 1rem; color: var(--dim); }
+
+        .price-features { list-style: none; margin-bottom: 30px; flex-grow: 1; }
+        .price-features li { font-size: 0.9rem; color: var(--dim); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+        .price-features li::before { content: "✔"; color: var(--neon); font-size: 0.8rem; }
+
+        .h-card {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .kanit {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(145deg, #111420, #05060a);
+            border: 1px solid var(--neon);
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .fixed-contact {
+            position: fixed;
+            bottom: 20px; left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            width: 94%;
+            max-width: 450px;
             z-index: 9999;
         }
 
-        .brand-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-circle {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            border: 2px solid var(--neon);
-            overflow: hidden;
-            box-shadow: 0 0 10px rgba(0, 242, 255, 0.3);
-            flex-shrink: 0; /* Mobilde küçülmeyi engeller */
-        }
-
-        .logo-circle img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .brand-meta {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .brand-name {
-            font-size: 1.1rem;
-            font-weight: 900;
-            color: var(--neon);
-            letter-spacing: -0.5px;
-            line-height: 1.2;
-        }
-
-        .brand-tag {
-            font-size: 0.55rem;
-            color: var(--dim);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* İÇERİK ALANI */
-        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding-top: 30px; }
-
-        .hero { text-align: center; margin-bottom: 30px; }
-        .hero h1 { font-size: clamp(1.5rem, 6vw, 2.5rem); margin-bottom: 15px; }
-        .hero span { color: var(--neon); }
-        .hero p { color: var(--dim); font-size: 0.95rem; }
-
-        .promo-banner {
-            background: linear-gradient(90deg, rgba(255, 75, 75, 0.1), transparent);
-            border-left: 4px solid var(--danger);
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            color: var(--danger);
-            text-align: center;
-        }
-
-        /* FİYAT KARTLARI */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card {
-            background: var(--card);
-            padding: 25px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.3s;
-        }
-        .card.hot { border: 1px solid var(--neon); position: relative; }
-        .card h3 { font-size: 1.2rem; margin-bottom: 10px; }
-        .price { font-size: 1.8rem; font-weight: 800; color: var(--neon); margin-bottom: 20px; }
-        .price span { font-size: 0.8rem; color: var(--dim); }
-
-        .features { list-style: none; font-size: 0.85rem; color: var(--dim); }
-        .features li { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-        .features li::before { content: "✓"; color: var(--neon); font-weight: bold; }
-
-        /* MOBİL ALT BUTONLAR */
-        .cta-bar {
-            position: fixed;
-            bottom: 20px; left: 5%;
-            width: 90%;
-            display: flex;
-            gap: 10px;
-            z-index: 10000;
-        }
-        .btn {
+        .c-btn {
             flex: 1;
-            padding: 15px;
-            border-radius: 12px;
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
+            padding: 18px;
+            border-radius: 14px;
             text-align: center;
-            display: flex; align-items: center; justify-content: center; gap: 8px;
-            font-size: 0.9rem;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.95rem;
+            color: #fff;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        .bg-wa { background: var(--whatsapp); }
-        .bg-ph { background: var(--phone); }
 
-        /* MOBİL ÖZEL AYAR */
-        @media (max-width: 480px) {
-            header { padding: 8px 4%; }
-            .brand-name { font-size: 0.95rem; }
-            .logo-circle { width: 38px; height: 38px; }
+        .btn-wa { background: var(--whatsapp); }
+        .btn-ph { background: var(--phone); }
+
+        @media (max-width: 768px) {
+            .price-card.featured { transform: scale(1); margin-top: 10px; }
+            .hero h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="brand-container">
-        <div class="logo-circle">
-            <img src="Gemini_Generated_Image_yipjhlyipjhlyipj(1).jpg" alt="Zırhlı Dijital Logo">
-        </div>
-        <div class="brand-meta">
-            <span class="brand-name">SİBER REKLAM DÜNYASI</span>
-            <span class="brand-tag">Dijital Strateji Merkezi</span>
-        </div>
-    </div>
-    <div style="font-size: 0.6rem; color: var(--neon); opacity: 0.5;">v6.0</div>
+    <div class="brand">SİBER REKLAM DÜNYASI</div>
+    <div style="font-size: 10px; color: var(--neon); font-weight: bold;">v5.6 LIVE</div>
 </header>
 
 <div class="container">
-    <div class="hero">
+    <section class="hero">
         <h1>Dijitalde Sadece Var Olmayın, <span>Hükmedin.</span></h1>
-        <p>Siber güvenlik altyapılı kurumsal dijital çözümler.</p>
-    </div>
+        <p>Siber güvenlik altyapılı reklam ve yazılım çözümleriyle rakiplerinizin önüne geçin.</p>
+        
+        <div class="promo-timer">
+            ⚠️ MAYIS AYINA ÖZEL LANSMAN FİYATLARI İÇİN SON 14 GÜN!
+        </div>
+    </section>
 
-    <div class="promo-banner">
-        ⚠️ MAYIS AYINA ÖZEL LANSMAN FİYATLARI İÇİN SON 14 GÜN!
-    </div>
-
-    <div class="grid">
-        <div class="card">
+    <div class="pricing-grid">
+        <!-- Paket 1 -->
+        <div class="price-card">
             <h3>Giriş / Kurumsal</h3>
-            <div class="price">₺12.500 <span>+ KDV</span></div>
-            <ul class="features">
-                <li>Modern & Mobil Uyumlu</li>
-                <li>Hız Optimizasyonu</li>
-                <li>Temel SEO</li>
-                <li>Ücretsiz SSL</li>
+            <div class="price-amount">₺12.500 <span>+ KDV</span></div>
+            <ul class="price-features">
+                <li>Modern & Mobil Uyumlu Tasarım</li>
+                <li>Hız Optimizasyonu (Lighthouse 90+)</li>
+                <li>Temel SEO Yapılandırması</li>
+                <li>Ücretsiz SSL Sertifikası</li>
+                <li>Google Harita Kaydı</li>
             </ul>
         </div>
-        <div class="card hot">
-            <div style="position: absolute; top: -10px; right: 10px; background: var(--neon); color: #000; font-size: 0.6rem; padding: 2px 8px; border-radius: 5px; font-weight: bold;">EN ÇOK SEÇİLEN</div>
-            <h3>Zırhlı Büyüme</h3>
-            <div class="price">₺24.500 <span>+ KDV</span></div>
-            <ul class="features">
-                <li><strong>Siber Güvenlik Duvarı</strong></li>
-                <li>Google Ads Kurulumu</li>
-                <li>Rakip Analizi</li>
-                <li>SEO Stratejisi</li>
+
+        <!-- Paket 2 -->
+        <div class="price-card featured">
+            <div class="badge">EN ÇOK TERCİH EDİLEN</div>
+            <h3>Zırhlı Büyüme Paketi</h3>
+            <div class="price-amount">₺24.500 <span>+ KDV</span></div>
+            <ul class="price-features">
+                <li><strong>Gelişmiş Siber Güvenlik Duvarı</strong></li>
+                <li>Google Ads Kampanya Kurulumu</li>
+                <li>Detaylı Rakip Analizi</li>
+                <li>Profesyonel SEO İçerik Stratejisi</li>
+                <li>Mercedes-Benz Onaylı Güvenlik Taraması</li>
             </ul>
         </div>
-        <div class="card">
-            <h3>Elite Çözüm</h3>
-            <div class="price">₺45.000 <span>'den</span></div>
-            <ul class="features">
-                <li>Tam Yönetim</li>
-                <li>Ads Optimizasyonu</li>
-                <li>Teknik Bakım</li>
-                <li>Özel Yazılım</li>
+
+        <!-- Paket 3 -->
+        <div class="price-card">
+            <h3>Elite / Ajans Çözümü</h3>
+            <div class="price-amount">₺45.000 <span>'den başlayan</span></div>
+            <ul class="price-features">
+                <li>Tam Kapsamlı Dijital Yönetim</li>
+                <li>Sürekli Google Ads Optimizasyonu</li>
+                <li>Aylık Teknik Bakım & Güvenlik</li>
+                <li>E-Ticaret Entegrasyonları</li>
+                <li>Özel Yazılım Çözümleri</li>
             </ul>
         </div>
     </div>
+
+    <section class="kanit">
+        <h2>STRATEJİK OPERASYON MERKEZİ</h2>
+        <p>Biz sadece kod yazmıyoruz. Önce sisteminizi siber güvenlik süzgecinden geçiriyor, sonra SEO ile optimize ederek satışa hazır hale getiriyoruz.</p>
+        <div style="font-weight: bold; font-size: 1.2rem; color: var(--neon); margin-top: 15px;">Profesyonellik, tesadüf değildir.</div>
+    </section>
 </div>
 
-<div class="cta-bar">
-    <a href="tel:+905414516774" class="btn bg-ph">📞 HEMEN ARA</a>
-    <a href="https://wa.me/905414516774" class="btn bg-wa">💬 WHATSAPP</a>
+<div class="fixed-contact">
+    <a href="tel:+905414516774" class="c-btn btn-ph">📞 HEMEN ARA</a>
+    <a href="https://wa.me/905414516774" class="c-btn btn-wa">💬 WHATSAPP</a>
 </div>
+
+<footer style="text-align: center; padding: 20px; font-size: 0.7rem; color: #444; margin-top: 20px;">
+    © 2026 Siber Reklam Dünyası | Güvenlik Denetimi Tamamlandı.
+</footer>
 
 </body>
 </html>
