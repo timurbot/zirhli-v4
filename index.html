@@ -2,7 +2,6 @@
 <html lang="tr">
 <head>
     <script>
-      /* Google Analytics - Non-blocking Load */
       window.addEventListener('DOMContentLoaded', function() {
           var s = document.createElement('script');
           s.async = true;
@@ -16,53 +15,61 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="TsjAUXa0RtDNcXynlfm1XaNXgOR88huyPc1KJpRxyOM">
-    <meta name="description" content="Siber Reklam Dünyası: Google Ads bütçe koruması ve uzman SEO ile zırhlı dijital çözümler.">
-    <title>Siber Reklam Dünyası | Zırhlı Dijital Ajans</title>
+    <meta name="description" content="Siber Reklam Dünyası: Google Ads bütçe koruması, profesyonel SEO ve siber güvenlik odaklı web tasarım çözümleri.">
+    <title>Siber Reklam Dünyası | Premium Siber Reklam Ajansı</title>
     
     <style>
-        :root { --n: #39ff14; --c: #00d2ff; --b: #050505; --s: #0d0d0d; }
-        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
-        body { background: var(--b); color: #fff; line-height: 1.6; overflow-x: hidden; padding-bottom: 100px; }
+        :root { --n: #39ff14; --c: #00d2ff; --b: #020202; --s: #0d0d0d; --w: #ffffff; }
+        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', system-ui, sans-serif; }
+        body { background: var(--b); color: var(--w); line-height: 1.6; overflow-x: hidden; padding-bottom: 100px; }
         
-        /* Glassmorphism Header */
-        .h { height: 75px; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.8); border-bottom: 1px solid #1a1a1a; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
-        .logo { font-size: 22px; font-weight: 900; color: var(--c); letter-spacing: 2px; text-transform: uppercase; }
+        /* Header */
+        .h { height: 80px; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.9); border-bottom: 1px solid #1a1a1a; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(15px); }
+        .logo { font-size: 24px; font-weight: 900; color: var(--c); letter-spacing: 3px; text-transform: uppercase; }
         .logo span { color: var(--n); }
 
-        /* Hero - Cyber Atmosphere */
-        .hr { padding: 100px 20px; text-align: center; background: radial-gradient(circle at center, #111 0%, #050505 100%); position: relative; }
-        .bd { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; color: var(--n); border: 1px solid var(--n); padding: 6px 16px; border-radius: 50px; margin-bottom: 25px; background: rgba(57,255,20,0.05); font-weight: 700; }
-        h1 { font-size: 38px; font-weight: 900; margin-bottom: 20px; line-height: 1.1; }
-        h1 span { color: var(--n); text-shadow: 0 0 15px rgba(57,255,20,0.3); }
-        .hp { font-size: 17px; color: #888; max-width: 650px; margin: 0 auto 35px; }
+        /* Hero Section */
+        .hr { padding: 120px 20px 60px; text-align: center; background: radial-gradient(circle at 50% 50%, #151515 0%, #020202 100%); }
+        .bd { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--n); border: 1px solid var(--n); padding: 8px 20px; border-radius: 50px; margin-bottom: 30px; background: rgba(57,255,20,0.05); font-weight: 800; letter-spacing: 1px; }
+        h1 { font-size: 44px; font-weight: 900; margin-bottom: 25px; line-height: 1.1; letter-spacing: -2px; }
+        h1 span { color: var(--n); text-shadow: 0 0 25px rgba(57,255,20,0.4); }
+        .hp { font-size: 19px; color: #888; max-width: 750px; margin: 0 auto 40px; font-weight: 400; }
 
-        /* Terminal - High Tech Look */
-        .tm { margin: 20px auto; max-width: 550px; background: #000; border: 1px solid #222; border-radius: 12px; padding: 25px; text-align: left; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
-        .tl { font-family: 'Courier New', monospace; font-size: 14px; color: var(--n); margin-bottom: 8px; white-space: nowrap; overflow: hidden; border-right: 3px solid var(--n); width: 0; }
+        /* Terminal Animasyonu */
+        .tm { margin: 0 auto 40px; max-width: 580px; background: #000; border: 1px solid #222; border-radius: 16px; padding: 30px; text-align: left; box-shadow: 0 30px 60px rgba(0,0,0,0.8); }
+        .tl { font-family: 'Courier New', monospace; font-size: 14px; color: var(--n); margin-bottom: 10px; white-space: nowrap; overflow: hidden; border-right: 3px solid var(--n); width: 0; }
         .l1 { animation: t 2s steps(40) forwards; }
         .l2 { animation: t 2s steps(40) 2s forwards; }
         @keyframes t { from { width: 0 } to { width: 100% } }
 
-        /* Professional Content Grid */
-        .gr { display: grid; gap: 25px; padding: 40px 20px; }
-        .cd { background: var(--s); border: 1px solid #1a1a1a; padding: 40px 30px; border-radius: 25px; transition: 0.3s ease; position: relative; overflow: hidden; }
-        .cd:hover { border-color: var(--n); transform: translateY(-5px); }
-        .cd i { font-size: 40px; color: var(--n); margin-bottom: 20px; display: block; }
-        .cd h3 { color: var(--c); font-size: 24px; margin-bottom: 15px; font-weight: 800; }
+        /* Hizmetlerimiz - Premium Bento Grid */
+        .section-title { text-align: center; font-size: 14px; color: var(--n); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 50px; font-weight: 900; }
+        .gr { display: grid; gap: 20px; padding: 20px; }
+        .cd { background: var(--s); border: 1px solid #1a1a1a; padding: 45px 30px; border-radius: 32px; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; }
+        .cd:hover { border-color: var(--n); transform: translateY(-10px); background: #111; }
+        .cd i { font-size: 40px; color: var(--n); margin-bottom: 25px; display: block; }
+        .cd h3 { color: var(--c); font-size: 26px; margin-bottom: 15px; font-weight: 800; }
         .cd p { font-size: 15px; color: #999; margin-bottom: 20px; }
-        .cd ul { list-style: none; font-size: 14px; color: #666; }
-        .cd ul li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
-        .cd ul li::before { content: "✓"; color: var(--n); font-weight: 900; }
+        
+        /* Neden Biz / Başarılarımız */
+        .stats { background: #080808; padding: 80px 20px; margin: 40px 0; border-top: 1px solid #111; border-bottom: 1px solid #111; }
+        .st-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: center; }
+        .st-card { padding: 30px; background: #000; border-radius: 20px; border: 1px solid #151515; }
+        .st-card h4 { font-size: 32px; color: var(--n); margin-bottom: 5px; }
+        .st-card span { font-size: 12px; color: #555; text-transform: uppercase; font-weight: 700; }
 
-        /* Action Section */
-        .cta { background: var(--n); color: #000; padding: 25px; border-radius: 20px; text-decoration: none; display: block; margin: 40px 20px; font-weight: 900; text-align: center; font-size: 18px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 10px 30px rgba(57,255,20,0.2); }
+        /* CTA */
+        .cta { background: var(--n); color: #000; padding: 26px; border-radius: 24px; text-decoration: none; display: block; margin: 40px 20px; font-weight: 900; text-align: center; font-size: 20px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 15px 40px rgba(57,255,20,0.3); }
 
-        /* Professional Nav */
-        .nv { position: fixed; bottom: 0; width: 100%; background: rgba(0,0,0,0.95); display: flex; justify-content: space-around; padding: 18px 0; border-top: 1px solid #222; z-index: 1000; backdrop-filter: blur(10px); }
-        .ni { color: #fff; text-decoration: none; font-size: 11px; text-align: center; font-weight: 600; }
-        .ni svg { display: block; margin: 0 auto 6px; width: 24px; height: 24px; fill: var(--n); }
+        /* Footer SEO */
+        .ft { padding: 60px 20px 120px; text-align: center; font-size: 13px; color: #333; line-height: 2; }
+
+        /* Nav */
+        .nv { position: fixed; bottom: 0; width: 100%; background: rgba(0,0,0,0.98); display: flex; justify-content: space-around; padding: 20px 0; border-top: 1px solid #222; z-index: 1001; backdrop-filter: blur(10px); }
+        .ni { color: #fff; text-decoration: none; font-size: 12px; text-align: center; font-weight: 700; }
+        .ni i { color: var(--n); display: block; font-size: 26px; margin-bottom: 8px; }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
 </head>
 <body>
 
@@ -70,53 +77,55 @@
 
 <main>
     <section class="hr">
-        <div class="bd">SİBER GÜVENLİK DENETİMLİ STRATEJİK AJANS</div>
-        <h1>Reklamınızı <span>Zırhlıyoruz</span></h1>
-        <p class="hp">Sadece reklam yönetmiyoruz; bütçenizi botlardan, rakiplerden ve siber saldırılardan koruyoruz.</p>
+        <div class="bd"><i class="fas fa-lock"></i> SİBER GÜVENLİK ODAKLI DİJİTAL STRATEJİ</div>
+        <h1>Reklamınızı <span>Siber Zırhla</span> Markaya Dönüştürün</h1>
+        <p class="hp">Türkiye'nin en hızlı ve en güvenli dijital ajansı. Google Ads bütçenizi botlardan koruyor, SEO ile sektörünüzü domine etmenizi sağlıyoruz.</p>
         <div class="tm">
-            <div class="tl l1">> STATUS: SECURE_CORE_ACTIVE</div>
-            <div class="tl l2">> PERFORMANCE: LIGHTSPEED_V25</div>
+            <div class="tl l1">> SYSTEM_RANKING: #1 GOOGLE_ADS</div>
+            <div class="tl l2">> SEO_STRENGTH: MAXIMUM_AUTHORITY</div>
         </div>
     </section>
 
+    <div class="section-title">Uzmanlık Alanlarımız</div>
     <div class="gr">
         <div class="cd">
-            <i class="fas fa-shield-halved"></i>
+            <i class="fas fa-microchip"></i>
             <h3>Zırhlı Google Ads</h3>
-            <p>Reklam bütçenizi geçersiz tıklamalardan koruyan, %100 verim odaklı yönetim.</p>
-            <ul>
-                <li>Bot Trafik Engelleme</li>
-                <li>ROI Odaklı Strateji</li>
-                <li>7/24 Rakip Analizi</li>
-            </ul>
+            <p>Reklam bütçenizin bir kuruşu bile botlara gitmez. Rakip tıklama koruması ve yüksek dönüşüm (ROI) odaklı siber analizler sunuyoruz.</p>
         </div>
         <div class="cd">
-            <i class="fas fa-code"></i>
-            <h3>Uzman SEO</h3>
-            <p>Google'da kalıcı otorite kuran, siber güvenlik denetimli teknik altyapı.</p>
-            <ul>
-                <li>Teknik SEO Denetimi</li>
-                <li>Semantik İçerik Gücü</li>
-                <li>Hız Optimizasyonu</li>
-            </ul>
+            <i class="fas fa-code-branch"></i>
+            <h3>Otorite Odaklı SEO</h3>
+            <p>Google botlarını ikna eden kusursuz teknik altyapı. Rakip analizi ve semantik içeriklerle sektörün zirvesine kalıcı olarak yerleşin.</p>
+        </div>
+        <div class="cd">
+            <i class="fas fa-fingerprint"></i>
+            <h3>Premium Web Tasarım</h3>
+            <p>Sadece şık değil, aynı zamanda sızma testlerinden geçmiş, saniyeler içinde açılan ultra hızlı ve güvenli dijital kaleler.</p>
         </div>
     </div>
 
-    <a href="https://wa.me/905414516774" class="cta">SİBER ANALİZİ BAŞLAT</a>
+    <section class="stats">
+        <div class="section-title">Neden Biz?</div>
+        <div class="st-grid">
+            <div class="st-card"><h4>%100</h4><span>Performans</span></div>
+            <div class="st-card"><h4>%40</h4><span>Bütçe Tasarrufu</span></div>
+            <div class="st-card"><h4>%250</h4><span>Dönüşüm Artışı</span></div>
+            <div class="st-card"><h4>7/24</h4><span>Siber İzleme</span></div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/905414516774" class="cta">ÜCRETSİZ DİJİTAL ANALİZİ BAŞLAT</a>
 </main>
 
-<nav class="nv">
-    <a href="https://wa.me/905414516774" class="ni">
-        <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.767 5.767 0 1.267.405 2.436 1.096 3.389l-1.013 3.701 3.794-0.995c0.916.556 1.989.872 3.135.872 3.182 0 5.767-2.586 5.767-5.767s-2.585-5.767-5.767-5.767zm3.332 8.177c-.139.39-.714.711-1.012.756-.277.042-.638.076-1.026-.051-.237-.078-.541-.184-.919-.344-1.606-.682-2.645-2.316-2.725-2.423-.081-.106-.656-.872-.656-1.664s.408-1.182.553-1.341c.145-.16.316-.2.421-.2.105 0 .211 0 .303.005.101.002.237-.038.371.288.139.34.475 1.157.515 1.241.041.085.068.184.011.298-.057.114-.085.184-.17.283-.085.1-.18.223-.257.3-.088.088-.181.184-.078.361.103.177.458.756.983 1.224.675.602 1.244.789 1.421.877.177.088.281.073.383-.045.102-.118.437-.508.555-.681.118-.173.236-.145.397-.085.161.06.1.282.723.59.623.308 1.037.46 1.139.636.102.176.102.518-.037.908z"/></svg>
-        WhatsApp
-    </a>
-    <a href="tel:+905414516774" class="ni">
-        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-        Hemen Ara
-    </a>
-</nav>
+<footer class="ft">
+    Siber Reklam Dünyası; İstanbul Esenyurt merkezli, Google Ads yönetimi, profesyonel SEO danışmanlığı ve güvenli web tasarımında uzmanlaşmış lider ajanstır. Google sıralamalarında kalıcı başarı için siber güvenlik standartlarında dijital pazarlama çözümleri üretiyoruz.
+</footer>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+<nav class="nv">
+    <a href="https://wa.me/905414516774" class="ni"><i class="fab fa-whatsapp"></i>Hızlı Teklif</a>
+    <a href="tel:+905414516774" class="ni"><i class="fas fa-bolt"></i>Hemen Ara</a>
+</nav>
 
 </body>
 </html>
