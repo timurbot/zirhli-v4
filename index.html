@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+    <!-- Google Analytics Operasyonu [v5.5] -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BKCKX7CWK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8BKCKX7CWK');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Siber Reklam Dünyası - Google Ads, SEO ve Siber Güvenlik Uzmanlığı.">
     <title>SİBER REKLAM DÜNYASI | Dijital Zırh ve Büyüme</title>
     <style>
         :root {
@@ -10,7 +20,7 @@
             --bg: #05060a;
             --card: #111420;
             --text: #f8fafc;
-            --dim: #94a3b8;
+            --dim: #cbd5e1; /* Erişilebilirlik için gri tonu bir tık açıldı */
             --danger: #ff3e3e;
             --whatsapp: #25d366;
             --phone: #34b7f1;
@@ -99,7 +109,7 @@
 
         .c-btn {
             flex: 1;
-            padding: 16px;
+            padding: 18px; /* Dokunma alanı iyileştirildi */
             border-radius: 14px;
             text-align: center;
             text-decoration: none;
@@ -108,6 +118,7 @@
             color: #fff;
             display: flex; align-items: center; justify-content: center; gap: 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            min-height: 50px;
         }
 
         .btn-wa { background: var(--whatsapp); }
@@ -123,7 +134,7 @@
 
 <header>
     <div class="brand">SİBER REKLAM DÜNYASI</div>
-    <div style="font-size: 10px; color: var(--neon); font-weight: bold;">v5.0 ACTION-DRIVEN</div>
+    <div style="font-size: 10px; color: var(--neon); font-weight: bold;">v5.5 LIVE</div>
 </header>
 
 <div class="container">
@@ -172,14 +183,14 @@
 
     <section class="kanit">
         <h2>NEDEN SİBER REKLAM DÜNYASI?</h2>
-        <p>Biz sadece reklam vermiyoruz; önce sisteminizi **Siber Güvenlik** süzgecinden geçiriyor, sonra **SEO ve Tasarım** ile optimize ederek **Google Reklamları** ile satışa dönüştürüyoruz. Zırhı olmayan bir strateji, her zaman kaybetmeye mahkumdur.</p>
+        <p>Biz sadece reklam vermiyoruz; önce sisteminizi **Siber Güvenlik** süzgecinden geçiriyor, sonra **SEO ve Tasarım** ile optimize ederek **Google Reklamları** ile satışa dönüştürüyoruz.</p>
         <div style="font-weight: bold; font-size: 1.2rem; color: var(--neon);">Rakipleriniz beklerken, siz büyümeyi başlatın.</div>
     </section>
 </div>
 
 <div class="fixed-contact">
-    <a href="tel:+905414516774" class="c-btn btn-ph">📞 HEMEN ARA</a>
-    <a href="https://wa.me/905414516774" class="c-btn btn-wa">💬 WHATSAPP</a>
+    <a href="tel:+905414516774" class="c-btn btn-ph" aria-label="Bizi telefonla arayın">📞 HEMEN ARA</a>
+    <a href="https://wa.me/905414516774" class="c-btn btn-wa" aria-label="WhatsApp üzerinden mesaj gönderin">💬 WHATSAPP</a>
 </div>
 
 <footer style="text-align: center; padding: 20px; font-size: 0.7rem; color: #444; margin-top: 20px;">
