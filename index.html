@@ -3,187 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Siber Reklam Dünyası: Türkiye'nin ilk siber güvenlik entegreli dijital reklam ajansı. Zırhlı web tasarım, yapay zeka destekli Google Ads ve teknik SEO operasyonları.">
-    <title>Siber Reklam Dünyası | Profesyonel Dijital Güvenlik ve Reklam Ajansı</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta name="description" content="Siber Reklam Dünyası: Mercedes-Benz onaylı siber güvenlik uzmanlığı ile zırhlı dijital pazarlama, web mühendisliği ve teknik SEO ajansı.">
+    <title>Siber Reklam Dünyası | Zırhlı Dijital Ajans & Siber Güvenlik Merkezi</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Rajdhani:wght@400;600;700&display=swap');
         
-        :root { --neon: #39ff14; --cyber: #00d2ff; --bg: #010101; --panel: #0a0a0a; --glass: rgba(255, 255, 255, 0.03); }
-        * { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing: antialiased; }
+        :root { --neon: #39ff14; --cyber: #00d2ff; --bg: #050505; --card-bg: #0c0c0c; --text: #f0f0f0; }
+        * { margin:0; padding:0; box-sizing:border-box; scroll-behavior: smooth; }
         
-        body { background: var(--bg); color: #e0e0e0; font-family: 'Rajdhani', sans-serif; line-height: 1.5; overflow-x: hidden; padding-bottom: 80px; }
-        
-        /* High-End Background */
-        .bg-grid { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: 
-            linear-gradient(rgba(57, 255, 20, 0.05) 1px, transparent 1px), 
-            linear-gradient(90deg, rgba(57, 255, 20, 0.05) 1px, transparent 1px);
-            background-size: 50px 50px; z-index: -1; pointer-events: none; }
+        body { background: var(--bg); color: var(--text); font-family: 'Rajdhani', sans-serif; overflow-x: hidden; padding-bottom: 90px; }
 
-        /* Professional Header */
-        .header { 
-            padding: 20px; text-align: center; background: rgba(0,0,0,0.9); 
-            border-bottom: 1px solid #1a1a1a; position: sticky; top: 0; z-index: 1000;
+        /* Premium Scanline Overlay */
+        body::after {
+            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            background-size: 100% 3px, 3px 100%; pointer-events: none; z-index: 9999; opacity: 0.3;
         }
-        .logo { font-family: 'Orbitron', sans-serif; font-size: 20px; letter-spacing: 4px; color: var(--cyber); }
-        .logo span { color: var(--neon); text-shadow: 0 0 15px var(--neon); }
 
-        /* Hero: The Vision */
-        .hero { padding: 80px 25px; text-align: center; }
-        .status-badge { 
-            display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--neon);
-            padding: 8px 20px; border-radius: 50px; font-size: 11px; color: var(--neon);
-            background: rgba(57, 255, 20, 0.05); text-transform: uppercase; margin-bottom: 30px;
-        }
-        .hero h1 { font-family: 'Orbitron', sans-serif; font-size: 32px; font-weight: 700; line-height: 1.1; margin-bottom: 25px; }
+        /* Header & Brand */
+        .header { padding: 25px; background: rgba(0,0,0,0.95); border-bottom: 1px solid #1a1a1a; position: sticky; top: 0; z-index: 1000; text-align: center; }
+        .logo { font-family: 'Syncopate', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 5px; color: #fff; text-transform: uppercase; }
+        .logo span { color: var(--neon); }
+
+        /* Hero: Corporate Security */
+        .hero { padding: 80px 25px; text-align: center; background: radial-gradient(circle at center, #111 0%, #050505 100%); }
+        .ref-tag { display: inline-flex; align-items: center; gap: 8px; color: var(--cyber); border: 1px solid var(--cyber); padding: 8px 20px; border-radius: 4px; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; background: rgba(0, 210, 255, 0.05); }
+        .hero h1 { font-family: 'Syncopate', sans-serif; font-size: 24px; line-height: 1.4; margin-bottom: 25px; }
         .hero h1 mark { background: none; color: var(--neon); }
-        .hero p { font-size: 18px; color: #888; max-width: 800px; margin: 0 auto; font-weight: 300; }
+        .hero p { font-size: 18px; color: #888; max-width: 750px; margin: 0 auto; font-weight: 400; }
 
-        /* Services: The Core */
-        .section-title { text-align: center; font-family: 'Orbitron', sans-serif; color: var(--neon); padding: 40px 0 20px; font-size: 16px; letter-spacing: 5px; text-transform: uppercase; }
+        /* Authority & History */
+        .history { padding: 40px 20px; background: #080808; border-top: 1px solid #111; border-bottom: 1px solid #111; }
+        .h-box { border-left: 2px solid var(--neon); padding-left: 20px; }
+        .h-box h3 { font-family: 'Syncopate', sans-serif; font-size: 14px; color: var(--neon); margin-bottom: 10px; }
+        .h-box p { font-size: 14px; color: #666; }
+
+        /* Professional Service Matrix */
+        .matrix { padding: 40px 20px; }
+        .section-label { font-family: 'Syncopate', sans-serif; font-size: 12px; color: #444; margin-bottom: 30px; display: block; text-align: center; letter-spacing: 10px; }
         
-        .service-container { padding: 20px; display: grid; gap: 30px; }
-        .service-panel { 
-            background: var(--panel); border: 1px solid #1a1a1a; border-radius: 20px; 
-            padding: 40px 30px; position: relative; overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-        }
-        .service-panel::before {
-            content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--cyber);
-        }
-        .service-panel i { font-size: 40px; color: var(--cyber); margin-bottom: 25px; display: block; }
-        .service-panel h2 { font-family: 'Orbitron', sans-serif; font-size: 22px; margin-bottom: 15px; color: #fff; }
-        .service-panel p { color: #888; font-size: 15px; margin-bottom: 20px; text-align: justify; }
-        .service-panel .features { list-style: none; }
-        .service-panel .features li { font-size: 14px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 12px; color: #ccc; }
-        .service-panel .features li i { font-size: 12px; color: var(--neon); margin: 4px 0 0 0; display: inline; }
+        .m-card { background: var(--card-bg); border: 1px solid #1a1a1a; padding: 40px 25px; border-radius: 4px; margin-bottom: 25px; transition: 0.3s; }
+        .m-card:hover { border-color: var(--neon); background: #0e0e0e; }
+        .m-card i { font-size: 30px; color: var(--neon); margin-bottom: 25px; }
+        .m-card h2 { font-family: 'Syncopate', sans-serif; font-size: 16px; margin-bottom: 15px; color: #fff; }
+        .m-card p { font-size: 15px; color: #888; margin-bottom: 20px; }
+        .m-feat { list-style: none; }
+        .m-feat li { font-size: 13px; color: #555; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+        .m-feat li i { font-size: 10px; color: var(--cyber); margin: 0; }
 
-        /* Referanslar & Otorite */
-        .authority { margin: 20px; background: linear-gradient(145deg, #0a0a0a, #000); border: 1px solid var(--neon); border-radius: 20px; padding: 40px 25px; text-align: center; }
-        .authority h3 { font-family: 'Orbitron', sans-serif; margin-bottom: 15px; color: var(--neon); }
-        .ref-grid { display: flex; justify-content: center; gap: 20px; opacity: 0.6; filter: grayscale(1); }
+        /* Pricing & Packages */
+        .packages { padding: 20px; background: #000; }
+        .p-box { border: 1px solid #222; padding: 50px 30px; text-align: center; border-radius: 4px; position: relative; }
+        .p-box.highlight { border: 1px solid var(--neon); box-shadow: 0 0 30px rgba(57, 255, 20, 0.05); }
+        .p-box h4 { font-family: 'Syncopate', sans-serif; font-size: 14px; margin-bottom: 20px; color: var(--neon); }
+        .price { font-size: 40px; font-weight: 700; margin-bottom: 20px; }
+        .price span { font-size: 14px; color: #444; }
 
-        /* Paketli Satış Sistemi */
-        .price-grid { padding: 20px; display: grid; gap: 20px; }
-        .package { background: #000; border: 1px solid #222; padding: 40px 25px; border-radius: 25px; text-align: center; }
-        .package.gold { border: 2px solid var(--neon); transform: scale(1.02); }
-        .package h4 { font-family: 'Orbitron', sans-serif; margin-bottom: 20px; color: #fff; }
-        .val { font-size: 42px; font-weight: 700; color: var(--neon); margin-bottom: 20px; }
-        .val span { font-size: 14px; color: #444; }
+        /* SEO Content Block */
+        .seo-text { padding: 60px 25px; font-size: 12px; color: #333; text-align: justify; line-height: 2; border-top: 1px solid #111; }
 
-        /* Footer SEO */
-        .footer-seo { padding: 60px 25px; background: #000; font-size: 12px; color: #333; text-align: justify; line-height: 2; border-top: 1px solid #111; }
+        /* NEW: High Visibility Navigation */
+        .action-bar { position: fixed; bottom: 0; width: 100%; background: #000; display: flex; justify-content: space-around; align-items: center; padding: 12px 0; border-top: 2px solid var(--neon); z-index: 10000; box-shadow: 0 -10px 25px rgba(0,0,0,0.8); }
+        .a-item { text-decoration: none; text-align: center; color: #fff; transition: 0.3s; flex: 1; }
+        .a-item i { font-size: 24px; display: block; margin-bottom: 4px; color: var(--neon); text-shadow: 0 0 10px var(--neon); }
+        .a-item span { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #eee; }
+        .a-item:active { transform: scale(0.9); }
+        
+        /* Central Contact Button */
+        .a-center { background: var(--neon); color: #000 !important; border-radius: 50px; padding: 12px 15px; margin: 0 10px; min-width: 100px; transform: translateY(-5px); box-shadow: 0 0 20px rgba(57, 255, 20, 0.4); }
+        .a-center i { color: #000 !important; text-shadow: none !important; }
+        .a-center span { color: #000 !important; }
 
-        /* Fixed Navigation */
-        .wa-call { background: var(--neon); color: #000; padding: 20px; text-decoration: none; display: block; margin: 30px 20px; border-radius: 15px; text-align: center; font-family: 'Orbitron', sans-serif; font-weight: 900; box-shadow: 0 10px 30px rgba(57, 255, 20, 0.3); }
-        .nav { position: fixed; bottom: 0; width: 100%; background: #000; display: flex; justify-content: space-around; padding: 15px 0; border-top: 1px solid #111; z-index: 1001; }
-        .n-link { color: #555; text-decoration: none; font-size: 11px; text-align: center; }
-        .n-link i { font-size: 24px; display: block; margin-bottom: 5px; }
-        .n-link.active { color: var(--neon); }
-
-        #adm-gate { display: none; position: fixed; bottom: 90px; left: 20px; background: #000; border: 1px solid var(--neon); padding: 15px; border-radius: 10px; z-index: 1002; }
+        #admin-ops { display: none; position: fixed; bottom: 90px; left: 20px; background: #111; padding: 15px; border: 1px solid var(--neon); z-index: 10001; }
     </style>
 </head>
 <body>
-
-<div class="bg-grid"></div>
 
 <header class="header">
     <div class="logo">SİBER<span>REKLAM</span> DÜNYASI</div>
 </header>
 
 <section class="hero">
-    <div class="status-badge"><i class="fas fa-microchip"></i> System Status: Operational / Mercedes-Benz Ref. Secured</div>
-    <h1>İşletmenizi <mark>Siber Zırhla</mark><br>Dijital Otoriteye Dönüştürün</h1>
-    <p>Web tasarımından Google Ads yönetimine kadar tüm süreçleri siber güvenlik standartlarında yöneten Türkiye'nin tek teknoloji odaklı ajansı.</p>
+    <div class="ref-tag"><i class="fas fa-certificate"></i> Mercedes-Benz Bug Bounty Certified</div>
+    <h1>Kurumsal Güvenlik Odaklı<br><mark>Dijital Operasyon</mark> Merkezi</h1>
+    <p>Web mühendisliğinden global reklam yönetimine kadar tüm dijital varlıklarınızı, dünya devi Mercedes-Benz sızma testi tecrübesiyle zırhlıyoruz.</p>
 </section>
 
-<div class="authority">
-    <h3>OPERASYONEL REFERANS</h3>
-    <p style="font-size: 14px; color: #888; margin-bottom: 20px;">Dünya devi Mercedes-Benz (HackerOne) siber güvenlik bildirimleri ve global sızma testi tecrübesiyle donatılmış dijital mimari.</p>
-    <div class="ref-grid">
-        <i class="fab fa-google fa-2x"></i>
-        <i class="fas fa-shield-alt fa-2x"></i>
-        <i class="fab fa-linux fa-2x"></i>
+<section class="history">
+    <div class="h-box">
+        <h3>Sektörel Otorite & Geçmiş</h3>
+        <p>HackerOne platformu üzerinden Mercedes-Benz ve global teknoloji devlerinin sistem zafiyetlerini tespit eden siber güvenlik uzmanımız Timur liderliğinde; sıradan bir ajans değil, bir siber güvenlik üssü olarak hizmet veriyoruz.</p>
     </div>
-</div>
+</section>
 
-<h2 class="section-title">Hizmetlerimiz</h2>
+<span class="section-label">OPERASYONEL HİZMETLER</span>
 
-<div class="service-container">
-    <div class="service-panel">
-        <i class="fas fa-terminal"></i>
+<div class="matrix">
+    <div class="m-card">
+        <i class="fas fa-shield-halved"></i>
         <h2>Zırhlı Web Mühendisliği</h2>
-        <p>Sadece bir site değil, her satır kodu güvenlik testlerinden geçirilmiş bir dijital kale inşa ediyoruz. Tasarımlarımız Lighthouse performans testlerinden tam puan alacak şekilde optimize edilir.</p>
-        <ul class="features">
-            <li><i class="fas fa-code"></i> WAF (Web Application Firewall) Entegrasyonu</li>
-            <li><i class="fas fa-code"></i> SQLi, XSS ve CSRF Koruma Protokolleri</li>
-            <li><i class="fas fa-code"></i> 0.8sn Altı Ultra Hızlı Açılış Performansı</li>
-            <li><i class="fas fa-code"></i> Semantik HTML5 ve Modern UI/UX Mimarisi</li>
+        <p>Klasik tasarımların ötesinde, sızma testlerinden geçirilmiş ve siber saldırılara karşı donatılmış yüksek performanslı sistemler kuruyoruz.</p>
+        <ul class="m-feat">
+            <li><i class="fas fa-check-double"></i> WAF & Güvenlik Duvarı Konfigürasyonu</li>
+            <li><i class="fas fa-check-double"></i> Lighthouse 100/100 Hız Optimizasyonu</li>
+            <li><i class="fas fa-check-double"></i> Penetrasyon (Sızma) Testli Teslimat</li>
         </ul>
     </div>
 
-    <div class="service-panel" style="border-left-color: var(--neon);">
+    <div class="m-card">
         <i class="fab fa-google"></i>
-        <h2>Stratejik Ads Yönetimi</h2>
-        <p>Reklam bütçenizin her kuruşunu siber koruma altına alıyoruz. Rakiplerin bütçenizi bitirmesine çalışan bot saldırılarını %99 oranında engelliyoruz.</p>
-        <ul class="features">
-            <li><i class="fas fa-shield-virus"></i> Click Fraud (Sahte Tıklama) Koruması</li>
-            <li><i class="fas fa-shield-virus"></i> Rakip Anahtar Kelime İstihbaratı</li>
-            <li><i class="fas fa-shield-virus"></i> Yapay Zeka Destekli Dönüşüm Takibi</li>
-            <li><i class="fas fa-shield-virus"></i> Günlük ROI ve Performans Raporlama</li>
+        <h2>Ads Bütçe Güvenliği</h2>
+        <p>Reklam bütçenizin hırsızlığa (bot tıklamaları) kurban gitmesine izin vermiyoruz. Siber savunma metodolojimizle ROI oranınızı maksimize ediyoruz.</p>
+        <ul class="m-feat">
+            <li><i class="fas fa-check-double"></i> Bot & Geçersiz Tıklama Koruması</li>
+            <li><i class="fas fa-check-double"></i> Rakip Strateji Analizi & İstihbarat</li>
+            <li><i class="fas fa-check-double"></i> Günlük Teknik Veri Analizi</li>
         </ul>
     </div>
 
-    <div class="service-panel">
-        <i class="fas fa-search-dollar"></i>
-        <h2>Teknik SEO Otoritesi</h2>
-        <p>Google sıralamalarında tesadüfe yer yok. Teknik SEO metodolojimizle sitenizi Google botlarının en sevdiği otorite haline getiriyoruz.</p>
-        <ul class="features">
-            <li><i class="fas fa-link"></i> Schema Markup ve JSON-LD Veri Yapılandırma</li>
-            <li><i class="fas fa-link"></i> Rakip Backlink ve İçerik Analizi</li>
-            <li><i class="fas fa-link"></i> Core Web Vitals (Hız ve Deneyim) Optimizasyonu</li>
-            <li><i class="fas fa-link"></i> Otoriter İçerik Stratejisi ve İç Linkleme</li>
+    <div class="m-card">
+        <i class="fas fa-fingerprint"></i>
+        <h2>Teknik & Semantik SEO</h2>
+        <p>Google algoritmalarını "hacklemek" değil, onları en doğru teknik verilerle besleyerek kalıcı bir dijital otorite inşa ediyoruz.</p>
+        <ul class="m-feat">
+            <li><i class="fas fa-check-double"></i> Schema.org & JSON-LD Yapılandırması</li>
+            <li><i class="fas fa-check-double"></i> Core Web Vitals Mühendisliği</li>
+            <li><i class="fas fa-check-double"></i> Otorite Odaklı Backlink Stratejisi</li>
         </ul>
     </div>
 </div>
 
-<h2 class="section-title">Kurumsal Operasyon Paketleri</h2>
-<div class="price-grid">
-    <div class="package gold">
-        <h4>FULL-STACK DİJİTAL ZIRH</h4>
-        <div class="val">7.500₺ <span>/Başlangıç</span></div>
-        <ul class="features" style="text-align: left; margin-bottom: 20px;">
-            <li><i class="fas fa-check"></i> Siber Zırhlı Kurumsal Web Sitesi</li>
-            <li><i class="fas fa-check"></i> 1 Ay Ücretsiz Profesyonel Google Ads</li>
-            <li><i class="fas fa-check"></i> Teknik SEO Kurulumu & Kayıtlar</li>
-            <li><i class="fas fa-check"></i> SSL, WAF ve Veri Şifreleme</li>
-        </ul>
-        <p style="font-size: 11px; color: #555;">Tüm süreçler Timur tarafından bizzat denetlenmektedir.</p>
+<div class="packages">
+    <div class="p-box highlight">
+        <h4>STRATEJİK KURUMSAL PAKET</h4>
+        <div class="price">12.500₺ <span>/Başlangıç</span></div>
+        <p style="font-size: 13px; color: #555; margin-bottom: 20px;">Web Mühendisliği + Ads Kurulumu + 3 Ay Teknik SEO</p>
+        <p style="font-size: 11px; color: var(--neon); letter-spacing: 2px;">FULL SİBER DENETİM DAHİLDİR</p>
     </div>
 </div>
 
-<a href="https://wa.me/905414516774?text=Siber Reklam Dünyası'ndan tam kapsamlı zırhlı dijital operasyon teklifi almak istiyorum." class="wa-call">OPERASYONU BAŞLAT</a>
-
-<footer class="footer-seo">
-    Siber Reklam Dünyası, dijital reklam ajansı kavramını siber güvenlik uzmanlığıyla yeniden tanımlayan bir teknoloji merkezidir. İstanbul merkezli ajansımız, Mercedes-Benz Bug Bounty başarılarıyla kanıtlanmış bir teknik altyapıya sahiptir. Türkiye genelinde web tasarım, profesyonel Google Ads yönetimi, teknik SEO ve siber güvenlik danışmanlığı alanlarında hizmet veriyoruz. İşletmenizin Google arama sonuçlarında üst sıralara çıkması için gerekli olan Schema yapılandırması, hız optimizasyonu ve otoriter içerik üretimini siber güvenlik testleriyle (sızma testleri) birleştirerek sunuyoruz. Reklam bütçenizi bot tıklamalarına karşı koruyan özel algoritmalarımız sayesinde maksimum yatırım getirisi (ROI) sağlıyoruz. Güvenli, hızlı ve sonuç odaklı dijital çözümler için Siber Reklam Dünyası yanınızda.
-</footer>
-
-<div id="adm-gate">
-    <button style="background:#000; color:var(--neon); border:1px solid var(--neon); padding:10px;" onclick="location.reload()">SYNC_FILES</button>
+<div class="seo-text">
+    Siber Reklam Dünyası, Türkiye'nin siber güvenlik entegreli tek dijital reklam ajansıdır. Mercedes-Benz Bug Bounty programlarında gösterdiğimiz başarılar, dijital dünyadaki teknik hakimiyetimizin en büyük kanıtıdır. Esenyurt merkezli operasyon merkezimizden tüm Türkiye'ye; zırhlı web tasarımı, profesyonel Google Ads yönetimi ve üst düzey teknik SEO hizmetleri sunuyoruz. İşletmelerin dijital varlıklarını korurken aynı zamanda arama motorlarında sürdürülebilir bir büyüme sağlıyoruz. Teknik altyapımız, her projenin siber sızma testlerinden geçirilmesini ve Google botları için kusursuz bir mimariye sahip olmasını garanti eder. Dijital reklam bütçenizi botlardan koruyan özel savunma sistemlerimizle tanışın.
 </div>
 
-<div class="nav">
-    <a href="https://wa.me/905414516774" class="n-link"><i class="fab fa-whatsapp"></i>Hızlı Teklif</a>
-    <div class="n-link" onclick="op()"><i class="fas fa-user-secret"></i>Zırh Kontrol</div>
-    <a href="tel:+905414516774" class="n-item n-link"><i class="fas fa-phone"></i>Ara</a>
+<div id="admin-ops">
+    <button style="background:#222; color:var(--neon); border:1px solid var(--neon); padding:10px;" onclick="location.reload()">SYNC_FILES</button>
 </div>
+
+<nav class="action-bar">
+    <a href="tel:+905414516774" class="a-item">
+        <i class="fas fa-phone-volume"></i>
+        <span>Hemen Ara</span>
+    </a>
+    <a href="https://wa.me/905414516774?text=Zırhlı bir dijital proje başlatmak istiyorum." class="a-item a-center">
+        <i class="fab fa-whatsapp"></i>
+        <span>Hızlı Teklif</span>
+    </a>
+    <div class="a-item" onclick="adm()">
+        <i class="fas fa-shield-halved"></i>
+        <span>Zırh Paneli</span>
+    </div>
+</nav>
 
 <script>
-    let c = 0;
-    function op() {
-        c++;
-        if(c >= 3) { document.getElementById('adm-gate').style.display = 'block'; c = 0; }
+    let s = 0;
+    function adm() {
+        s++;
+        if(s >= 3) { document.getElementById('admin-ops').style.display = 'block'; s = 0; }
     }
 </script>
 
