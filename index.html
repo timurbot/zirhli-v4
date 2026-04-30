@@ -10,6 +10,29 @@
       gtag('config', 'G-8BKCKX7CWK');
     </script>
 
+    <!-- Google Ads Etiketi Entegrasyonu [AW-18116614443] -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18116614443"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18116614443');
+
+      // Dönüşüm Tetikleyici Fonksiyon
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-18116614443',
+            'event_callback': callback
+        });
+        return false;
+      }
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Siber Reklam Dünyası - Profesyonel Google Ads, SEO ve Zırhlı Web Tasarım Paketleri.">
@@ -178,7 +201,7 @@
 
 <header>
     <div class="brand">SİBER REKLAM DÜNYASI</div>
-    <div style="font-size: 10px; color: var(--neon); font-weight: bold;">v5.7 LIVE</div>
+    <div style="font-size: 10px; color: var(--neon); font-weight: bold;">v5.8 LIVE</div>
 </header>
 
 <div class="container">
@@ -237,7 +260,7 @@
     </section>
 </div>
 
-<!-- Siber Destek Chatbot [Yeni Modül] -->
+<!-- Siber Destek Chatbot -->
 <div id="z-chat-container">
     <div id="z-chat-window">
         <div style="background: var(--neon); color: #000; padding: 12px; font-weight: 800; font-size: 0.9rem; display: flex; justify-content: space-between; align-items: center;">
@@ -258,8 +281,8 @@
 </div>
 
 <div class="fixed-contact">
-    <a href="tel:+905414516774" class="c-btn btn-ph">📞 HEMEN ARA</a>
-    <a href="https://wa.me/905414516774" class="c-btn btn-wa">💬 WHATSAPP</a>
+    <a href="tel:+905414516774" onclick="return gtag_report_conversion('tel:+905414516774');" class="c-btn btn-ph">📞 HEMEN ARA</a>
+    <a href="https://wa.me/905414516774" onclick="return gtag_report_conversion('https://wa.me/905414516774');" class="c-btn btn-wa">💬 WHATSAPP</a>
 </div>
 
 <footer style="text-align: center; padding: 20px; font-size: 0.7rem; color: #444; margin-top: 20px;">
@@ -277,7 +300,7 @@
         const message = input.value.trim();
         if (message !== "") {
             const waUrl = `https://wa.me/905414516774?text=${encodeURIComponent("Siteden yeni mesaj: " + message)}`;
-            window.open(waUrl, '_blank');
+            gtag_report_conversion(waUrl); // WA üzerinden de dönüşüm sayar
             input.value = "";
         }
     }
