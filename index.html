@@ -7,89 +7,82 @@
     <title>Siber Reklam Dünyası | Zırhlı Dijital Ajans</title>
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Rajdhani:wght@500;600;700&display=swap');
+        /* Google Fontlarını Performanslı Çağır */
+        @font-face { font-family: 'Syncopate'; font-style: normal; font-weight: 700; font-display: swap; src: url(https://fonts.gstatic.com/s/syncopate/v22/pe0pMIuPIYBCpEV5eFdKvtKqBP5p.woff2) format('woff2'); }
+        @font-face { font-family: 'Rajdhani'; font-style: normal; font-weight: 500; font-display: swap; src: url(https://fonts.gstatic.com/s/rajdhani/v15/L0x9DF02iFML4hGCyOCzS_56.woff2) format('woff2'); }
+        @font-face { font-family: 'Rajdhani'; font-style: normal; font-weight: 700; font-display: swap; src: url(https://fonts.gstatic.com/s/rajdhani/v15/L0x4DF02iFML4hGCyOC7be9mYv4.woff2) format('woff2'); }
         
         :root { --neon: #39ff14; --cyber: #00d2ff; --bg: #000; --card: #0c0c0c; --text: #fff; }
         
         * { margin:0; padding:0; box-sizing:border-box; }
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; background: #000; }
         body { 
             background: var(--bg); color: var(--text); 
             font-family: 'Rajdhani', sans-serif; 
-            line-height: 1.6; padding-bottom: 110px;
+            line-height: 1.5; padding-bottom: 110px;
+            overflow-x: hidden;
         }
 
-        /* Performans İçin Optimize Arka Plan */
-        body::before {
-            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 50%, #111 0%, #000 100%);
-            z-index: -1;
-        }
+        /* Tasarımın Ruhunu Koruyan Arka Plan */
+        .bg-layer { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at 50% 50%, #111 0%, #000 100%); }
 
         header { 
-            padding: 20px; background: rgba(0,0,0,0.95); 
+            padding: 18px; background: rgba(0,0,0,0.9); 
             border-bottom: 2px solid var(--neon); 
             position: sticky; top: 0; z-index: 1000; text-align: center;
         }
-        .logo { font-family: 'Syncopate', sans-serif; font-size: 1.2rem; letter-spacing: 4px; font-weight: 700; }
-        .logo span { color: var(--neon); text-shadow: 0 0 10px var(--neon); }
+        .logo { font-family: 'Syncopate', sans-serif; font-size: 1.1rem; letter-spacing: 4px; font-weight: 700; }
+        .logo span { color: var(--neon); }
 
-        .hero { padding: 70px 20px; text-align: center; }
-        .hero h1 { font-family: 'Syncopate', sans-serif; font-size: 1.6rem; margin-bottom: 20px; line-height: 1.3; }
+        .hero { padding: 60px 20px; text-align: center; }
+        .hero h1 { font-family: 'Syncopate', sans-serif; font-size: 1.5rem; margin-bottom: 20px; line-height: 1.3; }
         .hero h1 mark { background: none; color: var(--neon); }
-        .hero p { font-size: 1.3rem; color: #bbb; max-width: 800px; margin: 0 auto; font-weight: 500; }
+        .hero p { font-size: 1.25rem; color: #ccc; max-width: 800px; margin: 0 auto; }
 
         .authority { 
-            background: var(--card); margin: 25px; padding: 35px 25px; 
+            background: var(--card); margin: 20px; padding: 30px 20px; 
             border-left: 5px solid var(--neon); border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        .authority h2 { font-family: 'Syncopate', sans-serif; font-size: 0.85rem; color: var(--neon); margin-bottom: 12px; letter-spacing: 2px; }
-        .authority p { font-size: 1.1rem; font-weight: 600; line-height: 1.6; }
+        .authority h2 { font-family: 'Syncopate', sans-serif; font-size: 0.8rem; color: var(--neon); margin-bottom: 10px; }
+        .authority p { font-size: 1.05rem; font-weight: 600; }
 
-        .grid { padding: 0 20px; display: grid; gap: 35px; }
-        .card { 
-            background: #0f0f0f; padding: 45px 30px; 
-            border-radius: 15px; border: 1px solid #1a1a1a; transition: 0.3s;
-        }
-        .card:hover { border-color: var(--neon); transform: translateY(-5px); }
-        .card h2 { font-family: 'Syncopate', sans-serif; font-size: 1.1rem; margin-bottom: 20px; color: var(--white); border-bottom: 1px solid #222; padding-bottom: 15px; }
-        .card p { font-size: 1.15rem; color: #fff; margin-bottom: 25px; font-weight: 500; }
+        .grid { padding: 0 20px; display: grid; gap: 30px; }
+        .card { background: #0d0d0d; padding: 40px 25px; border-radius: 12px; border: 1px solid #1a1a1a; }
+        .card h2 { font-family: 'Syncopate', sans-serif; font-size: 1rem; margin-bottom: 15px; color: #fff; border-bottom: 1px solid #222; padding-bottom: 10px; }
+        .card p { font-size: 1.1rem; margin-bottom: 20px; font-weight: 500; }
         
-        .list { list-style: none; margin-bottom: 30px; }
-        .list li { font-size: 1rem; margin-bottom: 12px; color: #ccc; display: flex; align-items: center; gap: 12px; }
+        .list { list-style: none; margin-bottom: 25px; }
+        .list li { font-size: 0.95rem; margin-bottom: 10px; color: #bbb; display: flex; align-items: center; gap: 10px; }
         .list li::before { content: "✓"; color: var(--neon); font-weight: bold; }
 
         .btn { 
             display: block; background: var(--neon); color: #000; 
-            padding: 16px; text-align: center; text-decoration: none; 
-            font-weight: 900; border-radius: 6px; font-family: 'Syncopate', sans-serif; font-size: 0.75rem;
-            transition: 0.3s;
+            padding: 14px; text-align: center; text-decoration: none; 
+            font-weight: 900; border-radius: 5px; font-family: 'Syncopate', sans-serif; font-size: 0.7rem;
         }
-        .btn:hover { background: #fff; box-shadow: 0 0 20px var(--neon); }
 
-        .seo-footer { padding: 80px 25px; font-size: 0.9rem; color: #333; text-align: justify; line-height: 2; border-top: 1px solid #111; }
+        .seo-footer { padding: 70px 20px; font-size: 0.85rem; color: #333; text-align: justify; }
 
-        /* Sabit Alt Navigasyon */
+        /* Sabit Navigasyon */
         nav { 
             position: fixed; bottom: 0; width: 100%; background: #000; 
             display: flex; justify-content: space-around; align-items: center; 
-            padding: 15px 0; border-top: 3px solid var(--neon); z-index: 10001;
+            padding: 12px 0; border-top: 3px solid var(--neon); z-index: 10001;
         }
-        .nav-item { text-decoration: none; text-align: center; flex: 1; }
-        .nav-item i { font-size: 24px; display: block; margin-bottom: 5px; color: var(--neon); }
-        .nav-item span { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; color: #fff; }
+        .nav-item { text-decoration: none; text-align: center; flex: 1; color: #fff; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; }
+        .nav-item i { font-size: 20px; display: block; margin-bottom: 4px; color: var(--neon); }
         
         .nav-cta { 
-            background: var(--neon); border-radius: 10px; margin: 0 15px; 
-            padding: 12px 5px; transform: translateY(-12px); 
-            box-shadow: 0 5px 25px rgba(57, 255, 20, 0.4);
+            background: var(--neon); color: #000 !important; border-radius: 8px; 
+            margin: 0 10px; padding: 8px 0; transform: translateY(-10px); 
+            box-shadow: 0 5px 20px rgba(57, 255, 20, 0.4);
         }
-        .nav-cta i, .nav-cta span { color: #000 !important; }
+        .nav-cta i { color: #000 !important; }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
 </head>
 <body>
+
+<div class="bg-layer"></div>
 
 <header>
     <div class="logo">SİBER<span>REKLAM</span> DÜNYASI</div>
@@ -97,34 +90,34 @@
 
 <main>
     <section class="hero">
-        <h1>Türkiye Geneli <mark>Zırhlı Dijital</mark><br>Strateji Merkezi</h1>
-        <p>Mercedes-Benz referanslı siber güvenlik uzmanlığıyla web projelerinizi zırhlıyor, Google Ads ve SEO ile markanızı Türkiye çapında zirveye taşıyoruz.</p>
+        <h1>Türkiye Geneli <mark>Zırhlı Dijital</mark><br>Teknoloji Operasyonu</h1>
+        <p>Mercedes-Benz referanslı siber güvenlik tecrübesiyle sisteminizi zırhlıyor, teknik SEO ve Ads yönetimiyle Türkiye genelinde otorite kuruyoruz.</p>
     </section>
 
     <section class="authority">
-        <h2>TEKNİK OTORİTE</h2>
-        <p>Global siber güvenlik platformlarında (Mercedes-Benz) tescillenmiş teknik yetkinliğimizle, dijital varlığınızı en üst siber standartlarda inşa ediyoruz.</p>
+        <h2>GLOBAL TEKNİK GÜÇ</h2>
+        <p>Siber güvenlikte Mercedes-Benz (HackerOne) onaylı uzmanlığımızla, markanızı dijital dünyada sarsılmaz bir kale haline getiriyoruz.</p>
     </section>
 
     <div class="grid">
         <article class="card">
             <h2>Web Mühendisliği</h2>
-            <p>Sızma testlerinden geçmiş, ultra hızlı ve her türlü saldırıya karşı zırhlanmış kurumsal web mimarileri.</p>
+            <p>Sızma testlerinden geçmiş, ultra hızlı ve saldırılara karşı zırhlanmış kurumsal web sistemleri.</p>
             <ul class="list">
                 <li>Siber Güvenlikli Altyapı</li>
-                <li>Yüksek Performans & SEO Odaklılık</li>
+                <li>Hız ve SEO Odaklı Mimari</li>
             </ul>
-            <a href="https://wa.me/905414516774?text=Zırhlı web projesi hakkında bilgi almak istiyorum." class="btn">PROJEYİ BAŞLAT</a>
+            <a href="https://wa.me/905414516774" class="btn">PROJEYİ BAŞLAT</a>
         </article>
 
         <article class="card">
-            <h2>Ads & SEO Yönetimi</h2>
-            <p>Reklam bütçenizi botlardan koruyan siber savunma kalkanı ve Google'da kalıcı otorite sağlayan teknik SEO.</p>
+            <h2>Ads & SEO Otoritesi</h2>
+            <p>Reklam bütçenizi botlardan koruyan siber savunma kalkanı ve Google'da zirve sağlayan teknik SEO.</p>
             <ul class="list">
-                <li>Anti-Bot Ads Güvenliği</li>
-                <li>Teknik SEO Otorite Kaydı</li>
+                <li>Anti-Bot Reklam Koruması</li>
+                <li>Teknik SEO Yapılandırması</li>
             </ul>
-            <a href="https://wa.me/905414516774?text=SEO ve Ads otoritesi hakkında bilgi almak istiyorum." class="btn">OTORİTEYİ KUR</a>
+            <a href="https://wa.me/905414516774" class="btn">OTORİTEYİ KUR</a>
         </article>
     </div>
 </main>
@@ -136,17 +129,19 @@
 <nav>
     <a href="tel:+905414516774" class="nav-item">
         <i class="fas fa-phone-alt"></i>
-        <span>Hemen Ara</span>
+        <span>Ara</span>
     </a>
     <a href="https://wa.me/905414516774" class="nav-item nav-cta">
         <i class="fab fa-whatsapp"></i>
-        <span>Hızlı Teklif</span>
+        <span>Teklif</span>
     </a>
-    <a href="javascript:void(0)" class="nav-item">
-        <i class="fas fa-shield-virus"></i>
-        <span>Zırh</span>
+    <a href="#" class="nav-item">
+        <i class="fas fa-shield-halved"></i>
+        <span>Güvenlik</span>
     </a>
 </nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" async></script>
 
 </body>
 </html>
