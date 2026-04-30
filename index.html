@@ -3,135 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SİBER REKLAM DÜNYASI | Dijital Zırh ve Büyüme Ajansı</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Siber Reklam Dünyası - Google Reklamları, SEO ve Siber Güvenlik Uzmanlığı.">
+    <title>SİBER REKLAM DÜNYASI | Dijital Zırh ve Büyüme</title>
+    
     <style>
+        /* Kritik Performans Ayarları */
         :root {
             --bg: #05060a;
             --accent: #00f2ff;
-            --accent-dim: rgba(0, 242, 255, 0.15);
-            --danger: #ff3e3e;
-            --glass: rgba(255, 255, 255, 0.02);
             --border: rgba(255, 255, 255, 0.08);
         }
 
-        * { box-sizing: border-box; transition: all 0.3s ease; }
+        /* Sayfa açılış hızını (LCP) artırmak için resim yerine CSS gradyan kullanıldı */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
             background-color: var(--bg);
             color: #ffffff;
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
             overflow-x: hidden;
-        }
-
-        /* Siber Arka Plan */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 20% 30%, #101420 0%, #05060a 100%);
-            z-index: -2;
+            /* Donanım ivmelenmesini zorla */
+            transform: translateZ(0);
         }
 
         header {
-            padding: 20px 5%;
-            background: rgba(5, 6, 10, 0.8);
-            backdrop-filter: blur(15px);
+            padding: 15px 5%;
+            background: rgba(5, 6, 10, 0.95);
             border-bottom: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 100;
         }
 
         .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 20px;
-            letter-spacing: 2px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
             color: var(--accent);
-            text-shadow: 0 0 10px var(--accent-dim);
+            text-transform: uppercase;
         }
 
-        .container { width: 90%; max-width: 1200px; margin: 40px auto; }
+        .container { width: 92%; max-width: 1100px; margin: 30px auto; }
 
-        /* Neden Biz? - Hero Bölümü */
-        .hero {
-            text-align: center;
-            padding: 60px 0;
-            border-bottom: 1px solid var(--border);
-        }
+        .hero { text-align: center; padding: 40px 0; }
+        .hero h1 { font-size: clamp(1.5rem, 5vw, 2.5rem); margin-bottom: 15px; }
 
-        .hero h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: clamp(24px, 5vw, 42px);
-            margin-bottom: 20px;
-            background: linear-gradient(to right, #fff, var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* 4 Ana Hizmet Kartları */
-        .grid-4 {
+        /* Grid Sistemi - Performans için Flexbox/Grid karması */
+        .grid-services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
         }
 
         .card {
-            background: var(--glass);
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--border);
+            padding: 25px;
+            border-radius: 8px;
+            /* Hover efektini basitleştirdik, performansı koruduk */
+            transition: border-color 0.2s ease;
+        }
+
+        .card:hover { border-color: var(--accent); }
+        .card h3 { color: var(--accent); font-size: 1.1rem; margin-bottom: 10px; }
+        .card p { font-size: 0.9rem; color: #ccc; }
+
+        /* Neden Biz Bölümü */
+        .trust-section {
+            margin-top: 50px;
             padding: 30px;
+            background: rgba(0, 242, 255, 0.02);
             border-radius: 12px;
-            position: relative;
-        }
-
-        .card:hover {
-            border-color: var(--accent);
-            background: rgba(0, 242, 255, 0.03);
-            transform: translateY(-10px);
-        }
-
-        .card i { font-size: 40px; color: var(--accent); margin-bottom: 20px; display: block; }
-        .card h3 { font-family: 'Orbitron', sans-serif; font-size: 16px; margin-bottom: 15px; color: var(--accent); }
-        .card p { font-size: 14px; color: #aaa; }
-
-        /* Referans/Nitelik Bölümü */
-        .trust-box {
-            margin-top: 80px;
-            background: linear-gradient(135deg, rgba(0, 242, 255, 0.05) 0%, transparent 100%);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid var(--border);
             text-align: center;
+            border: 1px solid var(--border);
         }
 
-        /* Harekete Geçirici Buton */
-        .btn-main {
+        .btn-cta {
             display: inline-block;
-            margin-top: 30px;
-            padding: 18px 40px;
+            margin-top: 25px;
+            padding: 15px 35px;
             background: var(--accent);
             color: #000;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: bold;
+            font-weight: 700;
             text-decoration: none;
-            border-radius: 5px;
-            box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
-        }
-
-        .btn-main:hover {
-            box-shadow: 0 0 40px var(--accent);
-            transform: scale(1.05);
+            border-radius: 4px;
+            font-size: 0.95rem;
         }
 
         /* Mobil Optimizasyon */
         @media (max-width: 768px) {
-            .hero { padding: 40px 0; }
-            .grid-4 { grid-template-columns: 1fr; }
+            .hero { padding: 20px 0; }
+            .container { width: 95%; }
         }
     </style>
 </head>
@@ -139,45 +106,43 @@
 
 <header>
     <div class="logo">SİBER REKLAM DÜNYASI</div>
-    <div style="font-size: 12px; color: var(--accent);">GÜVENLİ BÜYÜME MERKEZİ</div>
+    <div style="font-size: 0.7rem; color: var(--accent);">ZIRHLI SİSTEM AKTİF</div>
 </header>
 
 <div class="container">
     <section class="hero">
-        <h1>DİJİTAL DÜNYADA HİÇBİR ŞEYİ ŞANSA BIRAKMAYIN</h1>
-        <p style="max-width: 700px; margin: 0 auto; color: #888;">Mercedes-Benz gibi dünya devlerinden onaylı bug bounty tecrübemiz ve siber güvenlik odaklı pazarlama stratejilerimizle işletmenizi hem koruyor hem de zirveye taşıyoruz.</p>
+        <h1>DİJİTAL KALENİZİ BİRLİKTE KURALIM</h1>
+        <p style="color: #888; font-size: 0.95rem;">Google Reklamları, SEO ve Siber Güvenlikte 2026 model çözümler.</p>
     </section>
 
-    <div class="grid-4">
+    <div class="grid-services">
         <div class="card">
-            <h3>📈 GOOGLE REKLAMLARI</h3>
-            <p>Bütçenizi yakmıyoruz! Veri odaklı analizlerle doğrudan satın alma eğilimindeki müşteriye ulaşıyoruz. Maksimum ROAS, minimum maliyet.</p>
+            <h3>📈 GOOGLE REKLAM</h3>
+            <p>Düşük maliyet, yüksek dönüşüm. Reklam bütçenizi zırh altına alıyoruz.</p>
         </div>
         <div class="card">
             <h3>🔍 SEO UZMANLIĞI</h3>
-            <p>Google algoritmalarını biz yazmadık ama nasıl çalıştığını çok iyi biliyoruz. Kalıcı sıralama ve organik otorite ile rakiplerinizi geride bırakın.</p>
+            <p>Organik büyüme ile Google'ın zirvesinde kalıcı yerinizi alın.</p>
         </div>
         <div class="card">
             <h3>🎨 WEB TASARIM</h3>
-            <p>Hız canavarı, mobil öncelikli ve yüksek dönüşüm odaklı "Zırhlı" arayüzler. Müşterileriniz sitenize girdiği an profesyonelliği hissedecek.</p>
+            <p>Hız testlerinden 100 tam puan alan, satış odaklı profesyonel arayüzler.</p>
         </div>
         <div class="card">
             <h3>🛡️ SİBER GÜVENLİK</h3>
-            <p>İşletmenizin en değerli varlığı verileridir. Zafiyet taramaları ve 7/24 izleme ile dijital kalenizi sarsılmaz hale getiriyoruz.</p>
+            <p>Zafiyet taraması ve kurumsal koruma ile verileriniz sarsılmaz.</p>
         </div>
     </div>
 
-    <section class="trust-box">
-        <h2 style="font-family: 'Orbitron', sans-serif;">NEDEN BİZİ TERCİH ETMELİSİNİZ?</h2>
-        <p>Sıradan bir reklam ajansı sadece "tıklama" getirir. Biz ise önce sisteminizi **Siber Güvenlik** süzgecinden geçirir, sonra **SEO ve Web Tasarım** ile optimize eder, en sonunda **Google Reklamları** ile satışa dönüştürürüz.</p>
-        <p style="font-style: italic; color: var(--accent);">"Zırhlı bir altyapı, en iyi pazarlama stratejisidir."</p>
-        
-        <a href="https://wa.me/905414516774" class="btn-main">OPERASYONU BAŞLATALIM</a>
+    <section class="trust-section">
+        <h2 style="font-size: 1.3rem; margin-bottom: 15px;">NEDEN TERCİH EDİLİYORUZ?</h2>
+        <p style="font-size: 0.9rem; color: #bbb;">Mercedes-Benz gibi devlerden onaylı tecrübemizle, önce sisteminizi koruyor, sonra Google'da büyütüyoruz. Bizim için her proje bir operasyondur.</p>
+        <a href="https://wa.me/905414516774" class="btn-cta">ÜCRETSİZ ANALİZ ALIN</a>
     </section>
 </div>
 
-<footer style="text-align: center; padding: 40px; font-size: 12px; color: #444;">
-    © 2026 Siber Reklam Dünyası | Tüm Hakları Saklıdır. | İletişim: +90 541 451 67 74
+<footer style="text-align: center; padding: 30px; font-size: 0.8rem; color: #444; border-top: 1px solid var(--border); margin-top: 50px;">
+    © 2026 Siber Reklam Dünyası | Operasyon Kodu: SPEED-MAX-v4.5
 </footer>
 
 </body>
