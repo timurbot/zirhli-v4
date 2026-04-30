@@ -6,158 +6,78 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-EZT6VH2Y2H');
+      gtag('config', 'G-EZT6VH2Y2H', { 'page_speed_insights': true });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="TsjAUXa0RtDNcXynlfm1XaNXgOR88huyPc1KJpRxyOM">
-    <meta name="description" content="Siber Reklam Dünyası: Google Ads bütçe koruması, zırhlı SEO ve siber güvenlik denetimli web tasarım çözümleri. Türkiye'nin en güvenli dijital ajansı.">
-    <title>Siber Reklam Dünyası | Zırhlı Dijital Pazarlama ve SEO Ajansı</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta name="description" content="Siber Reklam Dünyası: Google Ads bütçe koruması, zırhlı SEO ve siber güvenlik denetimli web tasarım çözümleri.">
+    <title>Siber Reklam Dünyası | Profesyonel Siber Ajans</title>
+    
     <style>
-        :root { --neon: #39ff14; --cyber: #00d2ff; --bg: #030303; --surface: #0a0a0a; --gray: #1a1a1a; }
-        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', -apple-system, sans-serif; }
-        body { background: var(--bg); color: #fff; line-height: 1.6; overflow-x: hidden; padding-bottom: 90px; }
-        
-        /* Header & Nav */
-        .header { height: 80px; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.95); border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(15px); }
-        .logo { font-size: 24px; font-weight: 900; color: var(--cyber); letter-spacing: 3px; text-transform: uppercase; }
-        .logo span { color: var(--neon); }
-
-        /* Hero: Kayan Hacker Teması */
-        .hero { padding: 120px 20px 60px; text-align: center; background: radial-gradient(circle at 50% 50%, #111 0%, #030303 100%); position: relative; }
-        .hero::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'); opacity: 0.1; pointer-events: none; }
-        
-        .badge { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; color: var(--neon); border: 1px solid var(--neon); padding: 8px 20px; border-radius: 50px; background: rgba(57,255,20,0.05); margin-bottom: 30px; letter-spacing: 1px; font-weight: 700; }
-        
-        .hero h1 { font-size: 42px; font-weight: 900; margin-bottom: 25px; line-height: 1.1; letter-spacing: -1.5px; }
-        .hero h1 span { color: var(--neon); text-shadow: 0 0 20px rgba(57,255,20,0.4); }
-        .hero p { font-size: 18px; color: #888; max-width: 750px; margin: 0 auto 40px; font-weight: 300; }
-
-        /* Terminal - Otomatik Kayan Profesyonel Metin */
-        .terminal { margin: 20px auto; max-width: 600px; background: #000; border: 1px solid var(--gray); border-radius: 15px; padding: 25px; text-align: left; box-shadow: 0 30px 60px rgba(0,0,0,0.8); position: relative; }
-        .terminal::after { content: "SECURE_SERVER_v2.2"; position: absolute; top: 5px; right: 15px; font-size: 9px; color: #333; }
-        .t-line { font-family: 'Courier New', monospace; font-size: 14px; color: var(--neon); margin-bottom: 8px; white-space: nowrap; overflow: hidden; border-right: 3px solid var(--neon); width: 0; }
-        .l1 { animation: type 2s steps(40) forwards; }
-        .l2 { animation: type 2s steps(40) 2s forwards; }
-        .l3 { animation: type 2s steps(40) 4s forwards; border-right: none; }
-        @keyframes type { from { width: 0; } to { width: 100%; } }
-
-        /* Hizmetler - Detaylı & Profesyonel */
-        .section-label { text-align: center; font-size: 14px; color: var(--neon); text-transform: uppercase; letter-spacing: 5px; margin-bottom: 15px; display: block; font-weight: 900; }
-        .services { padding: 80px 20px; }
-        .grid { display: grid; gap: 30px; }
-        .card { background: var(--surface); border: 1px solid #1a1a1a; padding: 45px 35px; border-radius: 30px; transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .card:hover { border-color: var(--neon); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(57,255,20,0.05); }
-        .card i { font-size: 50px; color: var(--neon); margin-bottom: 30px; display: block; }
-        .card h3 { font-size: 26px; margin-bottom: 18px; color: var(--cyber); font-weight: 800; }
-        .card p { font-size: 15px; color: #999; margin-bottom: 25px; line-height: 1.7; }
-        .card ul { list-style: none; }
-        .card ul li { font-size: 14px; color: #666; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
-        .card ul li i { font-size: 12px; color: var(--neon); margin-bottom: 0; }
-
-        /* Neden Biz? - İkna Noktası */
-        .advantage { background: #050505; padding: 80px 25px; margin: 40px 20px; border-radius: 40px; border: 1px solid #111; text-align: center; }
-        .advantage h2 { font-size: 32px; margin-bottom: 40px; }
-        .adv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .adv-item { background: #000; padding: 25px; border-radius: 20px; border: 1px solid #1a1a1a; }
-        .adv-item h4 { font-size: 24px; color: var(--neon); margin-bottom: 5px; }
-        .adv-item span { font-size: 11px; color: #555; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* CTA */
-        .cta-btn { background: var(--neon); color: #000; padding: 25px; border-radius: 25px; text-decoration: none; display: block; margin: 40px 20px; font-weight: 900; text-align: center; font-size: 20px; transition: 0.3s; box-shadow: 0 15px 35px rgba(57,255,20,0.3); text-transform: uppercase; letter-spacing: 1px; }
-        .cta-btn:hover { transform: scale(1.02); filter: brightness(1.1); }
-
-        /* Footer */
-        .footer { padding: 60px 20px 140px; background: #000; text-align: center; border-top: 1px solid #111; }
-        .seo-box { font-size: 13px; color: #333; max-width: 1000px; margin: 0 auto; text-align: justify; line-height: 1.8; border-left: 2px solid #111; padding-left: 20px; }
-
-        /* Mobile Nav */
-        .nav-bottom { position: fixed; bottom: 0; width: 100%; background: rgba(0,0,0,0.98); display: flex; justify-content: space-around; padding: 20px 0; border-top: 1px solid #222; z-index: 1001; backdrop-filter: blur(10px); }
-        .n-item { color: #fff; text-decoration: none; font-size: 12px; text-align: center; font-weight: 700; }
-        .n-item i { font-size: 28px; margin-bottom: 8px; display: block; color: var(--neon); }
+        :root { --n: #39ff14; --c: #00d2ff; --b: #030303; --s: #0a0a0a; }
+        * { margin:0; padding:0; box-sizing:border-box; font-family: system-ui, -apple-system, sans-serif; }
+        body { background: var(--b); color: #fff; line-height: 1.5; overflow-x: hidden; padding-bottom: 90px; }
+        .header { height: 70px; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.9); border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
+        .logo { font-size: 22px; font-weight: 900; color: var(--c); letter-spacing: 2px; }
+        .logo span { color: var(--n); }
+        .hero { padding: 80px 20px; text-align: center; background: radial-gradient(circle, #111 0%, #030303 100%); }
+        .badge { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; color: var(--n); border: 1px solid var(--n); padding: 6px 15px; border-radius: 50px; margin-bottom: 20px; }
+        h1 { font-size: 32px; font-weight: 900; margin-bottom: 15px; }
+        h1 span { color: var(--n); }
+        .terminal { margin: 20px auto; max-width: 500px; background: #000; border: 1px solid #1a1a1a; border-radius: 12px; padding: 20px; text-align: left; }
+        .t-line { font-family: monospace; font-size: 13px; color: var(--n); overflow: hidden; white-space: nowrap; border-right: 2px solid var(--n); width: 0; margin-bottom: 5px; }
+        .l1 { animation: t 1.5s steps(30) forwards; }
+        .l2 { animation: t 1.5s steps(30) 1.5s forwards; }
+        @keyframes t { from { width: 0 } to { width: 100% } }
+        .grid { display: grid; gap: 20px; padding: 20px; }
+        .card { background: var(--s); border: 1px solid #151515; padding: 30px; border-radius: 20px; }
+        .card h3 { color: var(--c); font-size: 22px; margin-bottom: 10px; }
+        .card p { font-size: 14px; color: #888; }
+        .cta { background: var(--n); color: #000; padding: 20px; border-radius: 15px; text-decoration: none; display: block; margin: 30px 20px; font-weight: 900; text-align: center; }
+        .nav { position: fixed; bottom: 0; width: 100%; background: #000; display: flex; justify-content: space-around; padding: 15px 0; border-top: 1px solid #222; z-index: 1001; }
+        .n-i { color: #fff; text-decoration: none; font-size: 11px; text-align: center; }
+        .n-i span { display: block; color: var(--n); font-size: 20px; margin-bottom: 4px; font-weight: bold; }
     </style>
+
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 </head>
 <body>
 
-<header class="header">
-    <div class="logo">SİBER<span>REKLAM</span> DÜNYASI</div>
-</header>
+<header class="header"><div class="logo">SİBER<span>REKLAM</span> DÜNYASI</div></header>
 
 <main>
     <section class="hero">
-        <div class="badge"><i class="fas fa-user-shield"></i> SİBER GÜVENLİK DENETİMLİ STRATEJİK AJANS</div>
-        <h1>Reklam Bütçenizi <span>Siber Zırhla</span> Koruyoruz</h1>
-        <p>Sıradan ajansların aksine, dijital yatırımlarınızı bot trafiklerinden, geçersiz tıklamalardan ve rakip saldırılarından koruyarak yönetiyoruz.</p>
-        
+        <div class="badge">SİBER GÜVENLİK DENETİMLİ AJANS</div>
+        <h1>Reklam Bütçenizi <span>Zırhlıyoruz</span></h1>
+        <p style="color:#777; margin-bottom:20px;">Bot trafiğinden temizlenmiş, %100 verimli Google Ads ve SEO yönetimi.</p>
         <div class="terminal">
-            <div class="t-line l1">> SCANNING_MARKET_COMPETITION... [SUCCESS]</div>
-            <div class="t-line l2">> OPTIMIZING_SEO_ALGORITHM... [100%]</div>
-            <div class="t-line l3">> SECURING_ADS_BUDGET... [ACTIVE]</div>
+            <div class="t-line l1">> INITIALIZING_SECURE_ADS... [OK]</div>
+            <div class="t-line l2">> OPTIMIZING_PERFORMANCE... [100%]</div>
         </div>
     </section>
 
-    <section class="services">
-        <span class="section-label">Hizmetlerimiz</span>
-        <div class="grid">
-            <div class="card">
-                <i class="fas fa-rocket"></i>
-                <h3>Stratejik SEO Yönetimi</h3>
-                <p>Google sıralamasında sadece "çıkmak" değil, "dominasyon" kurmak için buradayız. Teknik, semantik ve siber güvenlik odaklı SEO ile rakiplerinizi geride bırakın.</p>
-                <ul>
-                    <li><i class="fas fa-check-circle"></i> Google %100 Performans Garantili Kod</li>
-                    <li><i class="fas fa-check-circle"></i> AI Destekli Kelime Analizi</li>
-                    <li><i class="fas fa-check-circle"></i> Otorite Odaklı Backlink Savunması</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <i class="fas fa-shield-virus"></i>
-                <h3>Zırhlı Google Ads</h3>
-                <p>Reklam bütçenizin %30'u botlar tarafından tüketilmesin. Özel siber filtrelerimizle her tıklamayı denetliyor, sadece gerçek müşterilere ödeme yapmanızı sağlıyoruz.</p>
-                <ul>
-                    <li><i class="fas fa-check-circle"></i> Bot ve Geçersiz Tıklama Koruması</li>
-                    <li><i class="fas fa-check-circle"></i> ROI Odaklı Kampanya Mimarisi</li>
-                    <li><i class="fas fa-check-circle"></i> 7/24 Aktif Rakip Takibi</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <i class="fas fa-code-merge"></i>
-                <h3>Yüksek Teknoloji Web Tasarım</h3>
-                <p>Hızın siber güvenlikle buluştuğu noktadayız. SSL ötesinde, sızma testlerinden geçirilmiş ve dönüşüm oranı maksimize edilmiş dijital kaleler inşa ediyoruz.</p>
-                <ul>
-                    <li><i class="fas fa-check-circle"></i> LCP %100 Hız Optimizasyonu</li>
-                    <li><i class="fas fa-check-circle"></i> WAF ve Brute-Force Korumalı Panel</li>
-                    <li><i class="fas fa-check-circle"></i> UX/UI Dönüşüm Odaklı Mimari</li>
-                </ul>
-            </div>
+    <div class="grid">
+        <div class="card">
+            <h3>Stratejik SEO</h3>
+            <p>Google'da üst sıralara çıkmanız için siber güvenlik standartlarında teknik altyapı ve içerik stratejisi sunuyoruz.</p>
         </div>
-    </section>
-
-    <section class="advantage">
-        <span class="section-label">Neden Biz?</span>
-        <h2>Dijitalde Zafere Giden Siber Yol</h2>
-        <div class="adv-grid">
-            <div class="adv-item"><h4>%100</h4><span>SEO UYUMLULUĞU</span></div>
-            <div class="adv-item"><h4><i class="fas fa-infinity"></i></h4><span>SİBER GÜVENLİK</span></div>
-            <div class="adv-item"><h4>%40</h4><span>DAHA AZ MALİYET</span></div>
-            <div class="adv-item"><h4>7/24</h4><span>TEKNİK DESTEK</span></div>
+        <div class="card">
+            <h3>Zırhlı Ads</h3>
+            <p>Reklam bütçenizi rakiplerin ve botların saldırılarından koruyan özel filtreleme sistemleri kullanıyoruz.</p>
         </div>
-    </section>
+        <div class="card">
+            <h3>Güvenli Web</h3>
+            <p>Hız şampiyonu, mobil uyumlu ve sızma testlerinden geçirilmiş kurumsal web çözümleri.</p>
+        </div>
+    </div>
 
-    <a href="https://wa.me/905414516774" class="cta-btn">Zırhlı Analizi ŞİMDİ Başlat</a>
+    <a href="https://wa.me/905414516774" class="cta">ÜCRETSİZ ANALİZİ BAŞLAT</a>
 </main>
 
-<footer class="footer">
-    <div class="seo-box">
-        Siber Reklam Dünyası; İstanbul Esenyurt merkezli, Türkiye genelinde kurumsal markalara siber güvenlik denetimli dijital pazarlama çözümleri sunar. Google Ads bütçe yönetimi, teknik SEO optimizasyonu ve profesyonel web tasarım süreçlerimizde hız ve güvenlik önceliğimizdir. Google arama sonuçlarında kusursuz bir sıralama için optimize edilmiş altyapımızla tanışın.
-    </div>
-</footer>
-
-<nav class="nav-bottom">
-    <a href="https://wa.me/905414516774" class="n-item"><i class="fab fa-whatsapp"></i>Hızlı Teklif</a>
-    <a href="tel:+905414516774" class="n-item"><i class="fas fa-bolt"></i>Hemen Ara</a>
+<nav class="nav">
+    <a href="https://wa.me/905414516774" class="n-i"><span><i class="fab fa-whatsapp"></i></span>WhatsApp</a>
+    <a href="tel:+905414516774" class="n-i"><span><i class="fas fa-phone"></i></span>Hemen Ara</a>
 </nav>
 
 </body>
