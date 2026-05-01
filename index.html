@@ -249,8 +249,8 @@
             <span>SİBER DESTEK BİRİMİ</span>
             <button onclick="toggleZChat()" style="background:none; border:none; cursor:pointer; font-weight:bold; font-size:1.2rem;">×</button>
         </div>
-        <div style="padding: 15px; max-height: 200px; color: var(--dim); font-size: 0.85rem; background: #111420;">
-            Merhaba! Ben Zırhlı Dijital Asistanı. Size nasıl yardımcı olabilirim?
+        <div id="z-chat-body" style="padding: 15px; max-height: 200px; color: var(--dim); font-size: 0.85rem; background: #111420;">
+            Merhaba! Ben Zırhlı Dijital Asistanı. Şu an size özel indirimli paketlerimiz için kısa süreli bir kampanya başlattık. Bilgi almak ister misiniz?
         </div>
         <div style="padding: 10px; border-top: 1px solid rgba(0,242,255,0.1); display: flex; gap: 5px; background: #111420;">
             <input type="text" id="z-user-input" placeholder="Mesajınızı yazın..." style="flex: 1; background: #05060a; border: 1px solid #333; color: #fff; padding: 8px; border-radius: 8px; outline: none; font-size: 0.8rem;">
@@ -287,8 +287,18 @@
 
     function toggleZChat() {
         const win = document.getElementById('z-chat-window');
-        win.style.display = win.style.display === 'none' ? 'block' : 'none';
+        win.style.display = win.style.display === 'block' ? 'none' : 'block';
     }
+
+    // OTONOM AKTİVASYON: Kullanıcı siteye girdikten 4 saniye sonra botu otomatik aç
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            const win = document.getElementById('z-chat-window');
+            if(win.style.display !== 'block') {
+                toggleZChat();
+            }
+        }, 4000); // 4000ms = 4 Saniye
+    });
 
     function sendToWA() {
         const input = document.getElementById('z-user-input');
