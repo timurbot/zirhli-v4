@@ -28,8 +28,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Siber Reklam Dünyası - Profesyonel Google Ads, SEO ve Zırhlı Web Tasarım Paketleri.">
-    <title>SİBER REKLAM DÜNYASI | Dijital Zırh ve Büyüme</title>
+    <!-- SEO OPTİMİZASYONU: Rakipsiz kelime hedefleme -->
+    <meta name="description" content="5.500 TL'den başlayan ucuz web sitesi paketleri. Siber güvenlik altyapılı, profesyonel web tasarım ve Google Ads yönetimi ile işletmenizi büyütün.">
+    <meta name="keywords" content="ucuz web sitesi, web tasarım fiyatları, profesyonel web tasarım, google ads yönetimi, siber güvenlikli site">
+    <title>SİBER REKLAM DÜNYASI | Ucuz Web Sitesi & Siber Güvenlik</title>
     <style>
         :root {
             --neon: #00f2ff;
@@ -122,6 +124,18 @@
         .price-features li { font-size: 0.9rem; color: var(--dim); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
         .price-features li::before { content: "✔"; color: var(--neon); font-size: 0.8rem; }
 
+        /* SEO STRATEJİK ALAN TASARIMI */
+        .seo-box {
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(17, 20, 32, 0.5);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 242, 255, 0.05);
+            text-align: left;
+        }
+        .seo-box h2 { color: var(--neon); margin-bottom: 20px; font-size: 1.5rem; }
+        .seo-box p { color: var(--dim); font-size: 0.95rem; margin-bottom: 15px; }
+
         .kanit {
             margin-top: 60px;
             padding: 40px;
@@ -185,7 +199,7 @@
 
 <header>
     <div class="brand">SİBER REKLAM DÜNYASI</div>
-    <div style="font-size: 10px; color: var(--neon); font-weight: bold;">v11.5 AUTO-SYNC</div>
+    <div style="font-size: 10px; color: var(--neon); font-weight: bold;">v24.0 PRO-SEO</div>
 </header>
 
 <div class="container">
@@ -198,7 +212,7 @@
     <div class="pricing-grid">
         <div class="price-card">
             <div class="badge" style="background: var(--danger); color: #fff;">SINIRLI FIRSAT</div>
-            <h3>Giriş / Kurumsal</h3>
+            <h3>Ucuz Web Sitesi / Kurumsal</h3>
             <div class="price-amount">₺5.500</div>
             <ul class="price-features">
                 <li>Modern & Mobil Uyumlu Tasarım</li>
@@ -235,6 +249,13 @@
             </ul>
         </div>
     </div>
+
+    <!-- RAKİPSİZ SEO İÇERİK BLOĞU -->
+    <section class="seo-box">
+        <h2>Neden Profesyonel ve Uygun Fiyatlı Web Tasarım?</h2>
+        <p>İşletmenizi büyütmek için sadece bir siteye değil, Google aramalarında "ucuz web sitesi" diye arayan müşterilerinizin karşısına çıkan bir sisteme ihtiyacınız var. Siber Reklam Dünyası, ekonomik fiyatlarla siber güvenlik zırhını birleştirerek sizi rakiplerinizden ayırır.</p>
+        <p>Google Ads uyumlu altyapımız sayesinde reklam maliyetleriniz düşerken, SEO odaklı yazılımımızla organik aramalarda stabil bir yükseliş elde edersiniz. Profesyonellik, hızlı ve güvenli bir dijital varlıkla başlar.</p>
+    </section>
 
     <section class="kanit">
         <h2>STRATEJİK OPERASYON MERKEZİ</h2>
@@ -290,14 +311,13 @@
         win.style.display = win.style.display === 'block' ? 'none' : 'block';
     }
 
-    // OTONOM AKTİVASYON: Kullanıcı siteye girdikten 4 saniye sonra botu otomatik aç
     window.addEventListener('load', function() {
         setTimeout(function() {
             const win = document.getElementById('z-chat-window');
             if(win.style.display !== 'block') {
                 toggleZChat();
             }
-        }, 4000); // 4000ms = 4 Saniye
+        }, 4000);
     });
 
     function sendToWA() {
