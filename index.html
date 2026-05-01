@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <!-- Google Analytics & Ads Global Operasyonu [v7.5] -->
+    <!-- Google Analytics & Ads Global Operasyonu [v11.0 - Otomatik Sistem] -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BKCKX7CWK"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      // Tek bir akış üzerinden her iki mülke de veri gönderimi
       gtag('config', 'G-8BKCKX7CWK');
-      gtag('config', 'AW-18116614443'); // Google Ads Kimliği [Screenshot_2026-05-01_02_52_42.png]
+      gtag('config', 'AW-18116614443'); 
 
-      // Dönüşüm Tetikleyici Fonksiyon - Tasarımınla Tam Uyumlu
       function gtag_report_conversion(url) {
         var callback = function () {
           if (typeof(url) != 'undefined') {
@@ -188,20 +186,21 @@
 
 <header>
     <div class="brand">SİBER REKLAM DÜNYASI</div>
-    <div style="font-size: 10px; color: var(--neon); font-weight: bold;">v7.5 SECURE</div>
+    <div style="font-size: 10px; color: var(--neon); font-weight: bold;">v11.0 AUTO-SYNC</div>
 </header>
 
 <div class="container">
     <section class="hero">
         <h1>Dijitalde Sadece Var Olmayın, <span>Hükmedin.</span></h1>
         <p>Siber güvenlik altyapılı reklam ve yazılım çözümleriyle rakiplerinizin önüne geçin.</p>
-        <div class="promo-timer">⚠️ MAYIS AYINA ÖZEL LANSMAN FİYATLARI İÇİN SON 14 GÜN!</div>
+        <div class="promo-timer" id="dynamic-timer">⚠️ <span id="current-month"></span> AYINA ÖZEL LANSMAN FİYATLARI İÇİN SON <span id="days-left"></span> GÜN!</div>
     </section>
 
     <div class="pricing-grid">
         <div class="price-card">
+            <div class="badge" style="background: var(--danger); color: #fff;">SINIRLI FIRSAT</div>
             <h3>Giriş / Kurumsal</h3>
-            <div class="price-amount">₺12.500 <span>+ KDV</span></div>
+            <div class="price-amount">₺5.500</div>
             <ul class="price-features">
                 <li>Modern & Mobil Uyumlu Tasarım</li>
                 <li>Hız Optimizasyonu (Lighthouse 90+)</li>
@@ -214,7 +213,7 @@
         <div class="price-card featured">
             <div class="badge">EN ÇOK TERCİH EDİLEN</div>
             <h3>Zırhlı Büyüme Paketi</h3>
-            <div class="price-amount">₺24.500 <span>+ KDV</span></div>
+            <div class="price-amount">₺24.500</div>
             <ul class="price-features">
                 <li><strong>Gelişmiş Siber Güvenlik Duvarı</strong></li>
                 <li>Google Ads Kampanya Kurulumu</li>
@@ -273,6 +272,22 @@
 </footer>
 
 <script>
+    // Akıllı Ay ve Gün Hesaplayıcı
+    function updatePromo() {
+        const months = ["OCAK", "ŞUBAT", "MART", "NİSAN", "MAYIS", "HAZİRAN", "TEMMUZ", "AĞUSTOS", "EYLÜL", "EKİM", "KASIM", "ARALIK"];
+        const now = new Date();
+        const currentMonth = months[now.getMonth()];
+        
+        // Ayın bitmesine kaç gün kaldığını hesapla
+        const lastDayOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+        const daysLeft = lastDayOfMonth - now.getDate();
+
+        document.getElementById('current-month').innerText = currentMonth;
+        document.getElementById('days-left').innerText = daysLeft > 0 ? daysLeft : "1";
+    }
+
+    updatePromo();
+
     function toggleZChat() {
         const win = document.getElementById('z-chat-window');
         win.style.display = win.style.display === 'none' ? 'block' : 'none';
