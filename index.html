@@ -103,6 +103,12 @@
             position: relative;
         }
 
+        .price-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon);
+            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.1);
+        }
+
         .price-card.featured {
             border: 1px solid var(--neon);
             box-shadow: 0 0 30px rgba(0, 242, 255, 0.1);
@@ -125,7 +131,6 @@
         .price-features li { font-size: 0.9rem; color: var(--dim); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
         .price-features li::before { content: "✔"; color: var(--neon); }
 
-        /* Kart İçi Buton */
         .card-btn {
             background: rgba(0, 242, 255, 0.1);
             border: 1px solid var(--neon);
@@ -186,9 +191,9 @@
 <div class="container">
     <section class="hero">
         <div class="trust-badges">
-            <span>🛡️ 150+ Referans</span>
-            <span>⚡ 24 Saatte Teslim</span>
-            <span>✅ Onaylı Acente</span>
+            <span>🛡️ Siber Koruma Aktif</span>
+            <span>⚡ 24 Saatte Kurulum</span>
+            <span>✅ Onaylı Partner</span>
         </div>
         <h1>Dijitalde Sadece Var Olmayın, <span>Hükmedin.</span></h1>
         <p>Siber güvenlik zırhlı web tasarım ve Google Ads çözümleriyle müşterileriniz size ulaşsın.</p>
@@ -197,7 +202,7 @@
 
     <div class="pricing-grid">
         <div class="price-card">
-            <div class="badge" style="background: var(--danger); color: #fff;">EKONOMİK SEÇİM</div>
+            <div class="badge" style="background: var(--danger); color: #fff;">FIRSAT</div>
             <h3>Kurumsal Web Sitesi</h3>
             <div class="price-amount">₺5.500</div>
             <ul class="price-features">
@@ -210,8 +215,8 @@
         </div>
 
         <div class="price-card featured">
-            <div class="badge">EN POPÜLER</div>
-            <h3>Zırhlı Büyüme Paketi</h3>
+            <div class="badge">ZIRHLI PAKET</div>
+            <h3>Siber Büyüme Paketi</h3>
             <div class="price-amount">₺24.500</div>
             <ul class="price-features">
                 <li><strong>Gelişmiş Siber Güvenlik Duvarı</strong></li>
@@ -223,8 +228,8 @@
         </div>
 
         <div class="price-card">
-            <div class="badge" style="background: var(--gold); color: #000;">HIZLI SONUÇ</div>
-            <h3>Google Ads Yönetimi</h3>
+            <div class="badge" style="background: var(--gold); color: #000;">PROFESYONEL</div>
+            <h3>Ads Yönetimi</h3>
             <div class="price-amount">₺3.500 <span>/ay</span></div>
             <ul class="price-features">
                 <li>Akıllı Negatif Kelime Filtresi</li>
@@ -237,14 +242,14 @@
     </div>
 
     <section class="seo-box">
-        <h2>Neden Bizi Seçmelisiniz?</h2>
-        <p>İşletmenizi Google'da "ucuz web sitesi" veya "profesyonel web tasarım" aramalarında en üste taşımak için siber güvenlik ve SEO'yu birleştiriyoruz. Reklam maliyetlerinizi düşürürken, dönüşüm oranlarınızı (satışlarınızı) artırıyoruz.</p>
+        <h2>Siber Güvenlik Odaklı Web Tasarım</h2>
+        <p>İşletmenizi Google'da "ucuz web sitesi" aramalarında öne çıkarırken, siber güvenlik zırhıyla koruyoruz. Veriye dayalı stratejilerle reklam maliyetlerinizi düşürüp, satışlarınızı optimize ediyoruz.</p>
     </section>
 
     <section class="kanit">
         <h2>STRATEJİK OPERASYON MERKEZİ</h2>
         <p>Sisteminizi siber güvenlik süzgecinden geçiriyor ve satışa hazır hale getiriyoruz.</p>
-        <div style="font-weight: bold; font-size: 1.1rem; color: var(--neon); margin-top: 10px;">Profesyonellik, tesadüf değildir.</div>
+        <div style="font-weight: bold; font-size: 1.1rem; color: var(--neon); margin-top: 10px;">Geleceği Siber Güvenlikle İnşa Edin.</div>
     </section>
 </div>
 
@@ -255,7 +260,7 @@
             <button onclick="toggleZChat()" style="background:none; border:none; cursor:pointer;">×</button>
         </div>
         <div id="z-chat-body" style="padding: 15px; color: var(--dim); font-size: 0.85rem;">
-            Merhaba! Ben Dijital Asistan. Size özel kampanya fiyatları hakkında bilgi verebilirim.
+            Merhaba! Ben Siber Asistan. İşletmenizi büyütmek için buradayım.
         </div>
         <div style="padding: 10px; display: flex; gap: 5px;">
             <input type="text" id="z-user-input" placeholder="Yazın..." style="flex: 1; background: #05060a; border: 1px solid #333; color: #fff; padding: 8px; border-radius: 8px;">
@@ -268,7 +273,7 @@
 </div>
 
 <div class="fixed-contact">
-    <a href="tel:+905414516774" onclick="return gtag_report_conversion('tel:+905414516774');" class="c-btn btn-ph">📞 HEMEN ARA</a>
+    <a href="tel:+905414516774" onclick="return gtag_report_conversion('tel:+905414516774');" class="c-btn btn-ph">📞 ŞİMDİ ARA</a>
     <a href="https://wa.me/905414516774" onclick="return gtag_report_conversion('https://wa.me/905414516774');" class="c-btn btn-wa">💬 WHATSAPP</a>
 </div>
 
@@ -290,7 +295,7 @@
     function sendToWA() {
         const input = document.getElementById('z-user-input');
         if (input.value.trim() !== "") {
-            const waUrl = `https://wa.me/905414516774?text=${encodeURIComponent("Mesaj: " + input.value)}`;
+            const waUrl = `https://wa.me/905414516774?text=${encodeURIComponent("Merhaba, site üzerinden yazıyorum: " + input.value)}`;
             gtag_report_conversion(waUrl);
             input.value = "";
         }
