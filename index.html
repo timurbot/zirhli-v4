@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+    <!-- Google Tag Manager & Ads Conversion -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BKCKX7CWK"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-8BKCKX7CWK');
       gtag('config', 'AW-18116614443'); 
 
@@ -28,10 +28,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- SEO OPTİMİZASYONU: Rakipsiz kelime hedefleme -->
-    <meta name="description" content="5.500 TL'den başlayan ucuz web sitesi paketleri. Siber güvenlik altyapılı, profesyonel web tasarım ve Google Ads yönetimi ile işletmenizi büyütün.">
+    <meta name="description" content="5.500 TL'den başlayan ucuz web sitesi paketleri. Siber güvenlik altyapılı, profesyonel web tasarım ve Google Ads yönetimi.">
     <meta name="keywords" content="ucuz web sitesi, web tasarım fiyatları, profesyonel web tasarım, google ads yönetimi, siber güvenlikli site">
     <title>SİBER REKLAM DÜNYASI | Ucuz Web Sitesi & Siber Güvenlik</title>
+    
     <style>
         :root {
             --neon: #00f2ff;
@@ -63,10 +63,15 @@
 
         .brand { font-weight: 800; color: var(--neon); letter-spacing: 1px; }
         .container { width: 92%; max-width: 1100px; margin: 0 auto; padding: 40px 0; }
+        
         .hero { text-align: center; margin-bottom: 50px; }
-        .hero h1 { font-size: clamp(1.8rem, 8vw, 3rem); line-height: 1.1; margin-bottom: 20px; }
+        .hero h1 { font-size: clamp(1.8rem, 8vw, 3rem); line-height: 1.1; margin-bottom: 15px; }
         .hero span { color: var(--neon); }
-        .hero p { color: var(--dim); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+        .hero p { color: var(--dim); font-size: 1.1rem; max-width: 700px; margin: 0 auto 15px; }
+        
+        /* Güven Rozetleri */
+        .trust-badges { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; font-size: 0.8rem; color: var(--neon); opacity: 0.8; }
+        .trust-badges span { border: 1px solid rgba(0, 242, 255, 0.3); padding: 4px 10px; border-radius: 50px; }
 
         .promo-timer {
             background: rgba(255, 62, 62, 0.1);
@@ -92,7 +97,7 @@
             padding: 35px;
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: 0.4s;
             display: flex;
             flex-direction: column;
             position: relative;
@@ -100,7 +105,6 @@
 
         .price-card.featured {
             border: 1px solid var(--neon);
-            transform: scale(1.05);
             box-shadow: 0 0 30px rgba(0, 242, 255, 0.1);
         }
 
@@ -116,55 +120,41 @@
             font-weight: bold;
         }
 
-        .price-card h3 { font-size: 1.4rem; margin-bottom: 10px; color: #fff; }
         .price-amount { font-size: 2.2rem; font-weight: 800; margin-bottom: 20px; color: var(--neon); }
-        .price-amount span { font-size: 1rem; color: var(--dim); }
+        .price-features { list-style: none; margin-bottom: 25px; flex-grow: 1; }
+        .price-features li { font-size: 0.9rem; color: var(--dim); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .price-features li::before { content: "✔"; color: var(--neon); }
 
-        .price-features { list-style: none; margin-bottom: 30px; flex-grow: 1; }
-        .price-features li { font-size: 0.9rem; color: var(--dim); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
-        .price-features li::before { content: "✔"; color: var(--neon); font-size: 0.8rem; }
-
-        .seo-box {
-            margin-top: 60px;
-            padding: 40px;
-            background: rgba(17, 20, 32, 0.5);
-            border-radius: 20px;
-            border: 1px solid rgba(0, 242, 255, 0.05);
-            text-align: left;
-        }
-        .seo-box h2 { color: var(--neon); margin-bottom: 20px; font-size: 1.5rem; }
-        .seo-box p { color: var(--dim); font-size: 0.95rem; margin-bottom: 15px; }
-
-        .kanit {
-            margin-top: 60px;
-            padding: 40px;
-            background: linear-gradient(145deg, #111420, #05060a);
+        /* Kart İçi Buton */
+        .card-btn {
+            background: rgba(0, 242, 255, 0.1);
             border: 1px solid var(--neon);
-            border-radius: 20px;
+            color: var(--neon);
+            padding: 12px;
+            border-radius: 10px;
             text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.85rem;
+            transition: 0.3s;
         }
+        .card-btn:hover { background: var(--neon); color: #000; }
+
+        .seo-box { margin-top: 60px; padding: 30px; background: rgba(17, 20, 32, 0.5); border-radius: 20px; border: 1px solid rgba(0, 242, 255, 0.05); }
+        .kanit { margin-top: 40px; padding: 40px; background: linear-gradient(145deg, #111420, #05060a); border: 1px solid var(--neon); border-radius: 20px; text-align: center; }
 
         .fixed-contact {
             position: fixed;
             bottom: 20px; left: 50%;
             transform: translateX(-50%);
-            display: flex;
-            gap: 12px;
-            width: 94%;
-            max-width: 450px;
+            display: flex; gap: 12px;
+            width: 94%; max-width: 450px;
             z-index: 9999;
         }
 
         .c-btn {
-            flex: 1;
-            padding: 18px;
-            border-radius: 14px;
-            text-align: center;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 0.95rem;
-            color: #fff;
-            display: flex; align-items: center; justify-content: center; gap: 10px;
+            flex: 1; padding: 18px; border-radius: 14px; text-align: center; text-decoration: none;
+            font-weight: 800; font-size: 0.95rem; color: #fff; display: flex; align-items: center; justify-content: center; gap: 10px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
@@ -173,24 +163,16 @@
 
         #z-chat-container { position: fixed; bottom: 100px; right: 20px; z-index: 10000; }
         #z-chat-window {
-            display: none;
-            width: 300px;
-            background: #111420;
-            border: 1px solid var(--neon);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
-            margin-bottom: 15px;
-            animation: slideIn 0.3s ease;
+            display: none; width: 300px; background: #111420; border: 1px solid var(--neon);
+            border-radius: 15px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            margin-bottom: 15px; animation: slideIn 0.3s ease;
         }
 
         @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
         @media (max-width: 768px) {
-            .price-card.featured { transform: scale(1); margin-top: 10px; }
             .hero h1 { font-size: 1.8rem; }
-            #z-chat-container { right: 10px; bottom: 100px; }
-            #z-chat-window { width: 280px; }
+            .pricing-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -198,85 +180,89 @@
 
 <header>
     <div class="brand">SİBER REKLAM DÜNYASI</div>
-    <div style="font-size: 10px; color: var(--neon); font-weight: bold;">v24.1 PRO-SEO</div>
+    <div style="font-size: 10px; color: var(--neon); font-weight: bold;">v24.2 ELITE-UX</div>
 </header>
 
 <div class="container">
     <section class="hero">
+        <div class="trust-badges">
+            <span>🛡️ 150+ Referans</span>
+            <span>⚡ 24 Saatte Teslim</span>
+            <span>✅ Onaylı Acente</span>
+        </div>
         <h1>Dijitalde Sadece Var Olmayın, <span>Hükmedin.</span></h1>
-        <p>Siber güvenlik altyapılı reklam ve yazılım çözümleriyle rakiplerinizin önüne geçin.</p>
+        <p>Siber güvenlik zırhlı web tasarım ve Google Ads çözümleriyle müşterileriniz size ulaşsın.</p>
         <div class="promo-timer" id="dynamic-timer">⚠️ <span id="current-month"></span> AYINA ÖZEL LANSMAN FİYATLARI İÇİN SON <span id="days-left"></span> GÜN!</div>
     </section>
 
     <div class="pricing-grid">
         <div class="price-card">
-            <div class="badge" style="background: var(--danger); color: #fff;">SINIRLI FIRSAT</div>
-            <h3>Ucuz Web Sitesi / Kurumsal</h3>
+            <div class="badge" style="background: var(--danger); color: #fff;">EKONOMİK SEÇİM</div>
+            <h3>Kurumsal Web Sitesi</h3>
             <div class="price-amount">₺5.500</div>
             <ul class="price-features">
-                <li>Modern & Mobil Uyumlu Tasarım</li>
+                <li>Mobil Uyumlu & Ultra Hızlı</li>
                 <li>Hız Optimizasyonu (Lighthouse 90+)</li>
-                <li>Temel SEO Yapılandırması</li>
-                <li>Ücretsiz SSL Sertifikası</li>
-                <li>Google Harita Kaydı</li>
+                <li>Ücretsiz SSL & Google Kaydı</li>
+                <li>Temel SEO Altyapısı</li>
             </ul>
+            <a href="https://wa.me/905414516774?text=Ekonomik%20Paket%20Hakkında%20Bilgi%20Almak%20İstiyorum" class="card-btn">HEMEN BAŞLAT</a>
         </div>
 
         <div class="price-card featured">
-            <div class="badge">EN ÇOK TERCİH EDİLEN</div>
+            <div class="badge">EN POPÜLER</div>
             <h3>Zırhlı Büyüme Paketi</h3>
             <div class="price-amount">₺24.500</div>
             <ul class="price-features">
                 <li><strong>Gelişmiş Siber Güvenlik Duvarı</strong></li>
-                <li>Google Ads Kampanya Kurulumu</li>
-                <li>Detaylı Rakip Analizi</li>
-                <li>Profesyonel SEO İçerik Stratejisi</li>
-                <li>Mercedes-Benz Onaylı Güvenlik Taraması</li>
+                <li>Profesyonel Google Ads Kurulumu</li>
+                <li>Detaylı Rakip & Sektör Analizi</li>
+                <li>Mercedes-Benz Onaylı Güvenlik</li>
             </ul>
+            <a href="https://wa.me/905414516774?text=Zırhlı%20Büyüme%20Paketi%20Hakkında%20Bilgi%20Almak%20İstiyorum" class="card-btn" style="background: var(--neon); color: #000;">TEKLİF AL</a>
         </div>
 
         <div class="price-card">
-            <div class="badge" style="background: var(--gold); color: #000;">PROFESYONEL REKLAM</div>
+            <div class="badge" style="background: var(--gold); color: #000;">HIZLI SONUÇ</div>
             <h3>Google Ads Yönetimi</h3>
-            <div class="price-amount">₺3.500 <span>/ Başlangıç</span></div>
+            <div class="price-amount">₺3.500 <span>/ay</span></div>
             <ul class="price-features">
-                <li>Akıllı Negatif Kelime Filtreleme</li>
-                <li>Dönüşüm Takibi (Arama & WhatsApp)</li>
-                <li>24 Saatte İlk Telefon Araması</li>
-                <li>Haftalık Performans Raporlama</li>
-                <li>Maksimum TO (Tıklama Oranı)</li>
+                <li>Akıllı Negatif Kelime Filtresi</li>
+                <li>WhatsApp Dönüşüm Takibi</li>
+                <li>24 Saatte İlk Müşteri Araması</li>
+                <li>Haftalık Şeffaf Raporlama</li>
             </ul>
+            <a href="https://wa.me/905414516774?text=Ads%20Yönetimi%20Hakkında%20Bilgi%20Almak%20İstiyorum" class="card-btn">BİLGİ AL</a>
         </div>
     </div>
 
     <section class="seo-box">
-        <h2>Neden Profesyonel ve Uygun Fiyatlı Web Tasarım?</h2>
-        <p>İşletmenizi büyütmek için sadece bir siteye değil, Google aramalarında "ucuz web sitesi" diye arayan müşterilerinizin karşısına çıkan bir sisteme ihtiyacınız var. Siber Reklam Dünyası, ekonomik fiyatlarla siber güvenlik zırhını birleştirerek sizi rakiplerinizden ayırır.</p>
-        <p>Google Ads uyumlu altyapımız sayesinde reklam maliyetleriniz düşerken, SEO odaklı yazılımımızla organik aramalarda stabil bir yükseliş elde edersiniz.</p>
+        <h2>Neden Bizi Seçmelisiniz?</h2>
+        <p>İşletmenizi Google'da "ucuz web sitesi" veya "profesyonel web tasarım" aramalarında en üste taşımak için siber güvenlik ve SEO'yu birleştiriyoruz. Reklam maliyetlerinizi düşürürken, dönüşüm oranlarınızı (satışlarınızı) artırıyoruz.</p>
     </section>
 
     <section class="kanit">
         <h2>STRATEJİK OPERASYON MERKEZİ</h2>
-        <p>Biz sadece kod yazmıyoruz. Önce sisteminizi siber güvenlik süzgecinden geçiriyor, sonra SEO ile optimize ederek satışa hazır hale getiriyoruz.</p>
-        <div style="font-weight: bold; font-size: 1.2rem; color: var(--neon); margin-top: 15px;">Profesyonellik, tesadüf değildir.</div>
+        <p>Sisteminizi siber güvenlik süzgecinden geçiriyor ve satışa hazır hale getiriyoruz.</p>
+        <div style="font-weight: bold; font-size: 1.1rem; color: var(--neon); margin-top: 10px;">Profesyonellik, tesadüf değildir.</div>
     </section>
 </div>
 
 <div id="z-chat-container">
     <div id="z-chat-window">
-        <div style="background: var(--neon); color: #000; padding: 12px; font-weight: 800; font-size: 0.9rem; display: flex; justify-content: space-between; align-items: center;">
-            <span>SİBER DESTEK BİRİMİ</span>
-            <button onclick="toggleZChat()" style="background:none; border:none; cursor:pointer; font-weight:bold; font-size:1.2rem;">×</button>
+        <div style="background: var(--neon); color: #000; padding: 12px; font-weight: 800; display: flex; justify-content: space-between;">
+            <span>SİBER DESTEK</span>
+            <button onclick="toggleZChat()" style="background:none; border:none; cursor:pointer;">×</button>
         </div>
-        <div id="z-chat-body" style="padding: 15px; max-height: 200px; color: var(--dim); font-size: 0.85rem; background: #111420;">
-            Merhaba! Ben Zırhlı Dijital Asistanı. Şu an size özel indirimli paketlerimiz için kısa süreli bir kampanya başlattık. Bilgi almak ister misiniz?
+        <div id="z-chat-body" style="padding: 15px; color: var(--dim); font-size: 0.85rem;">
+            Merhaba! Ben Dijital Asistan. Size özel kampanya fiyatları hakkında bilgi verebilirim.
         </div>
-        <div style="padding: 10px; border-top: 1px solid rgba(0,242,255,0.1); display: flex; gap: 5px; background: #111420;">
-            <input type="text" id="z-user-input" placeholder="Mesajınızı yazın..." style="flex: 1; background: #05060a; border: 1px solid #333; color: #fff; padding: 8px; border-radius: 8px; outline: none; font-size: 0.8rem;">
-            <button onclick="sendToWA()" style="background: var(--neon); border: none; padding: 8px 12px; border-radius: 8px; cursor: pointer; font-weight: bold;">➔</button>
+        <div style="padding: 10px; display: flex; gap: 5px;">
+            <input type="text" id="z-user-input" placeholder="Yazın..." style="flex: 1; background: #05060a; border: 1px solid #333; color: #fff; padding: 8px; border-radius: 8px;">
+            <button onclick="sendToWA()" style="background: var(--neon); border: none; padding: 8px; border-radius: 8px;">➔</button>
         </div>
     </div>
-    <div onclick="toggleZChat()" style="width: 60px; height: 60px; background: var(--neon); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 0 20px rgba(0, 242, 255, 0.4); border: 2px solid #fff;">
+    <div onclick="toggleZChat()" style="width: 60px; height: 60px; background: var(--neon); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 2px solid #fff;">
         <svg viewBox="0 0 24 24" width="30" height="30" fill="#000"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
     </div>
 </div>
@@ -286,22 +272,14 @@
     <a href="https://wa.me/905414516774" onclick="return gtag_report_conversion('https://wa.me/905414516774');" class="c-btn btn-wa">💬 WHATSAPP</a>
 </div>
 
-<footer style="text-align: center; padding: 20px; font-size: 0.7rem; color: #444; margin-top: 20px;">
-    © 2026 Siber Reklam Dünyası | Güvenlik Denetimi Tamamlandı.
-</footer>
-
 <script>
     function updatePromo() {
         const months = ["OCAK", "ŞUBAT", "MART", "NİSAN", "MAYIS", "HAZİRAN", "TEMMUZ", "AĞUSTOS", "EYLÜL", "EKİM", "KASIM", "ARALIK"];
         const now = new Date();
-        const currentMonth = months[now.getMonth()];
-        const lastDayOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
-        const daysLeft = lastDayOfMonth - now.getDate();
-
-        document.getElementById('current-month').innerText = currentMonth;
-        document.getElementById('days-left').innerText = daysLeft > 0 ? daysLeft : "1";
+        document.getElementById('current-month').innerText = months[now.getMonth()];
+        const lastDay = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+        document.getElementById('days-left').innerText = lastDay - now.getDate() || "1";
     }
-
     updatePromo();
 
     function toggleZChat() {
@@ -309,28 +287,14 @@
         win.style.display = win.style.display === 'block' ? 'none' : 'block';
     }
 
-    window.addEventListener('load', function() {
-        setTimeout(function() {
-            const win = document.getElementById('z-chat-window');
-            if(win.style.display !== 'block') {
-                toggleZChat();
-            }
-        }, 4000);
-    });
-
     function sendToWA() {
         const input = document.getElementById('z-user-input');
-        const message = input.value.trim();
-        if (message !== "") {
-            const waUrl = `https://wa.me/905414516774?text=${encodeURIComponent("Siteden yeni mesaj: " + message)}`;
+        if (input.value.trim() !== "") {
+            const waUrl = `https://wa.me/905414516774?text=${encodeURIComponent("Mesaj: " + input.value)}`;
             gtag_report_conversion(waUrl);
             input.value = "";
         }
     }
-
-    document.getElementById('z-user-input').addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') sendToWA();
-    });
 </script>
 </body>
 </html>
