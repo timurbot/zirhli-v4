@@ -172,8 +172,8 @@
 <header>
     <div class="brand">SİBER REKLAM DÜNYASI</div>
     <div class="lang-control">
-        <button class="lang-btn active" onclick="setLanguage('tr', this)">TR</button>
-        <button class="lang-btn" onclick="setLanguage('en', this)">EN</button>
+        <button class="lang-btn active" id="btn-tr" onclick="setLanguage('tr', this)">TR</button>
+        <button class="lang-btn" id="btn-en" onclick="setLanguage('en', this)">EN</button>
     </div>
 </header>
 
@@ -210,7 +210,7 @@
         <div class="price-card">
             <div class="badge" style="background: var(--danger); color: #fff;" id="txt-pkg1-badge">FIRSAT</div>
             <h3 id="txt-pkg1-h3">Kurumsal Web Sitesi</h3>
-            <div class="price-amount">₺5.500</div>
+            <div class="price-amount" id="price-pkg1" data-tr="₺5.500" data-global="$799">₺5.500</div>
             <ul class="price-features" id="txt-pkg1-features">
                 <li>Mobil Uyumlu & Ultra Hızlı</li>
                 <li>Hız Optimizasyonu (Lighthouse 90+)</li>
@@ -224,7 +224,7 @@
         <div class="price-card featured">
             <div class="badge" id="txt-pkg2-badge">ZIRHLI PAKET</div>
             <h3 id="txt-pkg2-h3">Siber Büyüme Paketi</h3>
-            <div class="price-amount">₺24.500</div>
+            <div class="price-amount" id="price-pkg2" data-tr="₺24.500" data-global="$2.499">₺24.500</div>
             <ul class="price-features" id="txt-pkg2-features">
                 <li><strong>Gelişmiş Siber Güvenlik Duvarı</strong></li>
                 <li>Profesyonel Google Ads Kurulumu</li>
@@ -238,7 +238,7 @@
         <div class="price-card">
             <div class="badge" style="background: var(--gold); color: #000;" id="txt-pkg3-badge">PROFESYONEL</div>
             <h3 id="txt-pkg3-h3">Ads Yönetimi</h3>
-            <div class="price-amount">₺3.500 <span id="txt-month-unit">/ay</span></div>
+            <div class="price-amount" id="price-pkg3" data-tr="₺3.500" data-global="$499">₺3.500 <span id="txt-month-unit">/ay</span></div>
             <ul class="price-features" id="txt-pkg3-features">
                 <li>Akıllı Negatif Kelime Filtresi</li>
                 <li>WhatsApp Dönüşüm Takibi</li>
@@ -312,6 +312,8 @@
         }
     };
 
+    let currentMode = 'TR';
+
     function setLanguage(lang, btn) {
         document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
@@ -326,6 +328,42 @@
         document.getElementById('txt-month-unit').innerText = l.monthUnit; document.getElementById('txt-seo-h2').innerText = l.seoH2; document.getElementById('txt-seo-p').innerText = l.seoP;
         document.getElementById('txt-kanit-h2').innerText = l.kanitH2; document.getElementById('txt-kanit-p').innerText = l.kanitP; document.getElementById('txt-footer-quote').innerText = l.quote;
         document.getElementById('txt-chat-h').innerText = l.chatH; document.getElementById('txt-chat-msg').innerText = l.chatMsg; document.getElementById('txt-call').innerText = l.call; document.getElementById('txt-wa').innerText = l.wa;
+        
+        currentMode = lang.toUpperCase();
+        updateDisplayPrices();
+    }
+
+    function updateDisplayPrices() {
+        const prices = document.querySelectorAll('.price-amount');
+        prices.forEach(p => {
+            const trPrice = p.getAttribute('data-tr');
+            const globalPrice = p.getAttribute('data-global');
+            const unit = p.querySelector('span') ? p.querySelector('span').outerHTML : '';
+            
+            if (currentMode === 'TR') {
+                p.innerHTML = trPrice + ' ' + unit;
+            } else {
+                p.innerHTML = globalPrice + ' ' + unit;
+            }
+        });
+    }
+
+    // GEO-IP AUTOMATION
+    async function autoDetectLocation() {
+        try {
+            const response = await fetch('http://ip-api.com/json/');
+            const data = await response.json();
+            if (data.countryCode !== 'TR') {
+                // Yurt dışı tespit edildi
+                setLanguage('en', document.getElementById('btn-en'));
+            } else {
+                // Türkiye tespit edildi
+                setLanguage('tr', document.getElementById('btn-tr'));
+            }
+        } catch (error) {
+            console.log("Geo-IP Error: Defaulting to TR");
+            setLanguage('tr', document.getElementById('btn-tr'));
+        }
     }
 
     function updatePromo() {
@@ -335,12 +373,15 @@
         const lastDay = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
         document.getElementById('days-left').innerText = lastDay - now.getDate() || "1";
     }
-    updatePromo();
 
     function toggleZChat() {
         const win = document.getElementById('z-chat-window');
         win.style.display = win.style.display === 'block' ? 'none' : 'block';
     }
+
+    // INITIALIZE
+    updatePromo();
+    autoDetectLocation();
 </script>
 </body>
 </html>
