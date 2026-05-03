@@ -172,13 +172,12 @@
 <header>
     <div class="brand">SİBER REKLAM DÜNYASI</div>
     <div class="lang-control">
-        <button class="lang-btn active" id="btn-tr" onclick="setLanguage('tr', this)">TR</button>
-        <button class="lang-btn" id="btn-en" onclick="setLanguage('en', this)">EN</button>
+        <button id="btn-tr" class="lang-btn active" onclick="setLanguage('tr', this)">TR</button>
+        <button id="btn-en" class="lang-btn" onclick="setLanguage('en', this)">EN</button>
     </div>
 </header>
 
 <div class="container">
-    <!-- HERO SECTION -->
     <section class="hero">
         <div class="trust-badges">
             <span id="txt-badge1">🛡️ Siber Koruma Aktif</span>
@@ -190,7 +189,6 @@
         <div class="promo-timer" id="dynamic-timer">⚠️ <span id="current-month"></span> <span id="txt-promo">AYINA ÖZEL LANSMAN FİYATLARI İÇİN SON</span> <span id="days-left"></span> <span id="txt-days">GÜN!</span></div>
     </section>
 
-    <!-- FOUNDER (CV) SECTION -->
     <section class="founder-section">
         <div class="founder-img-wrapper">
             <img src="TİMUR.jpeg" alt="Timur Çapkın" class="founder-img" 
@@ -206,11 +204,10 @@
     </section>
 
     <div class="pricing-grid">
-        <!-- Paket 1 -->
         <div class="price-card">
             <div class="badge" style="background: var(--danger); color: #fff;" id="txt-pkg1-badge">FIRSAT</div>
             <h3 id="txt-pkg1-h3">Kurumsal Web Sitesi</h3>
-            <div class="price-amount" id="price-pkg1" data-tr="₺5.500" data-global="$799">₺5.500</div>
+            <div class="price-amount" id="price-pkg1" data-tr="₺5.500" data-en="$799">₺5.500</div>
             <ul class="price-features" id="txt-pkg1-features">
                 <li>Mobil Uyumlu & Ultra Hızlı</li>
                 <li>Hız Optimizasyonu (Lighthouse 90+)</li>
@@ -220,11 +217,10 @@
             <a href="https://wa.me/905414516774" class="card-btn" id="txt-pkg1-btn">HEMEN BAŞLAT</a>
         </div>
 
-        <!-- Paket 2 -->
         <div class="price-card featured">
             <div class="badge" id="txt-pkg2-badge">ZIRHLI PAKET</div>
             <h3 id="txt-pkg2-h3">Siber Büyüme Paketi</h3>
-            <div class="price-amount" id="price-pkg2" data-tr="₺24.500" data-global="$2.499">₺24.500</div>
+            <div class="price-amount" id="price-pkg2" data-tr="₺24.500" data-en="$2.499">₺24.500</div>
             <ul class="price-features" id="txt-pkg2-features">
                 <li><strong>Gelişmiş Siber Güvenlik Duvarı</strong></li>
                 <li>Profesyonel Google Ads Kurulumu</li>
@@ -234,11 +230,10 @@
             <a href="https://wa.me/905414516774" class="card-btn" style="background: var(--neon); color: #000;" id="txt-pkg2-btn">TEKLİF AL</a>
         </div>
 
-        <!-- Paket 3 -->
         <div class="price-card">
             <div class="badge" style="background: var(--gold); color: #000;" id="txt-pkg3-badge">PROFESYONEL</div>
             <h3 id="txt-pkg3-h3">Ads Yönetimi</h3>
-            <div class="price-amount" id="price-pkg3" data-tr="₺3.500" data-global="$499">₺3.500 <span id="txt-month-unit">/ay</span></div>
+            <div class="price-amount" id="price-pkg3" data-tr="₺3.500" data-en="$499">₺3.500 <span id="txt-month-unit">/ay</span></div>
             <ul class="price-features" id="txt-pkg3-features">
                 <li>Akıllı Negatif Kelime Filtresi</li>
                 <li>WhatsApp Dönüşüm Takibi</li>
@@ -261,7 +256,6 @@
     </section>
 </div>
 
-<!-- Chat Bot -->
 <div id="z-chat-container">
     <div id="z-chat-window">
         <div style="background: var(--neon); color: #000; padding: 12px; font-weight: 800; display: flex; justify-content: space-between;">
@@ -312,12 +306,15 @@
         }
     };
 
-    let currentMode = 'TR';
+    let currentMode = 'tr';
 
     function setLanguage(lang, btn) {
         document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+        if(btn) btn.classList.add('active');
+        
+        currentMode = lang;
         const l = dictionary[lang];
+        
         document.getElementById('txt-badge1').innerText = l.badge1; document.getElementById('txt-badge2').innerText = l.badge2; document.getElementById('txt-badge3').innerText = l.badge3;
         document.getElementById('txt-hero-h1').innerHTML = l.heroH1; document.getElementById('txt-hero-p').innerText = l.heroP;
         document.getElementById('txt-promo').innerText = l.promo; document.getElementById('txt-days').innerText = l.days;
@@ -328,40 +325,39 @@
         document.getElementById('txt-month-unit').innerText = l.monthUnit; document.getElementById('txt-seo-h2').innerText = l.seoH2; document.getElementById('txt-seo-p').innerText = l.seoP;
         document.getElementById('txt-kanit-h2').innerText = l.kanitH2; document.getElementById('txt-kanit-p').innerText = l.kanitP; document.getElementById('txt-footer-quote').innerText = l.quote;
         document.getElementById('txt-chat-h').innerText = l.chatH; document.getElementById('txt-chat-msg').innerText = l.chatMsg; document.getElementById('txt-call').innerText = l.call; document.getElementById('txt-wa').innerText = l.wa;
-        
-        currentMode = lang.toUpperCase();
-        updateDisplayPrices();
+
+        updatePricesByIP();
     }
 
-    function updateDisplayPrices() {
+    function updatePricesByIP() {
         const prices = document.querySelectorAll('.price-amount');
         prices.forEach(p => {
-            const trPrice = p.getAttribute('data-tr');
-            const globalPrice = p.getAttribute('data-global');
-            const unit = p.querySelector('span') ? p.querySelector('span').outerHTML : '';
+            const trVal = p.getAttribute('data-tr');
+            const enVal = p.getAttribute('data-en');
+            const unitEl = p.querySelector('span');
+            const unit = unitEl ? unitEl.outerHTML : '';
             
-            if (currentMode === 'TR') {
-                p.innerHTML = trPrice + ' ' + unit;
+            if(currentMode === 'tr') {
+                p.innerHTML = trVal + ' ' + unit;
             } else {
-                p.innerHTML = globalPrice + ' ' + unit;
+                p.innerHTML = enVal + ' ' + unit;
             }
         });
     }
 
-    // GEO-IP AUTOMATION
     async function autoDetectLocation() {
         try {
-            const response = await fetch('http://ip-api.com/json/');
+            // HTTPS uyumlu güvenli konum tespiti
+            const response = await fetch('https://ipapi.co/json/');
             const data = await response.json();
-            if (data.countryCode !== 'TR') {
-                // Yurt dışı tespit edildi
+            
+            if (data.country_code && data.country_code !== 'TR') {
                 setLanguage('en', document.getElementById('btn-en'));
             } else {
-                // Türkiye tespit edildi
                 setLanguage('tr', document.getElementById('btn-tr'));
             }
         } catch (error) {
-            console.log("Geo-IP Error: Defaulting to TR");
+            // Hata durumunda varsayılan TR ayarları
             setLanguage('tr', document.getElementById('btn-tr'));
         }
     }
@@ -379,9 +375,11 @@
         win.style.display = win.style.display === 'block' ? 'none' : 'block';
     }
 
-    // INITIALIZE
-    updatePromo();
-    autoDetectLocation();
+    // Uygulamayı Başlat
+    window.onload = () => {
+        updatePromo();
+        autoDetectLocation();
+    }
 </script>
 </body>
 </html>
