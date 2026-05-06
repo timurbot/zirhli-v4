@@ -81,7 +81,7 @@
         .hero span { color: var(--neon); }
         .hero p { color: var(--dim); font-size: 1.1rem; max-width: 700px; margin: 0 auto 15px; }
         
-        .trust-badges { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; font-size: 0.8rem; color: var(--neon); opacity: 0.8; }
+        .trust-badges { display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; font-size: 0.8rem; color: var(--neon); opacity: 0.8; flex-wrap: wrap; }
         .trust-badges span { border: 1px solid rgba(0, 242, 255, 0.3); padding: 4px 10px; border-radius: 50px; }
 
         .promo-timer {
@@ -95,6 +95,12 @@
             font-weight: bold;
             font-size: 0.9rem;
         }
+
+        /* YENI: İstatistik Bölümü */
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 40px; text-align: center; }
+        .stat-item { background: rgba(0, 242, 255, 0.05); padding: 20px; border-radius: 15px; border: 1px solid rgba(0, 242, 255, 0.1); }
+        .stat-num { display: block; font-size: 1.8rem; font-weight: 800; color: var(--neon); }
+        .stat-label { font-size: 0.75rem; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; }
 
         .founder-section {
             background: var(--card);
@@ -122,6 +128,14 @@
         .founder-text { flex: 1; min-width: 280px; }
         .founder-text h2 { color: var(--neon); margin-bottom: 15px; font-size: 1.5rem; display: flex; align-items: center; gap: 10px; }
         .founder-text p { color: var(--dim); font-size: 0.95rem; line-height: 1.7; }
+
+        /* YENI: Analiz Formu Bölümü */
+        .lead-form-box { background: linear-gradient(145deg, #161b2e, #0b0d18); padding: 30px; border-radius: 24px; border: 1px solid var(--neon); margin: 40px 0; }
+        .lead-form-box h2 { text-align: center; color: var(--neon); margin-bottom: 20px; font-size: 1.3rem; }
+        .l-form { display: flex; gap: 10px; flex-wrap: wrap; }
+        .l-input { flex: 1; min-width: 200px; padding: 15px; border-radius: 10px; border: 1px solid rgba(0, 242, 255, 0.3); background: #05060a; color: #fff; outline: none; }
+        .l-btn { background: var(--neon); color: #000; padding: 15px 30px; border-radius: 10px; border: none; font-weight: 800; cursor: pointer; transition: 0.3s; flex-shrink: 0; width: 100%; }
+        .l-btn:hover { box-shadow: 0 0 20px var(--neon); }
 
         .pricing-grid {
             display: grid;
@@ -156,6 +170,12 @@
         .seo-box { margin-top: 60px; padding: 30px; background: rgba(17, 20, 32, 0.5); border-radius: 20px; border: 1px solid rgba(0, 242, 255, 0.05); }
         .kanit { margin-top: 40px; padding: 40px; background: linear-gradient(145deg, #111420, #05060a); border: 1px solid var(--neon); border-radius: 20px; text-align: center; }
 
+        /* YENI: Footer Hukuki Linkler */
+        footer { margin-top: 50px; padding: 40px 0; border-top: 1px solid rgba(0, 242, 255, 0.1); text-align: center; font-size: 0.8rem; color: var(--dim); }
+        .footer-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 15px; }
+        .footer-links a { color: var(--dim); text-decoration: none; }
+        .footer-links a:hover { color: var(--neon); }
+
         .fixed-contact { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; width: 94%; max-width: 450px; z-index: 9999; }
         .c-btn { flex: 1; padding: 18px; border-radius: 14px; text-align: center; text-decoration: none; font-weight: 800; font-size: 0.95rem; color: #fff; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .btn-wa { background: var(--whatsapp); }
@@ -164,7 +184,7 @@
         #z-chat-container { position: fixed; bottom: 100px; right: 20px; z-index: 10000; }
         #z-chat-window { display: none; width: 300px; background: #111420; border: 1px solid var(--neon); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.8); margin-bottom: 15px; }
 
-        @media (max-width: 768px) { .hero h1 { font-size: 1.8rem; } .pricing-grid { grid-template-columns: 1fr; } .founder-section { text-align: center; justify-content: center; padding: 25px; } .founder-img-wrapper { width: 140px; height: 140px; } }
+        @media (max-width: 768px) { .hero h1 { font-size: 1.8rem; } .pricing-grid { grid-template-columns: 1fr; } .founder-section { text-align: center; justify-content: center; padding: 25px; } .founder-img-wrapper { width: 140px; height: 140px; } .l-form { flex-direction: column; } }
     </style>
 </head>
 <body>
@@ -188,6 +208,36 @@
         <h1 id="txt-hero-h1">Dijitalde Sadece Var Olmayın, <span>Hükmedin.</span></h1>
         <p id="txt-hero-p">Siber güvenlik zırhlı web tasarım ve Google Ads çözümleriyle müşterileriniz size ulaşsın.</p>
         <div class="promo-timer" id="dynamic-timer">⚠️ <span id="current-month"></span> <span id="txt-promo">AYINA ÖZEL LANSMAN FİYATLARI İÇİN SON</span> <span id="days-left"></span> <span id="txt-days">GÜN!</span></div>
+    </section>
+
+    <!-- YENI: İstatistikler -->
+    <div class="stats-grid">
+        <div class="stat-item">
+            <span class="stat-num">500+</span>
+            <span class="stat-label" id="txt-stat1">Başarılı Proje</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">10M+</span>
+            <span class="stat-label" id="txt-stat2">Yönetilen Bütçe</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">0</span>
+            <span class="stat-label" id="txt-stat3">Güvenlik İhlali</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-num">24/7</span>
+            <span class="stat-label" id="txt-stat4">Aktif Destek</span>
+        </div>
+    </div>
+
+    <!-- YENI: Hızlı Teklif Formu -->
+    <section class="lead-form-box">
+        <h2 id="txt-form-h">Ücretsiz Dijital Güvenlik & SEO Analizi Alın</h2>
+        <form class="l-form" onsubmit="return gtag_report_conversion('https://wa.me/905414516774?text=Ücretsiz analiz istiyorum');">
+            <input type="text" class="l-input" id="inp-url" placeholder="Web Siteniz (Opsiyonel)">
+            <input type="tel" class="l-input" id="inp-tel" placeholder="Telefon Numaranız" required>
+            <button type="submit" class="l-btn" id="txt-form-btn">ANALİZİ BAŞLAT</button>
+        </form>
     </section>
 
     <!-- FOUNDER (CV) SECTION -->
@@ -282,12 +332,23 @@
     <a href="https://wa.me/905414516774" class="c-btn btn-wa" id="txt-wa">💬 WHATSAPP</a>
 </div>
 
+<footer>
+    <div class="footer-links">
+        <a href="#" id="txt-f1">KVKK Aydınlatma</a>
+        <a href="#" id="txt-f2">Gizlilik Politikası</a>
+        <a href="#" id="txt-f3">Çerez Tercihleri</a>
+    </div>
+    <p>© 2026 Siber Reklam Dünyası. Tüm Hakları Saklıdır.</p>
+</footer>
+
 <script>
     const dictionary = {
         en: {
             badge1: "🛡️ Cyber Protection Active", badge2: "⚡ 24h Setup", badge3: "✅ Certified Partner",
             heroH1: "Don't Just Exist Online, <span>Dominate.</span>", heroP: "Reach your customers with cybersecurity-armored web design and global ad solutions.",
             promo: "LAST DAYS FOR SPECIAL LAUNCH PRICES IN", days: "DAYS!",
+            stat1: "Successful Projects", stat2: "Managed Budget", stat3: "Security Breaches", stat4: "Active Support",
+            formH: "Get Free Digital Security & SEO Analysis", formBtn: "START ANALYSIS",
             founderH2: "Who is the Founder of Cyber Ad World?",
             founderP: "I am <strong>Timur Capkin</strong>; a security researcher and digital strategist awarded by giants like Mercedes-Benz on platforms such as HackerOne and Bugcrowd. I don't just build websites; I construct high-performance digital fortresses armored against cyber threats. With 10+ years of experience, I maximize your profitability while protecting your business from risks.",
             pkg1Badge: "OPPORTUNITY", pkg1H3: "Corporate Website", pkg1Features: "<li>Mobile Friendly & Ultra Fast</li><li>Speed Optimization (Lighthouse 90+)</li><li>Free SSL & Google Entry</li><li>Basic SEO Infrastructure</li>", pkg1Btn: "START NOW",
@@ -296,12 +357,15 @@
             monthUnit: "/mo", seoH2: "Cybersecurity Oriented Web Design", seoP: "While making your business stand out in global searches, we protect it with a cybersecurity shield.",
             kanitH2: "STRATEGIC OPERATION CENTER", kanitP: "We pass your system through a cybersecurity filter and make it ready for sale.",
             quote: "Build the Future with Cybersecurity.", chatH: "CYBER SUPPORT", chatMsg: "Hello! I am your Cyber Assistant. I'm here to grow your business.", call: "📞 CALL NOW", wa: "💬 WHATSAPP",
+            f1: "Data Protection", f2: "Privacy Policy", f3: "Cookie Settings",
             prices: ["$250", "$1.250", "$150"]
         },
         tr: {
             badge1: "🛡️ Siber Koruma Aktif", badge2: "⚡ 24 Saatte Kurulum", badge3: "✅ Onaylı Partner",
             heroH1: "Dijitalde Sadece Var Olmayın, <span>Hükmedin.</span>", heroP: "Siber güvenlik zırhlı web tasarım ve Google Ads çözümleriyle müşterileriniz size ulaşsın.",
             promo: "AYINA ÖZEL LANSMAN FİYATLARI İÇİN SON", days: "GÜN!",
+            stat1: "Başarılı Proje", stat2: "Yönetilen Bütçe", stat3: "Güvenlik İhlali", stat4: "Aktif Destek",
+            formH: "Ücretsiz Dijital Güvenlik & SEO Analizi Alın", formBtn: "ANALİZİ BAŞLAT",
             founderH2: "Siber Reklam Dünyası Kurucusu Kimdir?",
             founderP: "Ben <strong>Timur Çapkın</strong>; siber güvenlik dünyasında HackerOne ve Bugcrowd gibi platformlarda Mercedes-Benz gibi devler tarafından ödüllendirilmiş bir güvenlik araştırmacısı ve dijital stratejistim. Sadece web sitesi yapmıyorum; markanızı siber saldırılara karşı zırhlayan, Google algoritmalarında hüküm süren yüksek performanslı dijital kaleler inşa ediyorum. 10 yılı aşkın tecrübemle, siber güvenlik zekasını reklam optimizasyonuyla birleştirerek işletmenizi risklerden koruyor ve karlılığınızı maksimize ediyorum.",
             pkg1Badge: "FIRSAT", pkg1H3: "Kurumsal Web Sitesi", pkg1Features: "<li>Mobil Uyumlu & Ultra Hızlı</li><li>Hız Optimizasyonu (Lighthouse 90+)</li><li>Ücretsiz SSL & Google Kaydı</li><li>Temel SEO Altyapısı</li>", pkg1Btn: "HEMEN BAŞLAT",
@@ -310,6 +374,7 @@
             monthUnit: "/ay", seoH2: "Siber Güvenlik Odaklı Web Tasarım", seoP: "İşletmenizi Google'da 'ucuz web sitesi' aramalarında öne çıkarırken, siber güvenlik zırhıyla koruyoruz.",
             kanitH2: "STRATEJİK OPERASYON MERKEZİ", kanitP: "Sisteminizi siber güvenlik süzgecinden geçiriyor ve satışa hazır hale getiriyoruz.",
             quote: "Geleceği Siber Güvenlikle İnşa Edin.", chatH: "SİBER DESTEK", chatMsg: "Merhaba! Ben Siber Asistan. İşletmenizi büyütmek için buradayım.", call: "📞 ŞİMDİ ARA", wa: "💬 WHATSAPP",
+            f1: "KVKK Aydınlatma", f2: "Gizlilik Politikası", f3: "Çerez Tercihleri",
             prices: ["₺5.500", "₺24.500", "₺3.500"]
         }
     };
@@ -323,6 +388,8 @@
         document.getElementById('txt-badge1').innerText = l.badge1; document.getElementById('txt-badge2').innerText = l.badge2; document.getElementById('txt-badge3').innerText = l.badge3;
         document.getElementById('txt-hero-h1').innerHTML = l.heroH1; document.getElementById('txt-hero-p').innerText = l.heroP;
         document.getElementById('txt-promo').innerText = l.promo; document.getElementById('txt-days').innerText = l.days;
+        document.getElementById('txt-stat1').innerText = l.stat1; document.getElementById('txt-stat2').innerText = l.stat2; document.getElementById('txt-stat3').innerText = l.stat3; document.getElementById('txt-stat4').innerText = l.stat4;
+        document.getElementById('txt-form-h').innerText = l.formH; document.getElementById('txt-form-btn').innerText = l.formBtn;
         document.getElementById('txt-founder-h2').innerText = l.founderH2; document.getElementById('txt-founder-p').innerHTML = l.founderP;
         document.getElementById('txt-pkg1-badge').innerText = l.pkg1Badge; document.getElementById('txt-pkg1-h3').innerText = l.pkg1H3; document.getElementById('txt-pkg1-features').innerHTML = l.pkg1Features; document.getElementById('txt-pkg1-btn').innerText = l.pkg1Btn;
         document.getElementById('txt-pkg2-badge').innerText = l.pkg2Badge; document.getElementById('txt-pkg2-h3').innerText = l.pkg2H3; document.getElementById('txt-pkg2-features').innerHTML = l.pkg2Features; document.getElementById('txt-pkg2-btn').innerText = l.pkg2Btn;
@@ -330,8 +397,8 @@
         document.getElementById('txt-month-unit').innerText = l.monthUnit; document.getElementById('txt-seo-h2').innerText = l.seoH2; document.getElementById('txt-seo-p').innerText = l.seoP;
         document.getElementById('txt-kanit-h2').innerText = l.kanitH2; document.getElementById('txt-kanit-p').innerText = l.kanitP; document.getElementById('txt-footer-quote').innerText = l.quote;
         document.getElementById('txt-chat-h').innerText = l.chatH; document.getElementById('txt-chat-msg').innerText = l.chatMsg; document.getElementById('txt-call').innerText = l.call; document.getElementById('txt-wa').innerText = l.wa;
+        document.getElementById('txt-f1').innerText = l.f1; document.getElementById('txt-f2').innerText = l.f2; document.getElementById('txt-f3').innerText = l.f3;
         
-        // IP Bazlı Fiyat Güncelleme
         document.getElementById('price-1').innerText = l.prices[0];
         document.getElementById('price-2').innerText = l.prices[1];
         document.getElementById('price-3').innerHTML = l.prices[2] + ` <span id="txt-month-unit">${l.monthUnit}</span>`;
@@ -341,14 +408,8 @@
         try {
             const response = await fetch('https://ipapi.co/json/');
             const data = await response.json();
-            if (data.country_code !== 'TR') {
-                setLanguage('en'); // TR dışı ise İngilizce yap
-            } else {
-                setLanguage('tr'); // TR ise Türkçe kal
-            }
-        } catch (error) {
-            setLanguage('tr'); // Hata durumunda default Türkçe
-        }
+            if (data.country_code !== 'TR') { setLanguage('en'); } else { setLanguage('tr'); }
+        } catch (error) { setLanguage('tr'); }
     }
     checkUserIP();
 
