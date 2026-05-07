@@ -114,13 +114,7 @@
         .card-btn { background: rgba(0, 242, 255, 0.05); border: 2px solid var(--neon); color: var(--neon); padding: 15px; border-radius: 12px; text-align: center; text-decoration: none; font-weight: 800; transition: 0.3s; }
         .card-btn:hover { background: var(--neon); color: #000; }
 
-        .article-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 40px; }
-        .article-card { background: rgba(17, 20, 32, 0.5); padding: 30px; border-radius: 20px; border: 1px solid rgba(0, 242, 255, 0.1); }
-        .article-card h3 { color: var(--neon); font-size: 1.2rem; margin-bottom: 15px; border-left: 3px solid var(--neon); padding-left: 15px; }
-        .article-card p { color: var(--dim); font-size: 0.9rem; line-height: 1.6; }
-
         .seo-box { margin-top: 50px; padding: 40px; background: rgba(17, 20, 32, 0.4); border-radius: 24px; border: 1px solid rgba(0, 242, 255, 0.08); text-align: center; }
-        .kanit { margin-top: 50px; padding: 50px; background: linear-gradient(145deg, #111420, #05060a); border: 1px solid var(--neon); border-radius: 28px; text-align: center; }
 
         footer { margin-top: 60px; padding: 50px 0; border-top: 1px solid rgba(0, 242, 255, 0.1); text-align: center; font-size: 0.85rem; color: var(--dim); }
         .footer-links { display: flex; justify-content: center; gap: 25px; margin-bottom: 20px; }
@@ -131,8 +125,8 @@
         .btn-wa { background: var(--whatsapp); }
         .btn-ph { background: var(--phone); }
 
-        /* Tawk.to Widget Ozellestirme */
-        #tawk-chat-container { border: 2px solid var(--neon) !important; border-radius: 15px !important; }
+        /* Arka Plan Kontrol Butonları (Gerektiğinde Aktif Edilebilir) */
+        #admin-controls { display: none; }
 
         @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .pricing-grid { grid-template-columns: 1fr; } .founder-section { text-align: center; justify-content: center; padding: 25px; } .founder-img-wrapper { width: 180px; height: 180px; margin: 0 auto; } }
     </style>
@@ -168,14 +162,14 @@
 
     <section class="founder-section">
         <div class="founder-img-wrapper">
-            <img src="TİMUR.jpeg" alt="Timur Çapkın - Siber Güvenlik Uzmanı" class="founder-img" onerror="this.onerror=null; this.src='https://api.dicebear.com/7.x/bottts-neutral/svg?seed=Timur&backgroundColor=00f2ff';">
+            <img src="TİMUR.jpeg" alt="Timur Çapkın" class="founder-img" onerror="this.onerror=null; this.src='https://api.dicebear.com/7.x/bottts-neutral/svg?seed=Timur&backgroundColor=00f2ff';">
             <div class="founder-status">VERIFIED EXPERT</div>
         </div>
         <div class="founder-text">
             <h2 id="txt-founder-h2">Siber Reklam Dünyası Kurucusu Kimdir?</h2>
             <div id="txt-founder-p">
-                <p>Ben <strong>Timur Çapkın</strong>; siber güvenlik dünyasında HackerOne ve Bugcrowd gibi global platformlarda rüştünü ispatlamış, <strong>Mercedes-Benz</strong> gibi dünya devleri tarafından resmi olarak ödüllendirilmiş bir siber güvenlik araştırmacısıyım.</p>
-                <p>Siber Reklam Dünyası'nı kurarken vizyonum sadece "web sitesi yapmak" değil, markaları siber saldırılara karşı birer kaleye dönüştürmekti. Geliştirmekte olduğum <strong>"Timur Projesi (Collide)"</strong> gibi otonom hacking araçlarıyla işletmenizi rakiplerin önüne geçiriyorum.</p>
+                <p>Ben <strong>Timur Çapkın</strong>; siber güvenlik dünyasında resmi olarak ödüllendirilmiş bir araştırmacıyım.</p>
+                <p>Siber Reklam Dünyası'nı kurarken vizyonum markaları siber saldırılara karşı birer kaleye dönüştürmekti. <strong>"Timur Projesi (Collide)"</strong> gibi otonom hacking araçlarıyla işletmenizi rakiplerin önüne geçiriyorum.</p>
             </div>
         </div>
     </section>
@@ -230,6 +224,11 @@
     <a href="https://wa.me/905414516774" class="c-btn btn-wa" id="txt-wa">💬 WHATSAPP</a>
 </div>
 
+<div id="admin-controls">
+    <button onclick="console.log('Update triggered')">Update</button>
+    <button onclick="console.log('Clear triggered')">Clear</button>
+</div>
+
 <footer>
     <div class="footer-links">
         <a href="#" id="txt-f1">KVKK Aydınlatma</a>
@@ -244,13 +243,12 @@ var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
-s1.src='https://embed.tawk.to/65b273d48d289546182496af/default'; // SANA OZEL ID
+s1.src='https://embed.tawk.to/69fcf1ed013fc11c3cb944d9/default';
 s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 
-// Musteri geldigi an paneline bilgi gonderir
 Tawk_API.onLoad = function(){
     Tawk_API.setAttributes({
         'Status': 'Ziyaretçi Takip Ediliyor',
@@ -260,14 +258,12 @@ Tawk_API.onLoad = function(){
 </script>
 
 <script>
-    // Sozluk ve Dil Fonksiyonlari (Mevcut Yapı - Dokunulmadı)
     const dictionary = {
         en: {
             badge1: "🛡️ Cyber Protection Active", badge2: "⚡ 24h Setup", badge3: "✅ Certified Partner",
             heroH1: "Don't Just Exist Online, <span>Dominate.</span>", heroP: "Reach customers with cybersecurity-armored web design and global ad solutions.",
             promo: "LAST DAYS FOR SPECIAL LAUNCH PRICES IN", days: "DAYS!",
             stat1: "Successful Projects", stat2: "Managed Budget", stat3: "Security Breaches", stat4: "Active Support",
-            formH: "Get Free Digital Security Analysis", formBtn: "START ANALYSIS",
             pkg1H3: "Corporate Website", pkg1Features: "<li>Mobile Friendly</li><li>90+ Speed Score</li><li>Free SSL & Google</li><li>Basic SEO</li>", pkg1Btn: "START NOW",
             pkg2Badge: "ARMORED PACK", pkg2H3: "Cyber Growth Pack", pkg2Features: "<li><strong>Advanced Firewall</strong></li><li>Ads Setup</li><li>Competitor Analysis</li><li>HackerOne Certified</li>", pkg2Btn: "GET OFFER",
             pkg3H3: "Ads Management", pkg3Features: "<li>Neg. Keyword Filter</li><li>WhatsApp Tracking</li><li>Journey Analysis</li><li>Transparent Reports</li>", pkg3Btn: "GET INFO",
@@ -280,7 +276,6 @@ Tawk_API.onLoad = function(){
             heroH1: "Dijitalde Sadece Var Olmayın, <span>Hükmedin.</span>", heroP: "Siber güvenlik zırhlı web tasarım ve Google Ads çözümleriyle müşterileriniz size ulaşsın.",
             promo: "AYINA ÖZEL LANSMAN FİYATLARI İÇİN SON", days: "GÜN!",
             stat1: "Başarılı Proje", stat2: "Yönetilen Bütçe", stat3: "Güvenlik İhlali", stat4: "Aktif Destek",
-            formH: "Ücretsiz Dijital Güvenlik & SEO Analizi Alın", formBtn: "ANALİZİ BAŞLAT",
             pkg1H3: "Kurumsal Web Sitesi", pkg1Features: "<li>Mobil Uyumlu</li><li>90+ Hız Skoru</li><li>Ücretsiz SSL & Google</li><li>Temel SEO Altyapısı</li>", pkg1Btn: "HEMEN BAŞLAT",
             pkg2Badge: "ZIRHLI PAKET", pkg2H3: "Siber Büyüme Paketi", pkg2Features: "<li><strong>Gelişmiş Güvenlik Duvarı</strong></li><li>Ads Kurulumu</li><li>Rakip Analizi</li><li>HackerOne Güvenliği</li>", pkg2Btn: "TEKLİF AL",
             pkg3H3: "Ads Yönetimi", pkg3Features: "<li>Negatif Filtre</li><li>WA Takibi</li><li>Yolculuk Analizi</li><li>Şeffaf Raporlama</li>", pkg3Btn: "BİLGİ AL",
