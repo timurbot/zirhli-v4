@@ -92,15 +92,19 @@
         .stat-label { font-size: 0.8rem; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; }
 
         .founder-section {
-            background: var(--card); border: 1px solid rgba(0, 242, 255, 0.2); border-radius: 28px; padding: 45px; margin: 50px 0; display: flex; gap: 40px; align-items: center; flex-wrap: wrap; position: relative; overflow: hidden;
+            background: var(--card); border: 1px solid rgba(0, 242, 255, 0.2); border-radius: 28px; padding: 45px; margin: 50px 0; display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; position: relative; overflow: hidden;
         }
-        .founder-img-wrapper { position: relative; width: 200px; height: 200px; flex-shrink: 0; }
-        .founder-img { width: 100%; height: 100%; border-radius: 24px; object-fit: cover; border: 2px solid var(--neon); background: #000; }
+        .founder-img-wrapper { position: relative; width: 220px; height: 220px; flex-shrink: 0; margin-top: 10px; }
+        .founder-img { width: 100%; height: 100%; border-radius: 24px; object-fit: cover; border: 2px solid var(--neon); background: #000; box-shadow: 0 0 30px rgba(0, 242, 255, 0.2); }
         .founder-status { position: absolute; bottom: -12px; right: -12px; background: var(--neon); color: #000; padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 900; }
+
+        .founder-text { flex: 1; min-width: 300px; }
+        .founder-text h2 { color: var(--neon); margin-bottom: 25px; font-size: 1.8rem; font-weight: 800; }
+        .founder-text p { color: var(--dim); font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px; }
+        .founder-text strong { color: var(--neon); }
 
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 50px; }
         .price-card { background: var(--card); padding: 40px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.03); display: flex; flex-direction: column; position: relative; transition: 0.4s; }
-        .price-card:hover { transform: translateY(-10px); border-color: var(--neon); }
         .price-card.featured { border: 2px solid var(--neon); box-shadow: 0 0 40px rgba(0, 242, 255, 0.15); }
         .badge { position: absolute; top: -15px; right: 25px; padding: 6px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: 900; }
         .price-amount { font-size: 2.5rem; font-weight: 900; margin-bottom: 25px; color: var(--neon); }
@@ -110,12 +114,8 @@
         .card-btn { background: rgba(0, 242, 255, 0.05); border: 2px solid var(--neon); color: var(--neon); padding: 15px; border-radius: 12px; text-align: center; text-decoration: none; font-weight: 800; transition: 0.3s; }
         .card-btn:hover { background: var(--neon); color: #000; }
 
-        /* SEO ARTICLE SECTION - NEW */
-        .seo-knowledge-base { margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(0, 242, 255, 0.1); }
-        .seo-knowledge-base h2 { color: var(--neon); text-align: center; margin-bottom: 40px; font-size: 1.8rem; text-transform: uppercase; }
-        .article-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .article-card { background: rgba(17, 20, 32, 0.5); padding: 30px; border-radius: 20px; border: 1px solid rgba(0, 242, 255, 0.1); transition: 0.3s; }
-        .article-card:hover { border-color: var(--neon); transform: scale(1.02); }
+        .article-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 40px; }
+        .article-card { background: rgba(17, 20, 32, 0.5); padding: 30px; border-radius: 20px; border: 1px solid rgba(0, 242, 255, 0.1); }
         .article-card h3 { color: var(--neon); font-size: 1.2rem; margin-bottom: 15px; border-left: 3px solid var(--neon); padding-left: 15px; }
         .article-card p { color: var(--dim); font-size: 0.9rem; line-height: 1.6; }
 
@@ -134,7 +134,7 @@
         #z-chat-container { position: fixed; bottom: 110px; right: 25px; z-index: 10000; }
         #z-chat-window { display: none; width: 320px; background: #111420; border: 1px solid var(--neon); border-radius: 20px; overflow: hidden; box-shadow: 0 15px 50px rgba(0,0,0,0.9); margin-bottom: 15px; }
 
-        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .pricing-grid { grid-template-columns: 1fr; } .founder-section { text-align: center; justify-content: center; } .article-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .pricing-grid { grid-template-columns: 1fr; } .founder-section { text-align: center; justify-content: center; padding: 25px; } .founder-img-wrapper { width: 180px; height: 180px; margin: 0 auto; } }
     </style>
 </head>
 <body>
@@ -166,44 +166,28 @@
         <div class="stat-item"><span class="stat-num">24/7</span><span class="stat-label" id="txt-stat4">Aktif Destek</span></div>
     </div>
 
-    <section class="seo-knowledge-base">
-        <h2 id="txt-kb-h2">Stratejik Dijital Çözümler & SEO Rehberi</h2>
-        <div class="article-grid">
-            <div class="article-card">
-                <h3 id="art1-h3">Siber Güvenlikli Web Tasarım Nedir?</h3>
-                <p id="art1-p">Sadece görsel bir arayüz değil, SQL Injection ve XSS korumalı altyapılar inşa ediyoruz. Google, güvenli siteleri arama sonuçlarında (SEO) daha üst sıralara taşır. Siber Reklam Dünyası, Mercedes-Benz standartlarında güvenlik testlerinden geçmiş kod mimarisi kullanır.</p>
-            </div>
-            <div class="article-card">
-                <h3 id="art2-h3">Dönüşüm Odaklı Google Ads Yönetimi</h3>
-                <p id="art2-p">Boşa giden tıklamalara son veriyoruz. Siber güvenlik zekamızla "bot" tıklamaları filtreliyor, sadece gerçek müşterilere ulaşmanızı sağlıyoruz. Akıllı anahtar kelime analizi ile reklam bütçenizi %40 daha verimli kullanın.</p>
-            </div>
-            <div class="article-card">
-                <h3 id="art3-h3">Neden Kurumsal Web Sitesi?</h3>
-                <p id="art3-p">Hız ve mobil uyumluluk (UX), dijital itibarınızın temelidir. 24 saatte kurulumunu yaptığımız profesyonel web tasarım çözümlerimiz, Lighthouse skorlarında 90+ puan alarak Google algoritmalarına tam uyum sağlar.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="lead-form-box">
-        <h2 id="txt-form-h">Ücretsiz Dijital Güvenlik & SEO Analizi Alın</h2>
-        <form class="l-form" onsubmit="return gtag_report_conversion('https://wa.me/905414516774?text=Ücretsiz analiz istiyorum');">
-            <input type="text" class="l-input" id="inp-url" placeholder="Web Siteniz (Opsiyonel)">
-            <input type="tel" class="l-input" id="inp-tel" placeholder="Telefon Numaranız" required>
-            <button type="submit" class="l-btn" id="txt-form-btn">ANALİZİ BAŞLAT</button>
-        </form>
-    </section>
-
     <section class="founder-section">
         <div class="founder-img-wrapper">
-            <img src="TİMUR.jpeg" alt="Timur Çapkın" class="founder-img" onerror="this.onerror=null; this.src='https://api.dicebear.com/7.x/bottts-neutral/svg?seed=Timur&backgroundColor=00f2ff';">
+            <img src="TİMUR.jpeg" alt="Timur Çapkın - Siber Güvenlik Uzmanı" class="founder-img" onerror="this.onerror=null; this.src='https://api.dicebear.com/7.x/bottts-neutral/svg?seed=Timur&backgroundColor=00f2ff';">
             <div class="founder-status">VERIFIED EXPERT</div>
         </div>
         <div class="founder-text">
             <h2 id="txt-founder-h2">Siber Reklam Dünyası Kurucusu Kimdir?</h2>
             <div id="txt-founder-p">
-                <p>Ben <strong>Timur Çapkın</strong>; HackerOne ve Bugcrowd platformlarında Mercedes-Benz gibi devler tarafından ödüllendirilmiş bir güvenlik araştırmacısıyım. İşletmenizi sadece dijital dünyaya taşımıyor, onu siber saldırılara karşı korunaklı bir kaleye dönüştürüyorum.</p>
+                <p>Ben <strong>Timur Çapkın</strong>; siber güvenlik dünyasında HackerOne ve Bugcrowd gibi global platformlarda rüştünü ispatlamış, <strong>Mercedes-Benz</strong> gibi dünya devleri tarafından resmi olarak ödüllendirilmiş bir siber güvenlik araştırmacısı ve dijital stratejistim.</p>
+                <p>Siber Reklam Dünyası'nı kurarken vizyonum sadece "web sitesi yapmak" değil, markaları siber saldırılara karşı birer kaleye dönüştürmekti. 10 yılı aşkın tecrübemle, <strong>IDOR, BOLA ve CSRF</strong> gibi kritik zafiyet taramalarını iş modelimin merkezine koydum. Bugün, geliştirmekte olduğum <strong>"Timur Projesi (Collide)"</strong> gibi otonom hacking araçları ve yapay zeka destekli güvenlik yazılımlarıyla, işletmenizi sadece rakiplerinizin değil, siber korsanların da önüne geçiriyorum.</p>
+                <p>Her kod satırını siber güvenlik süzgecinden geçiriyor, Google Ads optimizasyonlarımı ise bot tıklamalarını %100 filtreleyecek bir zeka ile kurguluyorum. Bizimle çalıştığınızda sadece bir ajansla değil, markanızın dijital zırhını kuşanan bir stratejik ortakla çalışırsınız.</p>
             </div>
         </div>
+    </section>
+
+    <section class="lead-form-box" style="background: linear-gradient(145deg, #161b2e, #0b0d18); padding: 40px; border-radius: 28px; border: 1px solid var(--neon);">
+        <h2 id="txt-form-h" style="text-align: center; color: var(--neon); margin-bottom: 25px;">Ücretsiz Dijital Güvenlik & SEO Analizi Alın</h2>
+        <form class="l-form" style="display: flex; gap: 15px; flex-wrap: wrap;" onsubmit="return gtag_report_conversion('https://wa.me/905414516774?text=Ücretsiz analiz istiyorum');">
+            <input type="text" class="l-input" id="inp-url" placeholder="Web Siteniz (Opsiyonel)" style="flex: 1; min-width: 220px; padding: 18px; border-radius: 12px; border: 1px solid rgba(0, 242, 255, 0.2); background: #05060a; color: #fff; outline: none;">
+            <input type="tel" class="l-input" id="inp-tel" placeholder="Telefon Numaranız" required style="flex: 1; min-width: 220px; padding: 18px; border-radius: 12px; border: 1px solid rgba(0, 242, 255, 0.2); background: #05060a; color: #fff; outline: none;">
+            <button type="submit" class="l-btn" id="txt-form-btn" style="background: var(--neon); color: #000; padding: 18px 35px; border-radius: 12px; border: none; font-weight: 900; cursor: pointer; transition: 0.4s; flex-shrink: 0; width: 100%;">ANALİZİ BAŞLAT</button>
+        </form>
     </section>
 
     <div class="pricing-grid">
@@ -244,6 +228,24 @@
             <a href="https://wa.me/905414516774" class="card-btn" id="txt-pkg3-btn">BİLGİ AL</a>
         </div>
     </div>
+
+    <section style="margin-top: 80px;">
+        <h2 id="txt-kb-h2" style="color: var(--neon); text-align: center; margin-bottom: 40px;">Sektörel Stratejiler & SEO Rehberi</h2>
+        <div class="article-grid">
+            <div class="article-card">
+                <h3 id="art1-h3">Siber Güvenlikli Web Tasarım Nedir?</h3>
+                <p id="art1-p">SQL Injection ve XSS korumalı altyapılar inşa ederek, Google'ın güvenli site kriterlerine tam uyum sağlıyoruz. Siber Reklam Dünyası, Mercedes-Benz standartlarında güvenlik testlerinden geçmiş kod mimarisi sunar.</p>
+            </div>
+            <div class="article-card">
+                <h3 id="art2-h3">Dönüşüm Odaklı Google Ads Yönetimi</h3>
+                <p id="art2-p">Bot tıklamaları siber güvenlik zekamızla filtreleyin. Akıllı anahtar kelime analizi ve negatif filtreleme ile reklam bütçenizi %40 daha verimli kullanın, gerçek müşteriye ulaşın.</p>
+            </div>
+            <div class="article-card">
+                <h3 id="art3-h3">Neden Kurumsal Web Sitesi?</h3>
+                <p id="art3-p">Hız ve mobil uyumluluk (UX), dijital itibarınızdır. 24 saatte kurduğumuz çözümler 90+ Lighthouse puanı alarak Google'ın Core Web Vitals algoritmalarına tam uyum sağlar.</p>
+            </div>
+        </div>
+    </section>
 
     <section class="seo-box">
         <h2 id="txt-seo-h2">Siber Güvenlik Odaklı Web Tasarım</h2>
@@ -293,18 +295,18 @@
             heroH1: "Don't Just Exist Online, <span>Dominate.</span>", heroP: "Reach customers with cybersecurity-armored web design and global ad solutions.",
             promo: "LAST DAYS FOR SPECIAL LAUNCH PRICES IN", days: "DAYS!",
             stat1: "Successful Projects", stat2: "Managed Budget", stat3: "Security Breaches", stat4: "Active Support",
-            kbH2: "Strategic Digital Solutions & SEO Guide",
-            art1H3: "What is Cybersecurity Web Design?", art1P: "We build SQLi/XSS protected infrastructures. Google prioritizes secure sites in SEO. We use Mercedes-Benz standard code architecture.",
-            art2H3: "Conversion Focused Google Ads", art2P: "Stop wasted clicks. Filter bots with cyber intelligence. Increase budget efficiency by 40% with smart keyword analysis.",
-            art3H3: "Why Corporate Web Design?", art3P: "Speed and UX are the foundation of your reputation. Our 24h-setup solutions hit 90+ Lighthouse scores for Google alignment.",
+            kbH2: "Sectoral Strategies & SEO Guide",
+            art1H3: "What is Cybersecurity Web Design?", art1P: "By building SQLi and XSS protected infrastructures, we comply with Google's secure site criteria. We use Mercedes-Benz standard code architecture.",
+            art2H3: "Conversion Focused Google Ads", art2P: "Filter bot clicks with cyber intelligence. Save 40% on your budget with smart keyword analysis and reach real customers.",
+            art3H3: "Why Corporate Web Design?", art3P: "Speed and UX are your digital reputation. Our 24h solutions hit 90+ Lighthouse scores for full Google algorithm alignment.",
             formH: "Get Free Digital Security & SEO Analysis", formBtn: "START ANALYSIS",
             founderH2: "Who is the Founder?",
-            founderP: "<p>I am <strong>Timur Capkin</strong>; a security researcher awarded by giants like Mercedes-Benz. I build digital fortresses armored against cyber threats.</p>",
+            founderP: "<p>I am <strong>Timur Capkin</strong>; a security researcher awarded by <strong>Mercedes-Benz</strong> on platforms like HackerOne and Bugcrowd.</p><p>My vision for Cyber Ad World was to transform brands into digital fortresses. With 10+ years of experience in <strong>IDOR, BOLA, and CSRF</strong> research, and projects like <strong>'Project Timur (Collide)'</strong>, I put your business ahead of hackers.</p><p>Every line of code is filtered for security, and Ads are optimized to filter 100% of bot clicks. We are your strategic partner in digital armor.</p>",
             pkg1H3: "Corporate Website", pkg1Features: "<li>Mobile Friendly</li><li>90+ Speed Score</li><li>Free SSL & Google</li><li>Basic SEO</li>", pkg1Btn: "START NOW",
             pkg2Badge: "ARMORED PACK", pkg2H3: "Cyber Growth Pack", pkg2Features: "<li><strong>Advanced Firewall</strong></li><li>Ads Setup</li><li>Competitor Analysis</li><li>HackerOne Certified</li>", pkg2Btn: "GET OFFER",
             pkg3H3: "Ads Management", pkg3Features: "<li>Neg. Keyword Filter</li><li>WhatsApp Tracking</li><li>Journey Analysis</li><li>Transparent Reports</li>", pkg3Btn: "GET INFO",
             monthUnit: "/mo", seoH2: "Cybersecurity Web Design", seoP: "Stand out in 'professional web design' searches while protected by a cyber shield.",
-            kanitH2: "OPERATION CENTER", kanitP: "We make your system ready for high-volume sales.",
+            kanitH2: "STRATEGIC OPERATION CENTER", kanitP: "We pass your system through a cybersecurity filter for high-volume sales.",
             quote: "Build the Future with Cybersecurity.", chatH: "CYBER SUPPORT", chatMsg: "Hello! I am your Cyber Assistant.", call: "📞 CALL NOW", wa: "💬 WHATSAPP",
             f1: "Data Protection", f2: "Privacy", f3: "Cookies",
             prices: ["$250", "$1.250", "$150"]
@@ -314,18 +316,18 @@
             heroH1: "Dijitalde Sadece Var Olmayın, <span>Hükmedin.</span>", heroP: "Siber güvenlik zırhlı web tasarım ve Google Ads çözümleriyle müşterileriniz size ulaşsın.",
             promo: "AYINA ÖZEL LANSMAN FİYATLARI İÇİN SON", days: "GÜN!",
             stat1: "Başarılı Proje", stat2: "Yönetilen Bütçe", stat3: "Güvenlik İhlali", stat4: "Aktif Destek",
-            kbH2: "Stratejik Dijital Çözümler & SEO Rehberi",
-            art1H3: "Siber Güvenlikli Web Tasarım Nedir?", art1P: "SQLi ve XSS korumalı altyapılar inşa ediyoruz. Google güvenli siteleri SEO'da üst sıralara taşır. Mercedes-Benz onaylı kod mimarisi sunuyoruz.",
-            art2H3: "Dönüşüm Odaklı Google Ads Yönetimi", art2P: "Bot tıklamaları filtreleyin, sadece gerçek müşteriye ulaşın. Akıllı anahtar kelime analizi ile bütçenizi %40 daha verimli kullanın.",
-            art3H3: "Neden Kurumsal Web Sitesi?", art3P: "Hız ve UX dijital itibarınızdır. 24 saatte kurduğumuz çözümler 90+ Lighthouse puanı ile Google algoritmalarına tam uyum sağlar.",
+            kbH2: "Sektörel Stratejiler & SEO Rehberi",
+            art1H3: "Siber Güvenlikli Web Tasarım Nedir?", art1P: "SQL Injection ve XSS korumalı altyapılar inşa ederek, Google'ın güvenli site kriterlerine tam uyum sağlıyoruz. Mercedes-Benz onaylı kod mimarisi sunuyoruz.",
+            art2H3: "Dönüşüm Odaklı Google Ads Yönetimi", art2P: "Bot tıklamaları siber güvenlik zekamızla filtreleyin. Negatif filtreleme ile bütçenizi %40 daha verimli kullanın, gerçek müşteriye ulaşın.",
+            art3H3: "Neden Kurumsal Web Sitesi?", art3P: "Hız ve UX dijital itibarınızdır. 24 saatte kurduğumuz çözümler 90+ Lighthouse puanı alarak Google algoritmalarına tam uyum sağlar.",
             formH: "Ücretsiz Dijital Güvenlik & SEO Analizi Alın", formBtn: "ANALİZİ BAŞLAT",
             founderH2: "Siber Reklam Dünyası Kurucusu Kimdir?",
-            founderP: "<p>Ben <strong>Timur Çapkın</strong>; Mercedes-Benz gibi devler tarafından ödüllendirilmiş bir araştırmacıyım. İşletmenizi siber saldırılara karşı korunaklı bir kaleye dönüştürüyorum.</p>",
+            founderP: "<p>Ben <strong>Timur Çapkın</strong>; HackerOne ve Bugcrowd gibi platformlarda <strong>Mercedes-Benz</strong> gibi devler tarafından ödüllendirilmiş bir araştırmacıyım.</p><p>Vizyonum markaları siber saldırılara karşı birer kaleye dönüştürmekti. 10 yılı aşkın <strong>IDOR, BOLA ve CSRF</strong> tecrübem ve <strong>'Timur Projesi (Collide)'</strong> gibi otonom araçlarımla işletmenizi korsanların önüne geçiriyorum.</p><p>Her kod satırı güvenlik süzgecinden geçiyor, Ads optimizasyonlarım botları %100 filtreliyor. Biz markanızın dijital zırhını kuşanan stratejik ortağınızız.</p>",
             pkg1H3: "Kurumsal Web Sitesi", pkg1Features: "<li>Mobil Uyumlu</li><li>90+ Hız Skoru</li><li>Ücretsiz SSL & Google</li><li>Temel SEO Altyapısı</li>", pkg1Btn: "HEMEN BAŞLAT",
             pkg2Badge: "ZIRHLI PAKET", pkg2H3: "Siber Büyüme Paketi", pkg2Features: "<li><strong>Gelişmiş Güvenlik Duvarı</strong></li><li>Ads Kurulumu</li><li>Rakip Analizi</li><li>HackerOne Güvenliği</li>", pkg2Btn: "TEKLİF AL",
             pkg3H3: "Ads Yönetimi", pkg3Features: "<li>Negatif Filtre</li><li>WA Takibi</li><li>Yolculuk Analizi</li><li>Şeffaf Raporlama</li>", pkg3Btn: "BİLGİ AL",
             monthUnit: "/ay", seoH2: "Siber Güvenlik Odaklı Web Tasarım", seoP: "İşletmenizi Google'da 'profesyonel web tasarım' aramalarında öne çıkarırken, siber zırhla koruyoruz.",
-            kanitH2: "STRATEJİK OPERASYON MERKEZİ", kanitP: "Sisteminizi siber güvenlik süzgecinden geçiriyor ve satışa hazır hale getiriyoruz.",
+            kanitH2: "STRATEGIC OPERATION CENTER", kanitP: "Sisteminizi siber güvenlik süzgecinden geçiriyor ve satışa hazır hale getiriyoruz.",
             quote: "Geleceği Siber Güvenlikle İnşa Edin.", chatH: "SİBER DESTEK", chatMsg: "Merhaba! Ben Siber Asistan. İşletmenizi büyütmek için buradayım.", call: "📞 ŞİMDİ ARA", wa: "💬 WHATSAPP",
             f1: "KVKK Aydınlatma", f2: "Gizlilik Politikası", f3: "Çerez Tercihleri",
             prices: ["₺3.500", "₺24.500", "₺3.500"]
