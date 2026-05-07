@@ -125,7 +125,6 @@
         .btn-wa { background: var(--whatsapp); }
         .btn-ph { background: var(--phone); }
 
-        /* Arka Plan Kontrol Butonları (Gerektiğinde Aktif Edilebilir) */
         #admin-controls { display: none; }
 
         @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .pricing-grid { grid-template-columns: 1fr; } .founder-section { text-align: center; justify-content: center; padding: 25px; } .founder-img-wrapper { width: 180px; height: 180px; margin: 0 auto; } }
@@ -250,10 +249,21 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 
 Tawk_API.onLoad = function(){
-    Tawk_API.setAttributes({
-        'Status': 'Ziyaretçi Takip Ediliyor',
-        'Agency': 'Siber Reklam Dünyası'
-    });
+    const currentLang = document.documentElement.lang || 'tr';
+    
+    if (currentLang === 'tr') {
+        Tawk_API.setAttributes({
+            'Status': 'Ziyaretçi Takip Ediliyor',
+            'Agency': 'Siber Reklam Dünyası'
+        });
+        Tawk_API.setVisitorLanguage('tr');
+    } else {
+        Tawk_API.setAttributes({
+            'Status': 'Visitor Being Tracked',
+            'Agency': 'Siber Reklam World'
+        });
+        Tawk_API.setVisitorLanguage('en');
+    }
 };
 </script>
 
@@ -286,8 +296,12 @@ Tawk_API.onLoad = function(){
     };
 
     function setLanguage(lang, btn) {
+        document.documentElement.lang = lang; // HTML lang etiketini günceller
         document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-        if(btn) btn.classList.add('active'); else document.getElementById('btn-' + lang).classList.add('active');
+        if(btn) btn.classList.add('active'); else {
+            const targetBtn = document.getElementById('btn-' + lang);
+            if(targetBtn) targetBtn.classList.add('active');
+        }
         const l = dictionary[lang];
         document.getElementById('txt-badge1').innerText = l.badge1; document.getElementById('txt-badge2').innerText = l.badge2; document.getElementById('txt-badge3').innerText = l.badge3;
         document.getElementById('txt-hero-h1').innerHTML = l.heroH1; document.getElementById('txt-hero-p').innerText = l.heroP;
