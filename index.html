@@ -70,7 +70,6 @@
         .lang-control { display: flex; gap: 8px; }
         .lang-btn { background: none; border: 1px solid var(--neon); color: var(--neon); padding: 5px 10px; border-radius: 6px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.3s ease; }
         .lang-btn.active { background: var(--neon); color: #000; }
-        .lang-btn:hover:not(.active) { background: rgba(0, 242, 255, 0.1); }
 
         .container { width: 92%; max-width: 1100px; margin: 0 auto; padding: 40px 0; }
         
@@ -83,118 +82,59 @@
         .trust-badges span { border: 1px solid rgba(0, 242, 255, 0.3); padding: 6px 12px; border-radius: 50px; background: rgba(0, 242, 255, 0.05); }
 
         .promo-timer {
-            background: rgba(255, 62, 62, 0.08);
-            border: 1px dashed var(--danger);
-            padding: 18px;
-            border-radius: 15px;
-            margin: 25px auto;
-            max-width: 650px;
-            color: var(--danger);
-            font-weight: 800;
-            font-size: 0.95rem;
-            animation: pulse 2s infinite;
+            background: rgba(255, 62, 62, 0.08); border: 1px dashed var(--danger); padding: 18px; border-radius: 15px; margin: 25px auto; max-width: 650px; color: var(--danger); font-weight: 800; font-size: 0.95rem; animation: pulse 2s infinite; text-align: center;
         }
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
 
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; margin-bottom: 50px; text-align: center; }
         .stat-item { background: rgba(17, 20, 32, 0.6); padding: 25px; border-radius: 18px; border: 1px solid rgba(0, 242, 255, 0.15); transition: 0.3s; }
-        .stat-item:hover { border-color: var(--neon); transform: translateY(-3px); }
         .stat-num { display: block; font-size: 2rem; font-weight: 800; color: var(--neon); margin-bottom: 5px; }
-        .stat-label { font-size: 0.8rem; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+        .stat-label { font-size: 0.8rem; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; }
 
         .founder-section {
-            background: var(--card);
-            border: 1px solid rgba(0, 242, 255, 0.2);
-            border-radius: 28px;
-            padding: 45px;
-            margin: 50px 0;
-            display: flex;
-            gap: 40px;
-            align-items: center;
-            flex-wrap: wrap;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            background: var(--card); border: 1px solid rgba(0, 242, 255, 0.2); border-radius: 28px; padding: 45px; margin: 50px 0; display: flex; gap: 40px; align-items: center; flex-wrap: wrap; position: relative; overflow: hidden;
         }
-        .founder-section::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, transparent, var(--neon), transparent); }
-        
         .founder-img-wrapper { position: relative; width: 200px; height: 200px; flex-shrink: 0; }
-        .founder-img { 
-            width: 100%; height: 100%; border-radius: 24px; object-fit: cover; 
-            border: 2px solid var(--neon); box-shadow: 0 0 25px rgba(0, 242, 255, 0.25);
-            background: #000;
-        }
-        .founder-status { position: absolute; bottom: -12px; right: -12px; background: var(--neon); color: #000; padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 900; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        .founder-img { width: 100%; height: 100%; border-radius: 24px; object-fit: cover; border: 2px solid var(--neon); background: #000; }
+        .founder-status { position: absolute; bottom: -12px; right: -12px; background: var(--neon); color: #000; padding: 5px 12px; border-radius: 10px; font-size: 11px; font-weight: 900; }
 
-        .founder-text { flex: 1; min-width: 300px; }
-        .founder-text h2 { color: var(--neon); margin-bottom: 20px; font-size: 1.7rem; font-weight: 800; }
-        .founder-text p { color: var(--dim); font-size: 1rem; line-height: 1.8; }
-
-        .lead-form-box { background: linear-gradient(145deg, #161b2e, #0b0d18); padding: 40px; border-radius: 28px; border: 1px solid var(--neon); margin: 50px 0; box-shadow: 0 0 30px rgba(0, 242, 255, 0.05); }
-        .lead-form-box h2 { text-align: center; color: var(--neon); margin-bottom: 25px; font-size: 1.5rem; font-weight: 800; }
-        .l-form { display: flex; gap: 15px; flex-wrap: wrap; }
-        .l-input { flex: 1; min-width: 220px; padding: 18px; border-radius: 12px; border: 1px solid rgba(0, 242, 255, 0.2); background: #05060a; color: #fff; outline: none; transition: 0.3s; font-size: 1rem; }
-        .l-input:focus { border-color: var(--neon); box-shadow: 0 0 10px rgba(0, 242, 255, 0.2); }
-        .l-btn { background: var(--neon); color: #000; padding: 18px 35px; border-radius: 12px; border: none; font-weight: 900; cursor: pointer; transition: 0.4s; flex-shrink: 0; width: 100%; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
-        .l-btn:hover { transform: scale(1.02); box-shadow: 0 0 25px var(--neon); }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .price-card {
-            background: var(--card);
-            padding: 40px;
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-
-        .price-card:hover { transform: translateY(-10px); border-color: var(--neon); box-shadow: 0 20px 40px rgba(0, 242, 255, 0.1); }
-        .price-card.featured { border: 2px solid var(--neon); box-shadow: 0 0 40px rgba(0, 242, 255, 0.15); z-index: 2; }
-
-        .badge { position: absolute; top: -15px; right: 25px; background: var(--neon); color: #000; padding: 6px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: 900; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 50px; }
+        .price-card { background: var(--card); padding: 40px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.03); display: flex; flex-direction: column; position: relative; transition: 0.4s; }
+        .price-card:hover { transform: translateY(-10px); border-color: var(--neon); }
+        .price-card.featured { border: 2px solid var(--neon); box-shadow: 0 0 40px rgba(0, 242, 255, 0.15); }
+        .badge { position: absolute; top: -15px; right: 25px; padding: 6px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: 900; }
         .price-amount { font-size: 2.5rem; font-weight: 900; margin-bottom: 25px; color: var(--neon); }
         .price-features { list-style: none; margin-bottom: 30px; flex-grow: 1; }
         .price-features li { font-size: 0.95rem; color: var(--dim); margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
         .price-features li::before { content: "✔"; color: var(--neon); font-weight: bold; }
-
-        .card-btn { background: rgba(0, 242, 255, 0.05); border: 2px solid var(--neon); color: var(--neon); padding: 15px; border-radius: 12px; text-align: center; text-decoration: none; font-weight: 800; font-size: 0.95rem; transition: 0.3s; }
+        .card-btn { background: rgba(0, 242, 255, 0.05); border: 2px solid var(--neon); color: var(--neon); padding: 15px; border-radius: 12px; text-align: center; text-decoration: none; font-weight: 800; transition: 0.3s; }
         .card-btn:hover { background: var(--neon); color: #000; }
 
-        .seo-box { margin-top: 70px; padding: 40px; background: rgba(17, 20, 32, 0.4); border-radius: 24px; border: 1px solid rgba(0, 242, 255, 0.08); text-align: center; }
-        .seo-box h2 { color: var(--neon); margin-bottom: 20px; }
-        
-        .kanit { margin-top: 50px; padding: 50px; background: linear-gradient(145deg, #111420, #05060a); border: 1px solid var(--neon); border-radius: 28px; text-align: center; position: relative; }
+        /* SEO ARTICLE SECTION - NEW */
+        .seo-knowledge-base { margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(0, 242, 255, 0.1); }
+        .seo-knowledge-base h2 { color: var(--neon); text-align: center; margin-bottom: 40px; font-size: 1.8rem; text-transform: uppercase; }
+        .article-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .article-card { background: rgba(17, 20, 32, 0.5); padding: 30px; border-radius: 20px; border: 1px solid rgba(0, 242, 255, 0.1); transition: 0.3s; }
+        .article-card:hover { border-color: var(--neon); transform: scale(1.02); }
+        .article-card h3 { color: var(--neon); font-size: 1.2rem; margin-bottom: 15px; border-left: 3px solid var(--neon); padding-left: 15px; }
+        .article-card p { color: var(--dim); font-size: 0.9rem; line-height: 1.6; }
+
+        .seo-box { margin-top: 50px; padding: 40px; background: rgba(17, 20, 32, 0.4); border-radius: 24px; border: 1px solid rgba(0, 242, 255, 0.08); text-align: center; }
+        .kanit { margin-top: 50px; padding: 50px; background: linear-gradient(145deg, #111420, #05060a); border: 1px solid var(--neon); border-radius: 28px; text-align: center; }
 
         footer { margin-top: 60px; padding: 50px 0; border-top: 1px solid rgba(0, 242, 255, 0.1); text-align: center; font-size: 0.85rem; color: var(--dim); }
         .footer-links { display: flex; justify-content: center; gap: 25px; margin-bottom: 20px; }
-        .footer-links a { color: var(--dim); text-decoration: none; transition: 0.3s; }
-        .footer-links a:hover { color: var(--neon); }
-
+        .footer-links a { color: var(--dim); text-decoration: none; }
+        
         .fixed-contact { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; width: 94%; max-width: 480px; z-index: 9999; }
-        .c-btn { flex: 1; padding: 20px; border-radius: 16px; text-align: center; text-decoration: none; font-weight: 900; font-size: 1rem; color: #fff; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.6); transition: 0.3s; }
-        .c-btn:active { transform: scale(0.95); }
+        .c-btn { flex: 1; padding: 20px; border-radius: 16px; text-align: center; text-decoration: none; font-weight: 900; color: #fff; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
         .btn-wa { background: var(--whatsapp); }
         .btn-ph { background: var(--phone); }
 
         #z-chat-container { position: fixed; bottom: 110px; right: 25px; z-index: 10000; }
         #z-chat-window { display: none; width: 320px; background: #111420; border: 1px solid var(--neon); border-radius: 20px; overflow: hidden; box-shadow: 0 15px 50px rgba(0,0,0,0.9); margin-bottom: 15px; }
 
-        @media (max-width: 768px) { 
-            .hero h1 { font-size: 2rem; } 
-            .pricing-grid { grid-template-columns: 1fr; } 
-            .founder-section { text-align: center; justify-content: center; padding: 30px; } 
-            .founder-img-wrapper { width: 160px; height: 160px; margin: 0 auto; } 
-            .l-form { flex-direction: column; }
-            .hero p { font-size: 1rem; }
-        }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .pricing-grid { grid-template-columns: 1fr; } .founder-section { text-align: center; justify-content: center; } .article-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -220,23 +160,29 @@
     </section>
 
     <div class="stats-grid">
-        <div class="stat-item">
-            <span class="stat-num">500+</span>
-            <span class="stat-label" id="txt-stat1">Başarılı Proje</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-num">10M+</span>
-            <span class="stat-label" id="txt-stat2">Yönetilen Bütçe</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-num">0</span>
-            <span class="stat-label" id="txt-stat3">Güvenlik İhlali</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-num">24/7</span>
-            <span class="stat-label" id="txt-stat4">Aktif Destek</span>
-        </div>
+        <div class="stat-item"><span class="stat-num">500+</span><span class="stat-label" id="txt-stat1">Başarılı Proje</span></div>
+        <div class="stat-item"><span class="stat-num">10M+</span><span class="stat-label" id="txt-stat2">Yönetilen Bütçe</span></div>
+        <div class="stat-item"><span class="stat-num">0</span><span class="stat-label" id="txt-stat3">Güvenlik İhlali</span></div>
+        <div class="stat-item"><span class="stat-num">24/7</span><span class="stat-label" id="txt-stat4">Aktif Destek</span></div>
     </div>
+
+    <section class="seo-knowledge-base">
+        <h2 id="txt-kb-h2">Stratejik Dijital Çözümler & SEO Rehberi</h2>
+        <div class="article-grid">
+            <div class="article-card">
+                <h3 id="art1-h3">Siber Güvenlikli Web Tasarım Nedir?</h3>
+                <p id="art1-p">Sadece görsel bir arayüz değil, SQL Injection ve XSS korumalı altyapılar inşa ediyoruz. Google, güvenli siteleri arama sonuçlarında (SEO) daha üst sıralara taşır. Siber Reklam Dünyası, Mercedes-Benz standartlarında güvenlik testlerinden geçmiş kod mimarisi kullanır.</p>
+            </div>
+            <div class="article-card">
+                <h3 id="art2-h3">Dönüşüm Odaklı Google Ads Yönetimi</h3>
+                <p id="art2-p">Boşa giden tıklamalara son veriyoruz. Siber güvenlik zekamızla "bot" tıklamaları filtreliyor, sadece gerçek müşterilere ulaşmanızı sağlıyoruz. Akıllı anahtar kelime analizi ile reklam bütçenizi %40 daha verimli kullanın.</p>
+            </div>
+            <div class="article-card">
+                <h3 id="art3-h3">Neden Kurumsal Web Sitesi?</h3>
+                <p id="art3-p">Hız ve mobil uyumluluk (UX), dijital itibarınızın temelidir. 24 saatte kurulumunu yaptığımız profesyonel web tasarım çözümlerimiz, Lighthouse skorlarında 90+ puan alarak Google algoritmalarına tam uyum sağlar.</p>
+            </div>
+        </div>
+    </section>
 
     <section class="lead-form-box">
         <h2 id="txt-form-h">Ücretsiz Dijital Güvenlik & SEO Analizi Alın</h2>
@@ -249,14 +195,13 @@
 
     <section class="founder-section">
         <div class="founder-img-wrapper">
-            <img src="TİMUR.jpeg" alt="Timur Çapkın - Siber Güvenlik Uzmanı" class="founder-img" 
-                 onerror="this.onerror=null; this.src='https://api.dicebear.com/7.x/bottts-neutral/svg?seed=Timur&backgroundColor=00f2ff';">
+            <img src="TİMUR.jpeg" alt="Timur Çapkın" class="founder-img" onerror="this.onerror=null; this.src='https://api.dicebear.com/7.x/bottts-neutral/svg?seed=Timur&backgroundColor=00f2ff';">
             <div class="founder-status">VERIFIED EXPERT</div>
         </div>
         <div class="founder-text">
             <h2 id="txt-founder-h2">Siber Reklam Dünyası Kurucusu Kimdir?</h2>
             <div id="txt-founder-p">
-                <p>Ben <strong>Timur Çapkın</strong>; siber güvenlik dünyasında HackerOne ve Bugcrowd gibi platformlarda Mercedes-Benz gibi devler tarafından ödüllendirilmiş bir güvenlik araştırmacısı ve dijital stratejistim. Sadece web sitesi yapmıyorum; markanızı siber saldırılara karşı zırhlayan, Google algoritmalarında hüküm süren yüksek performanslı dijital kaleler inşa ediyorum. 10 yılı aşkın tecrübemle, siber güvenlik zekasını reklam optimizasyonuyla birleştirerek işletmenizi risklerden koruyor ve karlılığınızı maksimize ediyorum.</p>
+                <p>Ben <strong>Timur Çapkın</strong>; HackerOne ve Bugcrowd platformlarında Mercedes-Benz gibi devler tarafından ödüllendirilmiş bir güvenlik araştırmacısıyım. İşletmenizi sadece dijital dünyaya taşımıyor, onu siber saldırılara karşı korunaklı bir kaleye dönüştürüyorum.</p>
             </div>
         </div>
     </section>
@@ -268,26 +213,24 @@
             <div class="price-amount" id="price-1">₺3.500</div>
             <ul class="price-features" id="txt-pkg1-features">
                 <li>Mobil Uyumlu & Ultra Hızlı</li>
-                <li>Hız Optimizasyonu (Lighthouse 90+)</li>
+                <li>Hız Optimizasyonu (90+)</li>
                 <li>Ücretsiz SSL & Google Kaydı</li>
                 <li>Temel SEO Altyapısı</li>
             </ul>
             <a href="https://wa.me/905414516774" class="card-btn" id="txt-pkg1-btn">HEMEN BAŞLAT</a>
         </div>
-
         <div class="price-card featured">
-            <div class="badge" id="txt-pkg2-badge">ZIRHLI PAKET</div>
+            <div class="badge" id="txt-pkg2-badge" style="background: var(--neon); color: #000;">ZIRHLI PAKET</div>
             <h3 id="txt-pkg2-h3">Siber Büyüme Paketi</h3>
             <div class="price-amount" id="price-2">₺24.500</div>
             <ul class="price-features" id="txt-pkg2-features">
                 <li><strong>Gelişmiş Siber Güvenlik Duvarı</strong></li>
-                <li>Profesyonel Google Ads Kurulumu</li>
+                <li>Profesyonel Ads Kurulumu</li>
                 <li>Detaylı Rakip & Sektör Analizi</li>
-                <li>Mercedes-Benz Onaylı Güvenlik</li>
+                <li>HackerOne Onaylı Güvenlik</li>
             </ul>
             <a href="https://wa.me/905414516774" class="card-btn" style="background: var(--neon); color: #000;" id="txt-pkg2-btn">TEKLİF AL</a>
         </div>
-
         <div class="price-card">
             <div class="badge" style="background: var(--gold); color: #000;" id="txt-pkg3-badge">PROFESYONEL</div>
             <h3 id="txt-pkg3-h3">Ads Yönetimi</h3>
@@ -295,7 +238,7 @@
             <ul class="price-features" id="txt-pkg3-features">
                 <li>Akıllı Negatif Kelime Filtresi</li>
                 <li>WhatsApp Dönüşüm Takibi</li>
-                <li>24 Saatte İlk Müşteri Araması</li>
+                <li>Müşteri Yolculuğu Analizi</li>
                 <li>Haftalık Şeffaf Raporlama</li>
             </ul>
             <a href="https://wa.me/905414516774" class="card-btn" id="txt-pkg3-btn">BİLGİ AL</a>
@@ -304,7 +247,7 @@
 
     <section class="seo-box">
         <h2 id="txt-seo-h2">Siber Güvenlik Odaklı Web Tasarım</h2>
-        <p id="txt-seo-p">İşletmenizi Google'da "ucuz web sitesi" aramalarında öne çıkarırken, siber güvenlik zırhıyla koruyoruz. Veriye dayalı stratejilerle reklam maliyetlerinizi düşürüp, satışlarınızı optimize ediyoruz.</p>
+        <p id="txt-seo-p">İşletmenizi Google'da "profesyonel web tasarım" ve "ucuz web sitesi" aramalarında öne çıkarırken, siber güvenlik zırhıyla koruyoruz. Veriye dayalı SEO stratejilerle satışlarınızı optimize ediyoruz.</p>
     </section>
 
     <section class="kanit">
@@ -318,13 +261,13 @@
     <div id="z-chat-window">
         <div style="background: var(--neon); color: #000; padding: 15px; font-weight: 800; display: flex; justify-content: space-between; align-items: center;">
             <span id="txt-chat-h">SİBER DESTEK</span>
-            <button onclick="toggleZChat()" style="background:none; border:none; cursor:pointer; font-size: 20px; font-weight: bold;">×</button>
+            <button onclick="toggleZChat()" style="background:none; border:none; cursor:pointer;">×</button>
         </div>
-        <div id="z-chat-body" style="padding: 20px; color: var(--dim); font-size: 0.9rem; min-height: 100px;">
+        <div id="z-chat-body" style="padding: 20px; color: var(--dim); font-size: 0.9rem;">
             <span id="txt-chat-msg">Merhaba! Ben Siber Asistan. İşletmenizi büyütmek için buradayım.</span>
         </div>
     </div>
-    <div onclick="toggleZChat()" style="width: 65px; height: 65px; background: var(--neon); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 3px solid #fff; box-shadow: 0 5px 20px rgba(0,242,255,0.4); transition: 0.3s;">
+    <div onclick="toggleZChat()" style="width: 65px; height: 65px; background: var(--neon); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 3px solid #fff;">
         <svg viewBox="0 0 24 24" width="32" height="32" fill="#000"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
     </div>
 </div>
@@ -347,19 +290,23 @@
     const dictionary = {
         en: {
             badge1: "🛡️ Cyber Protection Active", badge2: "⚡ 24h Setup", badge3: "✅ Certified Partner",
-            heroH1: "Don't Just Exist Online, <span>Dominate.</span>", heroP: "Reach your customers with cybersecurity-armored web design and global ad solutions.",
+            heroH1: "Don't Just Exist Online, <span>Dominate.</span>", heroP: "Reach customers with cybersecurity-armored web design and global ad solutions.",
             promo: "LAST DAYS FOR SPECIAL LAUNCH PRICES IN", days: "DAYS!",
             stat1: "Successful Projects", stat2: "Managed Budget", stat3: "Security Breaches", stat4: "Active Support",
+            kbH2: "Strategic Digital Solutions & SEO Guide",
+            art1H3: "What is Cybersecurity Web Design?", art1P: "We build SQLi/XSS protected infrastructures. Google prioritizes secure sites in SEO. We use Mercedes-Benz standard code architecture.",
+            art2H3: "Conversion Focused Google Ads", art2P: "Stop wasted clicks. Filter bots with cyber intelligence. Increase budget efficiency by 40% with smart keyword analysis.",
+            art3H3: "Why Corporate Web Design?", art3P: "Speed and UX are the foundation of your reputation. Our 24h-setup solutions hit 90+ Lighthouse scores for Google alignment.",
             formH: "Get Free Digital Security & SEO Analysis", formBtn: "START ANALYSIS",
-            founderH2: "Who is the Founder of Cyber Ad World?",
-            founderP: "<p>I am <strong>Timur Capkin</strong>; a security researcher and digital strategist awarded by giants like Mercedes-Benz on platforms such as HackerOne and Bugcrowd. I don't just build websites; I construct high-performance digital fortresses armored against cyber threats. With 10+ years of experience, I maximize your profitability while protecting your business from risks.</p>",
-            pkg1Badge: "OPPORTUNITY", pkg1H3: "Corporate Website", pkg1Features: "<li>Mobile Friendly & Ultra Fast</li><li>Speed Optimization (Lighthouse 90+)</li><li>Free SSL & Google Entry</li><li>Basic SEO Infrastructure</li>", pkg1Btn: "START NOW",
-            pkg2Badge: "ARMORED PACK", pkg2H3: "Cyber Growth Pack", pkg2Features: "<li><strong>Advanced Cyber Firewall</strong></li><li>Professional Google Ads Setup</li><li>Detailed Competitor Analysis</li><li>Mercedes-Benz Certified Security</li>", pkg2Btn: "GET OFFER",
-            pkg3Badge: "PROFESSIONAL", pkg3H3: "Ads Management", pkg3Features: "<li>Smart Negative Keyword Filter</li><li>WhatsApp Conversion Tracking</li><li>First Customer Call in 24h</li><li>Weekly Transparent Reporting</li>", pkg3Btn: "GET INFO",
-            monthUnit: "/mo", seoH2: "Cybersecurity Oriented Web Design", seoP: "While making your business stand out in global searches, we protect it with a cybersecurity shield.",
-            kanitH2: "STRATEGIC OPERATION CENTER", kanitP: "We pass your system through a cybersecurity filter and make it ready for sale.",
-            quote: "Build the Future with Cybersecurity.", chatH: "CYBER SUPPORT", chatMsg: "Hello! I am your Cyber Assistant. I'm here to grow your business.", call: "📞 CALL NOW", wa: "💬 WHATSAPP",
-            f1: "Data Protection", f2: "Privacy Policy", f3: "Cookie Settings",
+            founderH2: "Who is the Founder?",
+            founderP: "<p>I am <strong>Timur Capkin</strong>; a security researcher awarded by giants like Mercedes-Benz. I build digital fortresses armored against cyber threats.</p>",
+            pkg1H3: "Corporate Website", pkg1Features: "<li>Mobile Friendly</li><li>90+ Speed Score</li><li>Free SSL & Google</li><li>Basic SEO</li>", pkg1Btn: "START NOW",
+            pkg2Badge: "ARMORED PACK", pkg2H3: "Cyber Growth Pack", pkg2Features: "<li><strong>Advanced Firewall</strong></li><li>Ads Setup</li><li>Competitor Analysis</li><li>HackerOne Certified</li>", pkg2Btn: "GET OFFER",
+            pkg3H3: "Ads Management", pkg3Features: "<li>Neg. Keyword Filter</li><li>WhatsApp Tracking</li><li>Journey Analysis</li><li>Transparent Reports</li>", pkg3Btn: "GET INFO",
+            monthUnit: "/mo", seoH2: "Cybersecurity Web Design", seoP: "Stand out in 'professional web design' searches while protected by a cyber shield.",
+            kanitH2: "OPERATION CENTER", kanitP: "We make your system ready for high-volume sales.",
+            quote: "Build the Future with Cybersecurity.", chatH: "CYBER SUPPORT", chatMsg: "Hello! I am your Cyber Assistant.", call: "📞 CALL NOW", wa: "💬 WHATSAPP",
+            f1: "Data Protection", f2: "Privacy", f3: "Cookies",
             prices: ["$250", "$1.250", "$150"]
         },
         tr: {
@@ -367,14 +314,18 @@
             heroH1: "Dijitalde Sadece Var Olmayın, <span>Hükmedin.</span>", heroP: "Siber güvenlik zırhlı web tasarım ve Google Ads çözümleriyle müşterileriniz size ulaşsın.",
             promo: "AYINA ÖZEL LANSMAN FİYATLARI İÇİN SON", days: "GÜN!",
             stat1: "Başarılı Proje", stat2: "Yönetilen Bütçe", stat3: "Güvenlik İhlali", stat4: "Aktif Destek",
+            kbH2: "Stratejik Dijital Çözümler & SEO Rehberi",
+            art1H3: "Siber Güvenlikli Web Tasarım Nedir?", art1P: "SQLi ve XSS korumalı altyapılar inşa ediyoruz. Google güvenli siteleri SEO'da üst sıralara taşır. Mercedes-Benz onaylı kod mimarisi sunuyoruz.",
+            art2H3: "Dönüşüm Odaklı Google Ads Yönetimi", art2P: "Bot tıklamaları filtreleyin, sadece gerçek müşteriye ulaşın. Akıllı anahtar kelime analizi ile bütçenizi %40 daha verimli kullanın.",
+            art3H3: "Neden Kurumsal Web Sitesi?", art3P: "Hız ve UX dijital itibarınızdır. 24 saatte kurduğumuz çözümler 90+ Lighthouse puanı ile Google algoritmalarına tam uyum sağlar.",
             formH: "Ücretsiz Dijital Güvenlik & SEO Analizi Alın", formBtn: "ANALİZİ BAŞLAT",
             founderH2: "Siber Reklam Dünyası Kurucusu Kimdir?",
-            founderP: "<p>Ben <strong>Timur Çapkın</strong>; siber güvenlik dünyasında HackerOne ve Bugcrowd gibi platformlarda Mercedes-Benz gibi devler tarafından ödüllendirilmiş bir güvenlik araştırmacısı ve dijital stratejistim. Sadece web sitesi yapmıyorum; markanızı siber saldırılara karşı zırhlayan, Google algoritmalarında hüküm süren yüksek performanslı dijital kaleler inşa ediyorum. 10 yılı aşkın tecrübemle, siber güvenlik zekasını reklam optimizasyonuyla birleştirerek işletmenizi risklerden koruyor ve karlılığınızı maksimize ediyorum.</p>",
-            pkg1Badge: "FIRSAT", pkg1H3: "Kurumsal Web Sitesi", pkg1Features: "<li>Mobil Uyumlu & Ultra Hızlı</li><li>Hız Optimizasyonu (Lighthouse 90+)</li><li>Ücretsiz SSL & Google Kaydı</li><li>Temel SEO Altyapısı</li>", pkg1Btn: "HEMEN BAŞLAT",
-            pkg2Badge: "ZIRHLI PAKET", pkg2H3: "Siber Büyüme Paketi", pkg2Features: "<li><strong>Gelişmiş Siber Güvenlik Duvarı</strong></li><li>Profesyonel Google Ads Kurulumu</li><li>Detaylı Rakip & Sektör Analizi</li><li>Mercedes-Benz Onaylı Güvenlik</li>", pkg2Btn: "TEKLİF AL",
-            pkg3Badge: "PROFESYONEL", pkg3H3: "Ads Yönetimi", pkg3Features: "<li>Akıllı Negatif Kelime Filtresi</li><li>WhatsApp Dönüşüm Takibi</li><li>24 Saatte İlk Müşteri Araması</li><li>Haftalık Şeffaf Raporlama</li>", pkg3Btn: "BİLGİ AL",
-            monthUnit: "/ay", seoH2: "Siber Güvenlik Odaklı Web Tasarım", seoP: "İşletmenizi Google'da 'ucuz web sitesi' aramalarında öne çıkarırken, siber güvenlik zırhıyla koruyoruz.",
-            kanitH2: "STRATEGIC OPERATION CENTER", kanitP: "Sisteminizi siber güvenlik süzgecinden geçiriyor ve satışa hazır hale getiriyoruz.",
+            founderP: "<p>Ben <strong>Timur Çapkın</strong>; Mercedes-Benz gibi devler tarafından ödüllendirilmiş bir araştırmacıyım. İşletmenizi siber saldırılara karşı korunaklı bir kaleye dönüştürüyorum.</p>",
+            pkg1H3: "Kurumsal Web Sitesi", pkg1Features: "<li>Mobil Uyumlu</li><li>90+ Hız Skoru</li><li>Ücretsiz SSL & Google</li><li>Temel SEO Altyapısı</li>", pkg1Btn: "HEMEN BAŞLAT",
+            pkg2Badge: "ZIRHLI PAKET", pkg2H3: "Siber Büyüme Paketi", pkg2Features: "<li><strong>Gelişmiş Güvenlik Duvarı</strong></li><li>Ads Kurulumu</li><li>Rakip Analizi</li><li>HackerOne Güvenliği</li>", pkg2Btn: "TEKLİF AL",
+            pkg3H3: "Ads Yönetimi", pkg3Features: "<li>Negatif Filtre</li><li>WA Takibi</li><li>Yolculuk Analizi</li><li>Şeffaf Raporlama</li>", pkg3Btn: "BİLGİ AL",
+            monthUnit: "/ay", seoH2: "Siber Güvenlik Odaklı Web Tasarım", seoP: "İşletmenizi Google'da 'profesyonel web tasarım' aramalarında öne çıkarırken, siber zırhla koruyoruz.",
+            kanitH2: "STRATEJİK OPERASYON MERKEZİ", kanitP: "Sisteminizi siber güvenlik süzgecinden geçiriyor ve satışa hazır hale getiriyoruz.",
             quote: "Geleceği Siber Güvenlikle İnşa Edin.", chatH: "SİBER DESTEK", chatMsg: "Merhaba! Ben Siber Asistan. İşletmenizi büyütmek için buradayım.", call: "📞 ŞİMDİ ARA", wa: "💬 WHATSAPP",
             f1: "KVKK Aydınlatma", f2: "Gizlilik Politikası", f3: "Çerez Tercihleri",
             prices: ["₺3.500", "₺24.500", "₺3.500"]
@@ -383,81 +334,39 @@
 
     function setLanguage(lang, btn) {
         document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-        if(btn) btn.classList.add('active');
-        else document.getElementById('btn-' + lang).classList.add('active');
-
+        if(btn) btn.classList.add('active'); else document.getElementById('btn-' + lang).classList.add('active');
         const l = dictionary[lang];
-        document.getElementById('txt-badge1').innerText = l.badge1; 
-        document.getElementById('txt-badge2').innerText = l.badge2; 
-        document.getElementById('txt-badge3').innerText = l.badge3;
-        document.getElementById('txt-hero-h1').innerHTML = l.heroH1; 
-        document.getElementById('txt-hero-p').innerText = l.heroP;
-        document.getElementById('txt-promo').innerText = l.promo; 
-        document.getElementById('txt-days').innerText = l.days;
-        document.getElementById('txt-stat1').innerText = l.stat1; 
-        document.getElementById('txt-stat2').innerText = l.stat2; 
-        document.getElementById('txt-stat3').innerText = l.stat3; 
-        document.getElementById('txt-stat4').innerText = l.stat4;
-        document.getElementById('txt-form-h').innerText = l.formH; 
-        document.getElementById('txt-form-btn').innerText = l.formBtn;
-        document.getElementById('txt-founder-h2').innerText = l.founderH2; 
-        document.getElementById('txt-founder-p').innerHTML = l.founderP;
-        
-        document.getElementById('txt-pkg1-h3').innerText = l.pkg1H3; 
-        document.getElementById('txt-pkg1-features').innerHTML = l.pkg1Features; 
-        document.getElementById('txt-pkg1-btn').innerText = l.pkg1Btn;
-        document.getElementById('txt-pkg2-badge').innerText = l.pkg2Badge; 
-        document.getElementById('txt-pkg2-h3').innerText = l.pkg2H3; 
-        document.getElementById('txt-pkg2-features').innerHTML = l.pkg2Features; 
-        document.getElementById('txt-pkg2-btn').innerText = l.pkg2Btn;
-        document.getElementById('txt-pkg3-badge').innerText = l.pkg3Badge; 
-        document.getElementById('txt-pkg3-h3').innerText = l.pkg3H3; 
-        document.getElementById('txt-pkg3-features').innerHTML = l.pkg3Features; 
-        document.getElementById('txt-pkg3-btn').innerText = l.pkg3Btn;
-        
-        document.getElementById('txt-month-unit').innerText = l.monthUnit; 
-        document.getElementById('txt-seo-h2').innerText = l.seoH2; 
-        document.getElementById('txt-seo-p').innerText = l.seoP;
-        document.getElementById('txt-kanit-h2').innerText = l.kanitH2; 
-        document.getElementById('txt-kanit-p').innerText = l.kanitP; 
-        document.getElementById('txt-footer-quote').innerText = l.quote;
-        document.getElementById('txt-chat-h').innerText = l.chatH; 
-        document.getElementById('txt-chat-msg').innerText = l.chatMsg; 
-        document.getElementById('txt-call').innerText = l.call; 
-        document.getElementById('txt-wa').innerText = l.wa;
-        document.getElementById('txt-f1').innerText = l.f1; 
-        document.getElementById('txt-f2').innerText = l.f2; 
-        document.getElementById('txt-f3').innerText = l.f3;
-        
-        document.getElementById('price-1').innerText = l.prices[0];
-        document.getElementById('price-2').innerText = l.prices[1];
+        document.getElementById('txt-badge1').innerText = l.badge1; document.getElementById('txt-badge2').innerText = l.badge2; document.getElementById('txt-badge3').innerText = l.badge3;
+        document.getElementById('txt-hero-h1').innerHTML = l.heroH1; document.getElementById('txt-hero-p').innerText = l.heroP;
+        document.getElementById('txt-promo').innerText = l.promo; document.getElementById('txt-days').innerText = l.days;
+        document.getElementById('txt-stat1').innerText = l.stat1; document.getElementById('txt-stat2').innerText = l.stat2; document.getElementById('txt-stat3').innerText = l.stat3; document.getElementById('txt-stat4').innerText = l.stat4;
+        document.getElementById('txt-kb-h2').innerText = l.kbH2; document.getElementById('art1-h3').innerText = l.art1H3; document.getElementById('art1-p').innerText = l.art1P;
+        document.getElementById('art2-h3').innerText = l.art2H3; document.getElementById('art2-p').innerText = l.art2P; document.getElementById('art3-h3').innerText = l.art3H3; document.getElementById('art3-p').innerText = l.art3P;
+        document.getElementById('txt-form-h').innerText = l.formH; document.getElementById('txt-form-btn').innerText = l.formBtn;
+        document.getElementById('txt-founder-h2').innerText = l.founderH2; document.getElementById('txt-founder-p').innerHTML = l.founderP;
+        document.getElementById('txt-pkg1-h3').innerText = l.pkg1H3; document.getElementById('txt-pkg1-features').innerHTML = l.pkg1Features; document.getElementById('txt-pkg1-btn').innerText = l.pkg1Btn;
+        document.getElementById('txt-pkg2-badge').innerText = l.pkg2Badge; document.getElementById('txt-pkg2-h3').innerText = l.pkg2H3; document.getElementById('txt-pkg2-features').innerHTML = l.pkg2Features; document.getElementById('txt-pkg2-btn').innerText = l.pkg2Btn;
+        document.getElementById('txt-pkg3-h3').innerText = l.pkg3H3; document.getElementById('txt-pkg3-features').innerHTML = l.pkg3Features; document.getElementById('txt-pkg3-btn').innerText = l.pkg3Btn;
+        document.getElementById('txt-month-unit').innerText = l.monthUnit; document.getElementById('txt-seo-h2').innerText = l.seoH2; document.getElementById('txt-seo-p').innerText = l.seoP;
+        document.getElementById('txt-kanit-h2').innerText = l.kanitH2; document.getElementById('txt-kanit-p').innerText = l.kanitP; document.getElementById('txt-footer-quote').innerText = l.quote;
+        document.getElementById('txt-chat-h').innerText = l.chatH; document.getElementById('txt-chat-msg').innerText = l.chatMsg; document.getElementById('txt-call').innerText = l.call; document.getElementById('txt-wa').innerText = l.wa;
+        document.getElementById('txt-f1').innerText = l.f1; document.getElementById('txt-f2').innerText = l.f2; document.getElementById('txt-f3').innerText = l.f3;
+        document.getElementById('price-1').innerText = l.prices[0]; document.getElementById('price-2').innerText = l.prices[1];
         document.getElementById('price-3').innerHTML = l.prices[2] + ` <span id="txt-month-unit">${l.monthUnit}</span>`;
     }
 
-    async function checkUserIP() {
-        try {
-            const response = await fetch('https://ipapi.co/json/');
-            const data = await response.json();
-            if (data.country_code !== 'TR') { setLanguage('en'); } else { setLanguage('tr'); }
-        } catch (error) { setLanguage('tr'); }
-    }
+    async function checkUserIP() { try { const r = await fetch('https://ipapi.co/json/'); const d = await r.json(); if (d.country_code !== 'TR') setLanguage('en'); else setLanguage('tr'); } catch (e) { setLanguage('tr'); } }
     checkUserIP();
 
     function updatePromo() {
-        const monthsTR = ["OCAK", "ŞUBAT", "MART", "NİSAN", "MAYIS", "HAZİRAN", "TEMMUZ", "AĞUSTOS", "EYLÜL", "EKİM", "KASIM", "ARALIK"];
-        const now = new Date();
-        const monthElem = document.getElementById('current-month');
-        if (monthElem) monthElem.innerText = monthsTR[now.getMonth()];
-        const lastDay = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
-        const daysLeftElem = document.getElementById('days-left');
-        if (daysLeftElem) daysLeftElem.innerText = lastDay - now.getDate() || "1";
+        const m = ["OCAK", "ŞUBAT", "MART", "NİSAN", "MAYIS", "HAZİRAN", "TEMMUZ", "AĞUSTOS", "EYLÜL", "EKİM", "KASIM", "ARALIK"];
+        const n = new Date(); document.getElementById('current-month').innerText = m[n.getMonth()];
+        const l = new Date(n.getFullYear(), n.getMonth() + 1, 0).getDate();
+        document.getElementById('days-left').innerText = l - n.getDate() || "1";
     }
     updatePromo();
 
-    function toggleZChat() {
-        const win = document.getElementById('z-chat-window');
-        if (win) win.style.display = win.style.display === 'block' ? 'none' : 'block';
-    }
+    function toggleZChat() { const w = document.getElementById('z-chat-window'); w.style.display = w.style.display === 'block' ? 'none' : 'block'; }
 </script>
 </body>
 </html>
