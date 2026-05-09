@@ -26,16 +26,15 @@
     </script>
 
     <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/69fcf1ed013fc11c3cb944d9/default';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
+      window.$crisp=[];window.CRISP_WEBSITE_ID="3304a5cb-7d98-4793-87a7-0f7b0d8e05ed";
+      (function(){
+        d=document;s=d.createElement("script");
+        s.src="https://client.crisp.chat/l.js";
+        s.async=1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+      })();
     </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
@@ -302,8 +301,7 @@
             kanitH2: "STRATEGIC OPERATION CENTER", kanitP: "We pass your system through a cybersecurity filter for high-volume sales.",
             quote: "Build the Future with Cybersecurity.", call: "📞 CALL NOW", wa: "💬 WHATSAPP",
             f1: "Data Protection", f2: "Privacy", f3: "Cookies",
-            prices: ["$250", "$1.250", "$150"],
-            tawkMsg: "Hello! I am Timur. How can I protect and grow your brand today?"
+            prices: ["$250", "$1.250", "$150"]
         },
         tr: {
             badge1: "🛡️ Siber Koruma Aktif", badge2: "⚡ 24 Saatte Kurulum", badge3: "✅ Onaylı Partner",
@@ -324,15 +322,17 @@
             kanitH2: "STRATEGIC OPERATION CENTER", kanitP: "Sisteminizi siber güvenlik süzgecinden geçiriyor ve satışa hazır hale getiriyoruz.",
             quote: "Geleceği Siber Güvenlikle İnşa Edin.", call: "📞 ŞİMDİ ARA", wa: "💬 WHATSAPP",
             f1: "KVKK Aydınlatma", f2: "Gizlilik Politikası", f3: "Çerez Tercihleri",
-            prices: ["₺3.500", "₺24.500", "₺3.500"],
-            tawkMsg: "Merhaba! Ben Timur. İşletmenizi siber zırhla büyütmek için buradayım. Nasıl yardımcı olabilirim?"
+            prices: ["₺3.500", "₺24.500", "₺3.500"]
         }
     };
 
     function setLanguage(lang, btn) {
         document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-        if(btn) btn.classList.add('active'); else document.getElementById('btn-' + lang).classList.add('active');
+        if(btn) btn.classList.add('active'); else if(document.getElementById('btn-' + lang)) document.getElementById('btn-' + lang).classList.add('active');
+        
         const l = dictionary[lang];
+        if(!l) return;
+
         document.getElementById('txt-badge1').innerText = l.badge1; document.getElementById('txt-badge2').innerText = l.badge2; document.getElementById('txt-badge3').innerText = l.badge3;
         document.getElementById('txt-hero-h1').innerHTML = l.heroH1; document.getElementById('txt-hero-p').innerText = l.heroP;
         document.getElementById('txt-promo').innerText = l.promo; document.getElementById('txt-days').innerText = l.days;
@@ -358,28 +358,15 @@
             const d = await r.json(); 
             const lang = d.country_code !== 'TR' ? 'en' : 'tr';
             setLanguage(lang);
-            
-            // Tawk.to Greeting based on language
-            Tawk_API = Tawk_API || {};
-            Tawk_API.onLoad = function(){
-                Tawk_API.setAttributes({
-                    'Language': lang
-                }, function(error){});
-                // Auto greeting event
-                Tawk_API.maximize();
-                Tawk_API.addEvent('visitor-reached', {
-                    'message': dictionary[lang].tawkMsg
-                });
-            };
         } catch (e) { setLanguage('tr'); } 
     }
     checkUserIP();
 
     function updatePromo() {
         const m = ["OCAK", "ŞUBAT", "MART", "NİSAN", "MAYIS", "HAZİRAN", "TEMMUZ", "AĞUSTOS", "EYLÜL", "EKİM", "KASIM", "ARALIK"];
-        const n = new Date(); document.getElementById('current-month').innerText = m[n.getMonth()];
+        const n = new Date(); if(document.getElementById('current-month')) document.getElementById('current-month').innerText = m[n.getMonth()];
         const l = new Date(n.getFullYear(), n.getMonth() + 1, 0).getDate();
-        document.getElementById('days-left').innerText = l - n.getDate() || "1";
+        if(document.getElementById('days-left')) document.getElementById('days-left').innerText = l - n.getDate() || "1";
     }
     updatePromo();
 </script>
